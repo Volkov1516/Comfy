@@ -19,11 +19,27 @@ const Header: NextPage = () => {
                         <a className={styles.link} href="#"><b>#ComfyHelps</b></a>
                         <a className={styles.link} href="#">Магазины</a>
                         <a className={styles.link} href="#">Новый заказ</a>
-                        <a className={styles.link} href="#">Еще <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" /></a>
+                        <div className={styles.dropdown}>
+                            <span className={styles.dropdownBtn}>Еще <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
+                            <div className={styles.dropdownContent}>
+                                <a href="#">Доставка</a>
+                                <a href="#">Возврат</a>
+                                <a href="#">Блог</a>
+                            </div>
+                        </div>
                         <div className={styles.contact}>
-                            <img className={styles.phoneImg} src="/headerPhone.svg" alt="Phone" width="20px" height="20px" />
-                            <span className={styles.contactText}>Связаться</span>
-                            <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" />
+                            <div className={styles.dropdownBtn2}>
+                                <img className={styles.phoneImg} src="/headerPhone.svg" alt="Phone" width="20px" height="20px" />
+                                <span className={styles.contactText}>Связаться</span>
+                                <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" />
+                            </div>
+                            <div className={styles.dropdownContent}>
+                                <a href="#">Чат на сайте</a>
+                                <a href="#">Messenger</a>
+                                <a href="#">Viber</a>
+                                <a href="#">Telegram</a>
+                                <a href="#">0-000-000-000</a>
+                            </div>
                         </div>
                         <div className={styles.langContainer}>
                             <div className={styles.lang}><b>РУС</b></div>
@@ -33,9 +49,30 @@ const Header: NextPage = () => {
                 </div>
                 <div className={styles.headerBottom}>
                     <div className={styles.catalog}>
-                        <img className={styles.categoriesImg} src="/categories.svg" alt="Categories" width="17px" height="17px" />
-                        <span className={styles.catalogText}>Каталог товаров</span>
-                        <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="13px" height="13px" />
+                        <div className={styles.dropdownBtn3}>
+                            <img className={styles.categoriesImg} src="/categories.svg" alt="Categories" width="17px" height="17px" />
+                            <span className={styles.catalogText}>Каталог товаров</span>
+                            <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="13px" height="13px" />
+                        </div>
+                        <div className={styles.dropdownContent}>
+                            <div className={styles.catalogItem}><a href="#">Смартвоны и телефоны</a></div>
+                            <div className={styles.catalogItem}><a href="#">Ноутбуки, планшеты и компьютерная техника</a></div>
+                            <div className={styles.catalogItem}><a href="#">Техника для кухни</a></div>
+                            <div className={styles.catalogItem}><a href="#">Техника для дома</a></div>
+                            <div className={styles.catalogItem}><a href="#">Телевизоры и мультимедиа</a></div>
+                            <div className={styles.catalogItem}><a href="#">Смарт-часы и гаджеты</a></div>
+                            <div className={styles.catalogItem}><a href="#">Аудио</a></div>
+                            <div className={styles.catalogItem}><a href="#">Игровые консоли и гейминг</a></div>
+                            <div className={styles.catalogItem}><a href="#">Фото и видео</a></div>
+                            <div className={styles.catalogItem}><a href="#">Красота и здоровье</a></div>
+                            <div className={styles.catalogItem}><a href="#">Посуда</a></div>
+                            <div className={styles.catalogItem}><a href="#">Бытовая химия</a></div>
+                            <div className={styles.catalogItem}><a href="#">Дом и отдых</a></div>
+                            <div className={styles.catalogItem}><a href="#">Comfy KIDS</a></div>
+                            <div className={styles.catalogItem}><a href="#">Инструменты и автотовары</a></div>
+                            <div className={styles.catalogItem}><a href="#">Уцененные товары</a></div>
+                            <div className={styles.catalogItem}><a href="#">Сервисы, подписки и софт</a></div>
+                        </div>
                     </div>
                     <div className={styles.search}>
                         <input className={styles.input} type="text" placeholder="Поиск товаров" />

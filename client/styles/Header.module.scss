@@ -82,12 +82,44 @@
         }
 
         .contact {
-            margin: 0px 20px 0px 20px;
-            display: flex;
-            align-items: center;
+            position: relative;
+            display: inline-block;
+
+            .dropdownBtn2 {
+                margin: 0px 20px 0px 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            .dropdownContent {
+                min-width: 160px;
+                padding: 18px;
+                display: none;
+                position: absolute;
+                background-color: #FFFFFF;
+                box-shadow: 0px -4px 14px -3px rgba(0, 0, 0, 0.3);
+                border-radius: 0.4rem;
+                z-index: 1;
+            }
+
+            a {
+                display: block;
+
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+
+                &:hover {
+                    color: #FF671F;
+                }
+            }
 
             &:hover {
                 cursor: pointer;
+            }
+
+            &:hover .dropdownContent {
+                display: block;
             }
 
             .phoneImg {
@@ -103,6 +135,52 @@
                 margin-left: 12px;
                 margin-right: 12px;
                 color: #FF671F;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+            .dropdownContent {
+                min-width: 160px;
+                padding: 18px;
+                display: none;
+                position: absolute;
+                background-color: #FFFFFF;
+                box-shadow: 0px -4px 14px -3px rgba(0, 0, 0, 0.3);
+                border-radius: 0.4rem;
+                z-index: 1;
+            }
+
+            .arrowImg {
+                width: 8px;
+                height: 12px;
+                margin-left: 8px;
+                transform: rotate(180deg);
+            }
+
+            a {
+                display: block;
+
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+
+                &:hover {
+                    color: #FF671F;
+                }
+            }
+
+
+            &:hover .dropdownContent {
+                display: block;
+            }
+
+            &:hover .dropdownBtn {
+                cursor: pointer;
+                color: #FF671F;
+                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
             }
         }
 
@@ -129,15 +207,32 @@
     background-color: #43B02A;
 
     .catalog {
-        padding-left: 18px;
-        padding-right: 18px;
-        height: 56px;
-        display: flex;
-        align-items: center;
-        background-color: #379424;
+        position: relative;
+        display: inline-block;
+        // asdasdsa
+
+        .dropdownContent {
+            min-width: 160px;
+            padding: 18px;
+            display: none;
+            position: absolute;
+            background-color: #FFFFFF;
+            box-shadow: 0px -4px 14px -3px rgba(0, 0, 0, 0.3);
+            border-radius: 0.4rem;
+            z-index: 1;
+        }
+
+        .dropdownBtn3 {
+            padding-left: 18px;
+            padding-right: 18px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            background-color: #379424;
+        }
 
         .categoriesImg {
-            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
         }
 
         .catalogText {
@@ -145,12 +240,16 @@
             margin-right: 72px;
             font-size: 16px;
             font-weight: 500;
-            color: #F2F2F2;
+            color: #FFFFFF;
         }
 
         .arrowImg {
-            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
             transform: rotate(180deg);
+        }
+
+        &:hover .dropdownContent {
+            display: block;
         }
     }
 
@@ -175,7 +274,7 @@
         padding: 8px 10px;
         border-radius: 0.4rem;
         margin-right: 19px;
-        color: #F2F2F2;
+        color: #FFFFFF;
         background-color: #379424;
     }
 
@@ -184,7 +283,7 @@
         padding-right: 18px;
 
         .compareImg {
-            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
         }
     }
 
@@ -193,7 +292,7 @@
         padding-right: 18px;
 
         .heartImg {
-            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
         }
     }
 
@@ -206,13 +305,13 @@
         background-color: #379424;
 
         .cartImg {
-            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
         }
 
         .cartText {
             margin-left: 18px;
             font-size: 16px;
-            color: #F2F2F2;
+            color: #FFFFFF;
         }
     }
 }
