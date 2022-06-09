@@ -1,0 +1,218 @@
+.headerBanner {
+    width: 100%;
+    height: 60px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.headerTop {
+    width: 100%;
+    height: 70px;
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    .leftFlex {
+        width: 100%;
+        height: 70px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .logoImg {
+            margin: 0px 34px 0px 26px;
+        }
+
+        .citySelect {
+
+            &:hover {
+                cursor: pointer;
+                color: #FF671F;
+                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
+            }
+
+            .arrowImg {
+                width: 8px;
+                height: 12px;
+                margin-left: 8px;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .rightFlex {
+        width: 100%;
+        height: 70px;
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 12px;
+
+        .sales {
+            padding: 5px 12px;
+            border-radius: 1.5rem;
+            color: #FFFFFF;
+            background-color: #FF0000;
+
+            // :hover {
+            //     cursor: pointer;
+            // }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .link {
+            &:hover {
+                color: #FF671F;
+                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
+            }
+
+            .arrowImg {
+                width: 8px;
+                height: 12px;
+                margin-left: 8px;
+                transform: rotate(180deg);
+            }
+        }
+
+        .contact {
+            margin: 0px 20px 0px 20px;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .phoneImg {
+                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
+            }
+
+            .arrowImg {
+                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
+                transform: rotate(180deg);
+            }
+
+            .contactText {
+                margin-left: 12px;
+                margin-right: 12px;
+                color: #FF671F;
+            }
+        }
+
+        .langContainer {
+            width: 50px;
+            height: 70px;
+            background-color: #F2F2F2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+}
+
+.headerBottom {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 14px;
+    background-color: #43B02A;
+
+    .catalog {
+        padding-left: 18px;
+        padding-right: 18px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        background-color: #379424;
+
+        .categoriesImg {
+            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+        }
+
+        .catalogText {
+            margin-left: 18px;
+            margin-right: 72px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #F2F2F2;
+        }
+
+        .arrowImg {
+            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+            transform: rotate(180deg);
+        }
+    }
+
+    .search {
+        padding-left: 18px;
+        padding-right: 18px;
+        height: 56px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .input {
+            width: 100%;
+            height: 38px;
+            outline: none;
+            border: none;
+            border-radius: 0.4rem;
+        }
+    }
+
+    .login {
+        padding: 8px 10px;
+        border-radius: 0.4rem;
+        margin-right: 19px;
+        color: #F2F2F2;
+        background-color: #379424;
+    }
+
+    .compare {
+        padding-left: 18px;
+        padding-right: 18px;
+
+        .compareImg {
+            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+        }
+    }
+
+    .wishlist {
+        padding-left: 18px;
+        padding-right: 18px;
+
+        .heartImg {
+            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+        }
+    }
+
+    .cart {
+        padding-left: 18px;
+        padding-right: 18px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        background-color: #379424;
+
+        .cartImg {
+            filter: invert(94%) sepia(96%) saturate(20%) hue-rotate(211deg);
+        }
+
+        .cartText {
+            margin-left: 18px;
+            font-size: 16px;
+            color: #F2F2F2;
+        }
+    }
+}
