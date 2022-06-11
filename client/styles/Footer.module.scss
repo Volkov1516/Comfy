@@ -12,7 +12,7 @@
         padding: 15px 5px;
 
         &:not(:last-child) {
-            border-right: 2px solid $whiteDark;
+            border-right: 2px solid $grayLight;
         }
 
         .infoItemIcon {
@@ -207,7 +207,7 @@
     height: 58px;
     display: flex;
     align-items: center;
-    border-top: 2px solid $whiteDark;
+    border-top: 2px solid $grayLight;
     padding: 0px 20px;
     font-size: 14px;
 }
