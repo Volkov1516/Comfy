@@ -1,168 +1,166 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 
-import styles from '../styles/Header.module.scss'
+import css from '../styles/Header.module.scss';
 
 const Header: NextPage = () => {
     return (
-        <>
-            <header>
-                <div className={styles.headerBanner}>
-                    <img src="/headerBanner.webp" alt="Banner" width="100%" height="100%" />
+        <header>
+            <div className={css.headerBanner}>
+                <img src="/headerBanner.webp" alt="Banner" width="100%" height="100%" />
+            </div>
+            <div className={css.headerTop}>
+                <div className={css.leftFlex}>
+                    <img className={css.logoImg} src="/headerLogo.svg" alt="Logo" width="140px" height="32px" />
+                    <span className={css.citySelect}>Киев <img className={css.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
                 </div>
-                <div className={styles.headerTop}>
-                    <div className={styles.leftFlex}>
-                        <img className={styles.logoImg} src="/headerLogo.svg" alt="Logo" width="140px" height="32px" />
-                        <span className={styles.citySelect}>Киев <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
+                <nav className={css.rightFlex}>
+                    <div className={css.sales}>Акции</div>
+                    <a className={css.link} href="#"><b>#ComfyHelps</b></a>
+                    <a className={css.link} href="#">Магазины</a>
+                    <a className={css.link} href="#">Новый заказ</a>
+                    <div className={css.dropdown}>
+                        <span className={css.dropdownBtn}>Еще <img className={css.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
+                        <div className={css.dropdownContent}>
+                            <a href="#">Доставка</a>
+                            <a href="#">Возврат</a>
+                            <a href="#">Блог</a>
+                        </div>
                     </div>
-                    <nav className={styles.rightFlex}>
-                        <div className={styles.sales}>Акции</div>
-                        <a className={styles.link} href="#"><b>#ComfyHelps</b></a>
-                        <a className={styles.link} href="#">Магазины</a>
-                        <a className={styles.link} href="#">Новый заказ</a>
-                        <div className={styles.dropdown}>
-                            <span className={styles.dropdownBtn}>Еще <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
-                            <div className={styles.dropdownContent}>
-                                <a href="#">Доставка</a>
-                                <a href="#">Возврат</a>
-                                <a href="#">Блог</a>
-                            </div>
+                    <div className={css.contact}>
+                        <div className={css.dropdownBtn2}>
+                            <img className={css.phoneImg} src="/headerPhone.svg" alt="Phone" width="20px" height="20px" />
+                            <span className={css.contactText}>Связаться</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" />
                         </div>
-                        <div className={styles.contact}>
-                            <div className={styles.dropdownBtn2}>
-                                <img className={styles.phoneImg} src="/headerPhone.svg" alt="Phone" width="20px" height="20px" />
-                                <span className={styles.contactText}>Связаться</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Arrow" width="12px" height="12px" />
-                            </div>
-                            <div className={styles.dropdownContent}>
-                                <a href="#">Чат на сайте</a>
-                                <a href="#">Messenger</a>
-                                <a href="#">Viber</a>
-                                <a href="#">Telegram</a>
-                                <a href="#">0-000-000-000</a>
-                            </div>
+                        <div className={css.dropdownContent}>
+                            <a href="#">Чат на сайте</a>
+                            <a href="#">Messenger</a>
+                            <a href="#">Viber</a>
+                            <a href="#">Telegram</a>
+                            <a href="#">0-000-000-000</a>
                         </div>
-                        <div className={styles.langContainer}>
-                            <div className={styles.lang}><b>РУС</b></div>
-                            <div className={styles.lang}><b>УКР</b></div>
-                        </div>
-                    </nav>
+                    </div>
+                    <div className={css.langContainer}>
+                        <div className={css.lang}><b>РУС</b></div>
+                        <div className={css.lang}><b>УКР</b></div>
+                    </div>
+                </nav>
+            </div>
+            <div className={css.headerBottom}>
+                <div className={css.catalog}>
+                    <img className={css.catalogImg} src="/categories.svg" alt="Compare" width="17px" height="17px" />
+                    <span className={css.catalogText}>Каталог товаров</span>
+                    <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="13px" height="13px" />
                 </div>
-                <div className={styles.headerBottom}>
-                    <div className={styles.catalog}>
-                        <img className={styles.catalogImg} src="/categories.svg" alt="Compare" width="17px" height="17px" />
-                        <span className={styles.catalogText}>Каталог товаров</span>
-                        <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="13px" height="13px" />
-                    </div>
-                    <div className={styles.catalogContent}>
-                        <div className={styles.left}>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/smartphone.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Смартфоны и телефоны</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/laptop.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Ноутбуки, планшеты и компьютерная техника</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/oven.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Техника для кухни</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/washing.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Техника для дома</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/tv.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Телевизоры и мультимедиа</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/watch.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Смарт-часы и гаджеты</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/headphones.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Аудио</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/gamepad.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Игровые консоли и гейминг</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/camera.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Фото и видео</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/hairdryer.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Красота и здоровье</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/pot.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Посуда</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/bottle.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Бытовая химия</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/armchair.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Дом и отдых</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/kid.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Comfy KIIDS</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/screwdriver.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Инструменты и автотовары</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/down-arrow.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Уцененные товары</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
-                            <div className={styles.leftItem}>
-                                <img className={styles.leftImg} src="/ticket.svg" alt="Compare" width="20px" height="20px" />
-                                <span className={styles.leftText}>Сервисы, подписки и софт</span>
-                                <img className={styles.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />   
-                            </div>
+                <div className={css.catalogContent}>
+                    <div className={css.left}>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/smartphone.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Смартфоны и телефоны</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
                         </div>
-                        <div className={styles.right}>
-                            Submenu
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/laptop.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Ноутбуки, планшеты и компьютерная техника</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/oven.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Техника для кухни</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/washing.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Техника для дома</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/tv.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Телевизоры и мультимедиа</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/watch.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Смарт-часы и гаджеты</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/headphones.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Аудио</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/gamepad.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Игровые консоли и гейминг</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/camera.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Фото и видео</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/hairdryer.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Красота и здоровье</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/pot.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Посуда</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/bottle.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Бытовая химия</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/armchair.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Дом и отдых</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/kid.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Comfy KIIDS</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/screwdriver.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Инструменты и автотовары</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/down-arrow.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Уцененные товары</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
+                        </div>
+                        <div className={css.leftItem}>
+                            <img className={css.leftImg} src="/ticket.svg" alt="Compare" width="20px" height="20px" />
+                            <span className={css.leftText}>Сервисы, подписки и софт</span>
+                            <img className={css.arrowImg} src="/arrow.svg" alt="Compare" width="12px" height="12px" />
                         </div>
                     </div>
-                    <div className={styles.search}>
-                        <input className={styles.input} type="text" placeholder="Поиск товаров" />
-                    </div>
-                    <div className={styles.login}>Войти</div>
-                    <div className={styles.compare}>
-                        <img className={styles.compareImg} src="/compare.svg" alt="Compare" width="20px" height="20px" />
-                    </div>
-                    <div className={styles.wishlist}>
-                        <img className={styles.heartImg} src="/heart.svg" alt="Heart" width="20px" height="20px" />
-                    </div>
-                    <div className={styles.cart}>
-                        <img className={styles.cartImg} src="/cart.svg" alt="Cart" width="20px" height="20px" />
-                        <span className={styles.cartText}>Корзина</span>
+                    <div className={css.right}>
+                        Submenu
                     </div>
                 </div>
-            </header>
-        </>
-    )
+                <div className={css.search}>
+                    <input className={css.input} type="text" placeholder="Поиск товаров" />
+                </div>
+                <div className={css.login}>Войти</div>
+                <div className={css.compare}>
+                    <img className={css.compareImg} src="/compare.svg" alt="Compare" width="20px" height="20px" />
+                </div>
+                <div className={css.wishlist}>
+                    <img className={css.heartImg} src="/heart.svg" alt="Heart" width="20px" height="20px" />
+                </div>
+                <div className={css.cart}>
+                    <img className={css.cartImg} src="/cart.svg" alt="Cart" width="20px" height="20px" />
+                    <span className={css.cartText}>Корзина</span>
+                </div>
+            </div>
+        </header>
+    );
 }
 
-export default Header
+export default Header;

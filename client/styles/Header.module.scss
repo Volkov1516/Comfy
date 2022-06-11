@@ -1,3 +1,5 @@
+@use  './variables/colors.scss' as *;
+
 .headerBanner {
     width: 100%;
     height: 60px;
@@ -15,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    background-color: #FFFFFF;
+    background-color: $white;
 
     .leftFlex {
         width: 100%;
@@ -32,7 +34,7 @@
 
             &:hover {
                 cursor: pointer;
-                color: #FF671F;
+                color: $orange;
                 filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
             }
 
@@ -57,12 +59,9 @@
         .sales {
             padding: 5px 12px;
             border-radius: 1.5rem;
-            color: #FFFFFF;
-            background-color: #FF0000;
+            color: $white;
+            background-color: $red;
 
-            // :hover {
-            //     cursor: pointer;
-            // }
             &:hover {
                 cursor: pointer;
             }
@@ -70,7 +69,7 @@
 
         .link {
             &:hover {
-                color: #FF671F;
+                color: $orange;
                 filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
             }
 
@@ -97,7 +96,7 @@
                 padding: 18px;
                 display: none;
                 position: absolute;
-                background-color: #FFFFFF;
+                background-color: $white;
                 box-shadow: 0px -4px 14px -3px rgba(0, 0, 0, 0.3);
                 border-radius: 0.4rem;
                 z-index: 1;
@@ -111,7 +110,7 @@
                 }
 
                 &:hover {
-                    color: #FF671F;
+                    color: $orange;
                 }
             }
 
@@ -135,7 +134,7 @@
             .contactText {
                 margin-left: 12px;
                 margin-right: 12px;
-                color: #FF671F;
+                color: $orange
             }
         }
 
@@ -148,7 +147,7 @@
                 padding: 18px;
                 display: none;
                 position: absolute;
-                background-color: #FFFFFF;
+                background-color: $white;
                 box-shadow: 0px -4px 14px -3px rgba(0, 0, 0, 0.3);
                 border-radius: 0.4rem;
                 z-index: 1;
@@ -169,7 +168,7 @@
                 }
 
                 &:hover {
-                    color: #FF671F;
+                    color: $orange;
                 }
             }
 
@@ -180,7 +179,7 @@
 
             &:hover .dropdownBtn {
                 cursor: pointer;
-                color: #FF671F;
+                color: $orange;
                 filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
             }
         }
@@ -188,7 +187,7 @@
         .langContainer {
             width: 50px;
             height: 70px;
-            background-color: #F2F2F2;
+            background-color: $whiteDark;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -205,13 +204,13 @@
     flex-wrap: wrap;
     align-items: center;
     font-size: 14px;
-    background-color: #43B02A;
+    background-color: $green;
     position: relative;
 
     .catalog {
         display: flex;
         align-items: center;
-        background-color: #379424;
+        background-color: $greenDark;
         height: 56px;
         padding: 0px 18px 0px 18px;
         width: 300px;
@@ -228,7 +227,7 @@
         .catalogText {
             font-size: 16px;
             font-weight: 500;
-            color: #FFFFFF;
+            color: $white;
             margin-left: 12px;
             flex: 1;
         }
@@ -250,7 +249,7 @@
 
         .left {
             width: 300px;
-            background-color: #FFFFFF;
+            background-color: $white;
             padding: 12px;
 
             
@@ -267,8 +266,6 @@
                     margin-left: 12px;
                     flex: 1;
                 }
-
-                .leftImg {}
 
                 .arrowImg {
                     transform: rotate(90deg);
@@ -287,7 +284,7 @@
 
         .right {
             flex: 1;
-            background-color: #FFFFFF;
+            background-color: $white;
             display: none;
 
             &:hover {
@@ -317,8 +314,8 @@
         padding: 8px 10px;
         border-radius: 0.4rem;
         margin-right: 19px;
-        color: #FFFFFF;
-        background-color: #379424;
+        color: $white;
+        background-color: $greenDark;
     }
 
     .compare {
@@ -346,7 +343,7 @@
         height: 56px;
         display: flex;
         align-items: center;
-        background-color: #379424;
+        background-color: $greenDark;
 
         .cartImg {
             filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
@@ -355,7 +352,7 @@
         .cartText {
             margin-left: 18px;
             font-size: 16px;
-            color: #FFFFFF;
+            color: $white;
         }
     }
 }
