@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 
 import css from '../styles/Slider.module.scss';
@@ -23,6 +23,10 @@ const Slider: NextPage = () => {
             serCurrentSlide(1)
         }
     }
+
+    useEffect(() => {
+        setTimeout(() => nextSlide(), 5000)
+    }, [currentSlide])
 
     return (
         <div className={css.container}>
