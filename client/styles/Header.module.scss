@@ -238,7 +238,8 @@
     }
 
     .catalogContent {
-        display: none;
+        // flex - only home page! Need to change dynamicly
+        display: flex;
         position: absolute;
         top: 100%;
 
@@ -286,6 +287,7 @@
             flex: 1;
             background-color: $white;
             display: none;
+            z-index: 1;
 
             &:hover {
                 display: block;
