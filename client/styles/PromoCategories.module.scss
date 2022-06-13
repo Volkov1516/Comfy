@@ -1,0 +1,139 @@
+@use './variables/colors.scss' as *;
+
+.container {
+    width: 100%;
+    height: auto;
+    padding: 0px 24px 24px;
+
+    .header {
+        width: 100%;
+        padding: 0px 18px 24px;
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .more {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            color: $orange;
+
+            img {
+                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .body {
+        width: 100%;
+        height: auto;
+        display: flex;
+
+        .item {
+            flex: 1;
+            padding: 16px 16px 28px;
+            background-color: $white;
+            border-right: 1px solid $grayLight;
+
+            .code {
+                width: 100%;
+                float: right;
+                padding-bottom: 15px;
+                font-size: 10px;
+                color: $grayMiddle;
+            }
+
+            .info {
+
+                .name {
+                    font-size: 14px;
+                    margin: 24px 0px 12px;
+                }
+
+                .feedback {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 12px;
+                    margin-bottom: 12px;
+
+                    .comments {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 6px;
+
+                        img {
+                            transform: scale(-1, 1);
+                        }
+                    }
+                }
+
+                .labels {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 32px;
+                }
+
+                .actions {
+                    width: 100%;
+                    height: 48px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .price {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .priceCurrent {
+                            font-size: 24px;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .actionButton {
+                        display: flex;
+                        align-items: center;
+                        background-color: $green;
+                        padding: 10px;
+                        border-radius: 0.8rem;
+                        font-weight: 700;
+
+                        img {
+                            margin: 0px 4px;
+                            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $orange;
+                        }
+                    }
+                }
+
+                .bonus {
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+
+                    .pinted {
+                        color: $orange;
+                    }
+
+                    img {
+                        filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
+                    }
+                }
+            }
+        }
+    }
+}
