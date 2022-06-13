@@ -16,7 +16,7 @@ const PromoCategories: NextPage = () => {
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
                     <div className={css.slide}>
-                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="180px" height="180px" />
+                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
                     </div>
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
@@ -53,7 +53,7 @@ const PromoCategories: NextPage = () => {
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
                     <div className={css.slide}>
-                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="180px" height="180px" />
+                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
                     </div>
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
@@ -90,7 +90,7 @@ const PromoCategories: NextPage = () => {
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
                     <div className={css.slide}>
-                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="180px" height="180px" />
+                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
                     </div>
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
@@ -127,7 +127,7 @@ const PromoCategories: NextPage = () => {
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
                     <div className={css.slide}>
-                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="180px" height="180px" />
+                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
                     </div>
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
@@ -164,7 +164,7 @@ const PromoCategories: NextPage = () => {
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
                     <div className={css.slide}>
-                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="180px" height="180px" />
+                        <img src="/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
                     </div>
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
