@@ -1,4 +1,5 @@
 @use  './variables/colors.scss' as *;
+@use  './variables/mixins.scss' as *;
 
 .headerBanner {
     width: 100%;
@@ -13,9 +14,7 @@
     width: 100%;
     height: 70px;
     padding: 0 20px 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(row, space-between, center);
     font-size: 14px;
     background-color: $white;
 
@@ -23,8 +22,7 @@
         width: 100%;
         height: 70px;
         flex: 1;
-        display: flex;
-        align-items: center;
+        @include flex(row, space-between, center);
 
         .logoImg {
             margin: 0px 34px 0px 26px;
@@ -51,10 +49,7 @@
         width: 100%;
         height: 70px;
         flex: 2;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        column-gap: 12px;
+        @include flex(row, flex-end, center, 12px);
 
         .sales {
             padding: 5px 12px;
@@ -87,8 +82,7 @@
 
             .dropdownBtn2 {
                 margin: 0px 20px 0px 20px;
-                display: flex;
-                align-items: center;
+                @include flex(row, flex-end, center);
             }
 
             .dropdownContent {
@@ -188,10 +182,7 @@
             width: 50px;
             height: 70px;
             background-color: $grayLight;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+            @include flex(column, space-around, center);
         }
     }
 }
@@ -200,16 +191,13 @@
     width: 100%;
     height: 56px;
     padding: 0 20px 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    @include flex(row, flex-start, center, 0px, 0px, wrap);
     font-size: 14px;
     background-color: $green;
     position: relative;
 
     .catalog {
-        display: flex;
-        align-items: center;
+        @include flex(row, flex-start, center);
         background-color: $greenDark;
         height: 56px;
         padding: 0px 18px 0px 18px;
@@ -233,18 +221,18 @@
         }
 
         &:hover + .catalogContent {
-            display: flex;  
+            @include flex(); 
         }
     }
 
     .catalogContent {
         // flex - only home page! Need to change dynamicly
-        display: flex;
+        @include flex();
         position: absolute;
         top: 100%;
 
         &:hover {
-            display: flex;  
+            @include flex();
             width: calc(100% - 40px);
         }
 
@@ -256,8 +244,7 @@
             
 
             .leftItem {
-                display: flex;
-                align-items: center;
+                @include flex(row, flex-start, center);
 
                 &:not(:last-child) {
                     margin-bottom: 14px;
@@ -300,8 +287,7 @@
         padding-right: 18px;
         height: 56px;
         flex: 1;
-        display: flex;
-        align-items: center;
+        @include flex(row, flex-start, center);
 
         .input {
             width: 100%;
@@ -343,8 +329,7 @@
         padding-left: 18px;
         padding-right: 18px;
         height: 56px;
-        display: flex;
-        align-items: center;
+        @include flex(row, flex-start, center);
         background-color: $greenDark;
 
         .cartImg {

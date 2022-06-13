@@ -7,7 +7,7 @@ const Footer: NextPage = () => {
         <footer>
             <div className={css.info}>
                 <div className={css.infoItem}>
-                    <img className={css.infoItemIcon} src="/delivery.svg" alt="Delivery" width="55px" height="55px" />
+                    <img className={css.infoItemIcon} src="/img/delivery.svg" alt="Delivery" width="55px" height="55px" />
                     <div className={css.textWrapper}>
                         <span className={css.infoItemText}>Доставка</span>
                         <p className={css.infoItemDescription}>
@@ -16,7 +16,7 @@ const Footer: NextPage = () => {
                     </div>
                 </div>
                 <div className={css.infoItem}>
-                    <img className={css.infoItemIcon} src="/protection.svg" alt="Guard" width="55px" height="55px" />
+                    <img className={css.infoItemIcon} src="/img/protection.svg" alt="Guard" width="55px" height="55px" />
                     <div className={css.textWrapper}>
                         <span className={css.infoItemText}>Гарантия</span>
                         <p className={css.infoItemDescription}>
@@ -25,7 +25,7 @@ const Footer: NextPage = () => {
                     </div>
                 </div>
                 <div className={css.infoItem}>
-                    <img className={css.infoItemIcon} src="/payment.svg" alt="Payment" width="55px" height="55px" />
+                    <img className={css.infoItemIcon} src="/img/payment.svg" alt="Payment" width="55px" height="55px" />
                     <div className={css.textWrapper}>
                         <span className={css.infoItemText}>Оплата</span>
                         <p className={css.infoItemDescription}>
@@ -34,7 +34,7 @@ const Footer: NextPage = () => {
                     </div>
                 </div>
                 <div className={css.infoItem}>
-                    <img className={css.infoItemIcon} src="/return.svg" alt="Return" width="55px" height="55px" />
+                    <img className={css.infoItemIcon} src="/img/return.svg" alt="Return" width="55px" height="55px" />
                     <div className={css.textWrapper}>
                         <span className={css.infoItemText}>Возврат</span>
                         <p className={css.infoItemDescription}>
@@ -64,26 +64,26 @@ const Footer: NextPage = () => {
                             <p>Присоединяйтесь</p>
                             <div className={css.row}>
                                 <a href="#">
-                                    <img className={css.infoItemIcon} src="/facebook.svg" alt="Facebook" width="44px" height="44px" />
+                                    <img className={css.infoItemIcon} src="/img/facebook.svg" alt="Facebook" width="44px" height="44px" />
                                 </a>
                                 <a href="#">
-                                    <img className={css.infoItemIcon} src="/youtube.svg" alt="Youtube" width="44px" height="44px" />
+                                    <img className={css.infoItemIcon} src="/img/youtube.svg" alt="Youtube" width="44px" height="44px" />
                                 </a>
                                 <a href="#">
-                                    <img className={css.infoItemIcon} src="/instagram.svg" alt="Instagram" width="44px" height="44px" />
+                                    <img className={css.infoItemIcon} src="/img/instagram.svg" alt="Instagram" width="44px" height="44px" />
                                 </a>
                                 <a href="#">
-                                    <img className={css.infoItemIcon} src="/telegram.svg" alt="Telegram" width="44px" height="44px" />
+                                    <img className={css.infoItemIcon} src="/img/telegram.svg" alt="Telegram" width="44px" height="44px" />
                                 </a>
                                 <a href="#">
-                                    <img className={css.infoItemIcon} src="/viber.svg" alt="Viber" width="44px" height="44px" />
+                                    <img className={css.infoItemIcon} src="/img/viber.svg" alt="Viber" width="44px" height="44px" />
                                 </a>
                             </div>
                         </div>
                         <div className={css.findShop}>
                             <a href="#">
                                 <div className={css.shopWrapper}>
-                                    <img className={css.icon} src="/store.svg" alt="Viber" width="21px" height="21px" />
+                                    <img className={css.icon} src="/img/store.svg" alt="Viber" width="21px" height="21px" />
                                     <span className={css.text}>Найти магазин</span>
                                 </div>
                             </a>
@@ -91,9 +91,9 @@ const Footer: NextPage = () => {
                         <div className={css.consultation}>
                             <a href="#">
                                 <div className={css.consultWrapper}>
-                                    <img className={css.icon} src="/store.svg" alt="Viber" width="21px" height="21px" />
+                                    <img className={css.icon} src="/img/store.svg" alt="Viber" width="21px" height="21px" />
                                     <span className={css.text}>Найти магазин</span>
-                                    <img className={css.arrowIcon} src="/arrow.svg" alt="Arrow" width="14px" height="14px" />
+                                    <img className={css.arrowIcon} src="/img/arrow.svg" alt="Arrow" width="14px" height="14px" />
                                 </div>
                             </a>
                         </div>
@@ -137,16 +137,16 @@ const Footer: NextPage = () => {
                                 <li><a href="#">Правила участия в акциях</a></li>
                             </ul>
                             <div className={css.row}>
-                                <img className={css.icon} src="/visa.svg" alt="Visa" width="80px" height="36px" />
-                                <img className={css.icon} src="/mastercard.svg" alt="Mastercard" width="80px" height="36px" />
+                                <img className={css.icon} src="/img/visa.svg" alt="Visa" width="80px" height="36px" />
+                                <img className={css.icon} src="/img/mastercard.svg" alt="Mastercard" width="80px" height="36px" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className={css.applinks}>
-                    <img className={css.icon} src="/googleApp.svg" alt="Visa" width="110px" height="42px" />
-                    <img className={css.icon} src="/appleApp.svg" alt="Visa" width="110px" height="42px" />
-                    <img className={css.icon} src="/appGallery.svg" alt="Visa" width="110px" height="42px" />
+                    <img className={css.icon} src="/img/googleApp.svg" alt="Visa" width="110px" height="42px" />
+                    <img className={css.icon} src="/img/appleApp.svg" alt="Visa" width="110px" height="42px" />
+                    <img className={css.icon} src="/img/appGallery.svg" alt="Visa" width="110px" height="42px" />
                 </div>
             </div>
             <div className={css.bottom}>

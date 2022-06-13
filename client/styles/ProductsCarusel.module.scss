@@ -1,4 +1,5 @@
 @use './variables/colors.scss' as *;
+@use './variables/mixins.scss' as *;
 
 .container {
     width: 100%;
@@ -8,9 +9,7 @@
     .header {
         width: 100%;
         padding: 0px 18px 24px;
-        display: flex;
-        align-items: center;
-        column-gap: 24px;
+        @include flex(row, flex-start, center, 24px);
 
         h3 {
             font-size: 24px;
@@ -21,19 +20,16 @@
     .carusel {
         width: 100%;
         height: auto;
-        display: flex;
+        @include flex(row, flex-start, stretch, 12px);
         padding: 32px 18px;
         background-color: $white;
-        column-gap: 12px;
 
         .buttonPrev {
             width: 34px;
             height: 280px;
+            @include flex(row, center, center);
             border: 1px solid $grayLight;
             border-radius: 0.8rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             img {
                 transform: rotate(-90deg);
@@ -48,11 +44,9 @@
         .buttonNext {
             width: 34px;
             height: 280px;
+            @include flex(row, center, center);
             border: 1px solid $grayLight;
             border-radius: 0.8rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             img {
                 transform: rotate(90deg);
@@ -65,10 +59,7 @@
         }
 
         .item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
+            @include flex(column, space-between, center);
             flex: 1;
             border: 1px solid $grayLight;
             border-radius: 0.8rem;
@@ -83,14 +74,10 @@
             .actions {
                 width: 100%;
                 height: 48px;
-                display: flex;
-                justify-content: space-between;
+                @include flex(row, space-between);
 
                 .price {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    @include flex(column, center, center);
 
                     .priceCurrent {
                         font-size: 24px;
@@ -99,8 +86,7 @@
                 }
 
                 .actionButton {
-                    display: flex;
-                    align-items: center;
+                    @include flex(row, flex-start, center);
                     background-color: $green;
                     padding: 10px;
                     border-radius: 0.8rem;

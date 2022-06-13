@@ -1,14 +1,15 @@
 @use  './variables/colors.scss' as *;
+@use  './variables/mixins.scss' as *;
 
 .info {
     width: 100%;
     height: 140px;
-    display: flex;
+    @include flex();
     background-color: $white;
 
     .infoItem {
         flex: 1;
-        display: flex;
+        @include flex();
         padding: 15px 5px;
 
         &:not(:last-child) {
@@ -34,8 +35,7 @@
     width: 100%;
     height: 140px;
     padding: 30px 20px;
-    display: flex;
-    align-items: center;
+    @include flex(row, flex-start, center);
     background-color: $green;
 
     .textWrapper {
@@ -54,8 +54,7 @@
     }
 
     .inputWrapper {
-        display: flex;
-        flex-direction: column;
+        @include flex(column);
         padding-left: 20px;
 
         .inputLabel {
@@ -98,7 +97,7 @@
     padding: 64px 20px 0px;
 
     .navTop {
-        display: flex;
+        @include flex();
 
         .join {
             .social {
@@ -109,8 +108,7 @@
                 }
 
                 .row {
-                    display: flex;
-                    column-gap: 12px;
+                    @include flex(row, flex-start, center, 12px);
                     margin-top: 8px;
                 }
             }
@@ -122,8 +120,7 @@
                 border-radius: 0.8rem;
 
                 .shopWrapper {
-                    display: flex;
-                    align-items: center;
+                    @include flex(row, flex-start, center);
 
                     .text {
                         flex: 1;
@@ -144,8 +141,7 @@
                 border-radius: 0.8rem;
 
                 .consultWrapper {
-                    display: flex;
-                    align-items: center;
+                    @include flex(row, flex-start, center);
                     filter: invert(58%) sepia(36%) saturate(6690%) hue-rotate(346deg);
 
                     .text {
@@ -184,9 +180,7 @@
                 }
 
                 .row {
-                    display: flex;
-                    align-items: center;
-                    column-gap: 10px;
+                    @include flex(row, flex-start, center, 10px);
                 }
             }
         }
@@ -205,8 +199,7 @@
 .bottom {
     width: 100%;
     height: 58px;
-    display: flex;
-    align-items: center;
+    @include flex(row, flex-start, center);
     border-top: 2px solid $grayLight;
     padding: 0px 20px;
     font-size: 14px;

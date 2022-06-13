@@ -1,4 +1,5 @@
 @use  './variables/colors.scss' as *;
+@use  './variables/mixins.scss' as *;
 
 .container {
     width: calc(100% - 320px);
@@ -8,14 +9,13 @@
     .top {
         display: flex;
         align-items: center;
-        column-gap: 8px;
+        @include flex(row, flex-start, center, 8px);
 
         .topItem {
             padding: 8px;
             background-color: $white;
             color: $blackLight;
-            display: flex;
-            align-items: center;
+            @include flex(row, flex-start, center);
             border-radius: 16px;
             flex: 1;
 
@@ -33,13 +33,12 @@
     .slider{
         width: 100%;
         height: 450px;
+        @include flex(row, flex-start, center);
         background-color: $white;
         margin-top: 4px;
         margin-bottom: 4px;
-        display: flex;
         overflow: hidden;
         position: relative;
-        align-items: center;
         z-index: 0;
 
         .prew{
@@ -71,17 +70,13 @@
 
     .logoBrands{
         width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        @include flex(row, space-around, center);
         background-color: $white;
         padding: 14px 0px;
 
         .logoItem {
             &:last-child {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flex(column, flex-start, center);
             }
         }
     }
