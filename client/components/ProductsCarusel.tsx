@@ -1,8 +1,6 @@
-import type { NextPage } from 'next';
-
 import css from '../styles/ProductsCarusel.module.scss';
 
-const ProductsCarusel: NextPage = () => {
+const ProductsCarusel = () => {
     return (
         <section className={css.container}>
             <div className={css.header}>

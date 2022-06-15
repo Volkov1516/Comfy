@@ -1,8 +1,6 @@
-import type { NextPage } from 'next';
-
 import css from '../styles/PromoCategories.module.scss';
 
-const PromoCategories: NextPage = () => {
+const PromoCategories = () => {
     return (
         <section className={css.container}>
             <div className={css.header}>

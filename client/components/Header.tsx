@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
+import Link from 'next/link';
 
 import css from '../styles/Header.module.scss';
 
-const Header: NextPage = () => {
+const Header = () => {
     return (
         <header>
             <div className={css.headerBanner}>
@@ -55,9 +55,13 @@ const Header: NextPage = () => {
                 <div className={css.catalogContent}>
                     <div className={css.left}>
                         <div className={css.leftItem}>
-                            <img className={css.leftImg} src="/img/smartphone.svg" alt="Compare" width="20px" height="20px" />
-                            <span className={css.leftText}>Смартфоны и телефоны</span>
-                            <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="12px" height="12px" />
+                            <Link href="/telephone-smartfon">
+                                <a>
+                                    <img className={css.leftImg} src="/img/smartphone.svg" alt="Compare" width="20px" height="20px" />
+                                    <span className={css.leftText}>Смартфоны и телефоны</span>
+                                    <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="12px" height="12px" />
+                                </a>
+                            </Link>
                         </div>
                         <div className={css.leftItem}>
                             <img className={css.leftImg} src="/img/laptop.svg" alt="Compare" width="20px" height="20px" />
@@ -141,7 +145,7 @@ const Header: NextPage = () => {
                         </div>
                     </div>
                     <div className={css.right}>
-                        Submenu
+                        Сматрфоны
                     </div>
                 </div>
                 <div className={css.search}>

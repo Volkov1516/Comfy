@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import type { NextPage } from 'next';
 
 import css from '../styles/Slider.module.scss';
 
 const imgArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const Slider: NextPage = () => {
+const Slider = () => {
     const [currentSlide, serCurrentSlide] = useState(1)
 
     const prevSlide = () => {

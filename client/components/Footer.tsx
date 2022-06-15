@@ -1,8 +1,6 @@
-import type { NextPage } from 'next';
-
 import css from '../styles/Footer.module.scss';
 
-const Footer: NextPage = () => {
+const Footer = () => {
     return (
         <footer>
             <div className={css.info}>

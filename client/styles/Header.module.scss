@@ -227,7 +227,8 @@
 
     .catalogContent {
         // flex - only home page! Need to change dynamicly for display: none
-        @include flex();
+        // @include flex();
+        display: none;
         position: absolute;
         top: 100%;
 
