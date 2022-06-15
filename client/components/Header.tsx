@@ -55,7 +55,7 @@ const Header = () => {
                 <div className={css.catalogContent}>
                     <div className={css.left}>
                         <div className={css.leftItem}>
-                            <Link href="/telephone-smartfon">
+                            <Link href="/catalog">
                                 <a>
                                     <img className={css.leftImg} src="/img/smartphone.svg" alt="Compare" width="20px" height="20px" />
                                     <span className={css.leftText}>Смартфоны и телефоны</span>

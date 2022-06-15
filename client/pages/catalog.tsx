@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 
 import TelephoneSmartfon from '../components/TelephoneSmartfon';
 
-const TelephoneSmartfonPage: NextPage = () => {
+const Catalog: NextPage = () => {
     return (
         <>
             <TelephoneSmartfon />
@@ -10,4 +10,4 @@ const TelephoneSmartfonPage: NextPage = () => {
     )
 }
 
-export default TelephoneSmartfonPage;
+export default Catalog;

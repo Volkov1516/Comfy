@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import css from '../styles/TelephoneSmartfon.module.scss';
 
 const TelephoneSmartfon = () => {
@@ -6,8 +8,12 @@ const TelephoneSmartfon = () => {
             <div>Breadcrumbs</div>
             <div className={css.category}>
                 <div className={css.categoryItem}>
-                    <img src="/img/file.webp" alt="Logo" width="80px" height="80px" />
-                    <h2>Смартфоны</h2>
+                    <Link href="/category">
+                        <a>
+                            <img src="/img/file.webp" alt="Logo" width="80px" height="80px" />
+                            <h2>Смартфоны</h2>
+                        </a>
+                    </Link>
                 </div>
                 <div className={css.categoryItem}>
                     <img src="/img/apple4.webp" alt="Logo" width="80px" height="80px" />
