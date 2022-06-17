@@ -26,7 +26,10 @@ const Product = () => {
                     <img className={css.listItem} src="/img/apple_iphone_11_64gb_black_0_3.webp" alt="Arrow" width="100%" height="380px" />
                     </div>
                 </div>
-                <div className={css.info}></div>
+                <div className={css.info}>
+                    <h1 className={css.name}>Смартфон Apple iPhone 11 128Gb Black</h1>
+                    <div className={css.buy}></div>
+                </div>
             </div>
         </div>
     );
