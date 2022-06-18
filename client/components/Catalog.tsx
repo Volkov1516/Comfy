@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import css from '../styles/TelephoneSmartfon.module.scss';
+import css from '../styles/Catalog.module.scss';
 
-const TelephoneSmartfon = () => {
+const Catalog = () => {
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>
@@ -124,4 +124,4 @@ const TelephoneSmartfon = () => {
     )
 }
 
-export default TelephoneSmartfon;
+export default Catalog;

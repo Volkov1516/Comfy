@@ -1,8 +1,12 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import css from '../styles/Header.module.scss';
 
 const Header = () => {
+    const router = useRouter();
+    console.log(router.pathname);
+
     return (
         <header>
             <div className={css.headerBanner}>

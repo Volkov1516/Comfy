@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 
-import Smartfon from '../components/Smartfon';
+import Category from '../components/Category';
 
-const Catalog: NextPage = () => {
+const CategoryPage: NextPage = () => {
     return (
         <>
-            <Smartfon />
+            <Category />
         </>
     )
 }
 
-export default Catalog;
+export default CategoryPage;

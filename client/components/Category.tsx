@@ -1,6 +1,6 @@
-import css from '../styles/Smartfon.module.scss';
+import css from '../styles/Category.module.scss';
 
-const Smartfon = () => {
+const Category = () => {
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>
@@ -208,4 +208,4 @@ const Smartfon = () => {
     )
 }
 
-export default Smartfon;
+export default Category;
