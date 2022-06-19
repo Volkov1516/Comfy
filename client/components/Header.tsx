@@ -14,7 +14,11 @@ const Header = () => {
             </div>
             <div className={css.headerTop}>
                 <div className={css.leftFlex}>
-                    <img className={css.logoImg} src="/img/headerLogo.svg" alt="Logo" width="140px" height="32px" />
+                    <Link href="/">
+                        <a>
+                            <img className={css.logoImg} src="/img/headerLogo.svg" alt="Logo" width="140px" height="32px" />
+                        </a>
+                    </Link>
                     <span className={css.citySelect}>Киев <img className={css.arrowImg} src="/img/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
                 </div>
                 <nav className={css.rightFlex}>
