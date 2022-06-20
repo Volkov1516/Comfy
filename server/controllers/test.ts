@@ -10,9 +10,13 @@ export const getAllTest = (req: Request, res: Response) => {
 };
 
 export const createTest = async (req: Request, res: Response) => {
-    const test = await Test.create(req.body);
+    try {
+        const test = await Test.create(req.body);
 
-    res.status(201).json({ test });
+        res.status(201).json({ test });
+    } catch (error) {
+        res.status(500).json({ msg: error });
+    }
 };
 
 export const updateTest = (req: Request, res: Response) => {
