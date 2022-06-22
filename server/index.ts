@@ -1,8 +1,10 @@
 import express from 'express';
-import router from './routes/test';
 import mongoose from 'mongoose';
 import dotenv from "dotenv";
 import { notFound } from './middleware/notFound';
+
+import testRouter from './routes/test';
+import catalogRouter from './routes/catalog';
 
 const app = express();
 
@@ -12,7 +14,8 @@ const PORT = 5000;
 
 app.use(express.json());
 
-app.use('/api/v1/test', router);
+app.use('/api/v1/test', testRouter);
+app.use('/api/v1/catalog', catalogRouter);
 
 app.use(notFound);
 
