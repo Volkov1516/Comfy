@@ -10,9 +10,15 @@ const Header = () => {
     console.log(router.pathname);
 
     const [catalog, setCatalog] = useState<AxiosResponse<[]>>();
+    const [category, setCategory] = useState<AxiosResponse<[]>>();
+    const [activeCategory, setActiveCategory] = useState<string>('');
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/catalog').then((resp) => { setCatalog(resp.data) });
+    }, []);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/v1/category').then((resp) => { setCategory(resp.data) });
     }, []);
 
     return (
@@ -71,7 +77,7 @@ const Header = () => {
                 <div className={css.catalogContent}>
                     <div className={css.left}>
                         {catalog?.data.map((item: any, index) => (
-                            <div className={css.leftItem} key={index}>
+                            <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>
                                 <Link href="/catalog">
                                     <a>
                                         <img className={css.leftImg} src={item.img} alt="Image" width="20px" height="20px" />
@@ -83,7 +89,22 @@ const Header = () => {
                         ))}
                     </div>
                     <div className={css.right}>
-                        Сматрфоны
+                        {category?.data.map((item: any, index) => {
+                            if (item.catalogId === activeCategory) {
+                                return (
+                                    <>
+                                        {item.categories.map((item: any) => (
+                                            <>
+                                                <h3>{item.title}</h3>
+                                                {item.products.map((item: any) => (
+                                                    <p>{item}</p>
+                                                ))}
+                                            </>
+                                        ))}
+                                    </>
+                                )
+                            }
+                        })}
                     </div>
                 </div>
                 <div className={css.search}>
