@@ -7,6 +7,7 @@ import { notFound } from './middleware/notFound';
 
 import testRouter from './routes/test';
 import catalogRouter from './routes/catalog';
+import categoryRouter from './routes/category';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cors());
 
 app.use('/api/v1/test', testRouter);
 app.use('/api/v1/catalog', catalogRouter);
+app.use('/api/v1/category', categoryRouter);
 
 app.use(notFound);
 
