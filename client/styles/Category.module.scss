@@ -4,180 +4,33 @@
 .container {
     width: 100%;
     height: auto;
-    background-color: $white;
-    z-index: 0;
+    padding: 0px 20px;
 
-    .categoryInfo {
-        width: 100%;
-        border-bottom: 2px solid $grayLight;
+    .category {
+        // @include flex(row, flex-start, center, 6px, 6px, wrap);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
 
-        h1 {
-            font-size: 20px;
-        }
-    }
+        .categoryItem {
+            @include flex(column, flex-start, center);
+            height: 600px;
+            padding: 24px;
+            background-color: $white;
 
-    .content {
-        padding: 0px 20px;
-        @include flex();
-
-        .filter {
-            width: 300px;
-            border-right: 2px solid $grayLight;
-
-            .filterItem {
-                border-bottom: 2px solid $grayLight;
-
-                .header {
-                    @include flex(row, space-between, center);
-                    padding: 24px 16px 24px 0px;
-                    font-size: 16px;
-
-                    img {
-                        transform: rotate(90deg);
-                    }
-                }
-
-                .content {
-                    width: 300px;
-                    height: auto;
-                    padding: 0px 16px 20px 0px;
-                    @include flex(column, flex-start, stretch, 0px, 12px);
-                }
-
-                .price {
-                    .header {
-                        padding: 24px 16px 24px 0px;
-                    }
-
-                    .content {
-                        @include flex(row, flex-start, center, 6px);
-
-                        .input {
-                            width: 70px;
-                            height: 40px;
-                        }
-                    }
-
-                    .submit {
-                        width: 300px;
-                        height: 40px;
-                        @include flex(row, center, center);
-                        background-color: $green;
-                        border-radius: 0.4rem;
-                        color: $white;
-
-                        &:hover {
-                            background-color: $greenDark;
-                            cursor: pointer;
-                        }
-                    }
-                }
-
-            }
-        }
-
-        .main {
-            width: 100%;
-
-            .controlls {
-                padding: 20px 30px 12px 20px;
-                @include flex(row, flex-end, center);
-                border-bottom: 2px solid $grayLight;
-                border-right: 2px solid $grayLight;
+            h2 {
+                font-size: 18px;
             }
 
-            .productContainer {
-                width: 100%;
-                height: auto;
-                @include flex();
+            ul {
+                list-style: none;
+                align-self: flex-start;
 
-                .item {
-                    flex: 1;
-                    padding: 16px 16px 28px;
-                    background-color: $white;
-                    border-right: 1px solid $grayLight;
-
-                    .code {
-                        width: 100%;
-                        float: right;
-                        padding-bottom: 15px;
-                        font-size: 10px;
-                        color: $grayMiddle;
-                    }
-
-                    .info {
-
-                        .name {
-                            font-size: 14px;
-                            margin: 24px 0px 12px;
-                        }
-
-                        .feedback {
-                            @include flex(row, flex-start, center, 12px);
-                            margin-bottom: 12px;
-
-                            .comments {
-                                @include flex(row, flex-start, center, 6px);
-
-                                img {
-                                    transform: scale(-1, 1);
-                                }
-                            }
-                        }
-
-                        .labels {
-                            width: 100%;
-                            height: auto;
-                            @include flex(row, space-between, center);
-                            margin-bottom: 32px;
-                        }
-
-                        .actions {
-                            width: 100%;
-                            height: 48px;
-                            @include flex(row, space-between);
-
-                            .price {
-                                @include flex(column, center, center);
-
-                                .priceCurrent {
-                                    font-size: 24px;
-                                    font-weight: 700;
-                                }
-                            }
-
-                            .actionButton {
-                                @include flex(row, flex-start, center);
-                                background-color: $green;
-                                padding: 10px;
-                                border-radius: 0.8rem;
-                                font-weight: 700;
-
-                                img {
-                                    margin: 0px 4px;
-                                    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
-                                }
-
-                                &:hover {
-                                    cursor: pointer;
-                                    background-color: $orange;
-                                }
-                            }
-                        }
-
-                        .bonus {
-                            font-size: 14px;
-                            @include flex(row, flex-start, center);
-
-                            .pinted {
-                                color: $orange;
-                            }
-
-                            img {
-                                filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
-                            }
-                        }
-                    }
+                li {
+                    margin-bottom: 12px;
+                    font-size: 14px;
+                    color: $blackLight;
                 }
             }
         }
