@@ -78,7 +78,7 @@ const Header = () => {
                     <div className={css.left}>
                         {catalog?.data.map((item: any, index) => (
                             <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>
-                                <Link href="/catalog">
+                                <Link href={`/category/${item._id}`}>
                                     <a>
                                         <img className={css.leftImg} src={item.img} alt="Image" width="20px" height="20px" />
                                         <span className={css.leftText}>{item.title}</span>
