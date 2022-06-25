@@ -25,7 +25,7 @@ const Category = () => {
                     <>
                         {item.categories.map((item: any) => (
                             <div className={css.categoryItem}>
-                                <Link href="/products">
+                                <Link href={`/products/${item._id}`}>
                                     <a>
                                         <img src="/img/apple4.webp" alt="Logo" width="80px" height="80px" />
                                         <h2>{item?.title}</h2>
