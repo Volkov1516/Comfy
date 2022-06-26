@@ -1,22 +1,8 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import axios, { AxiosResponse } from 'axios';
 
 import css from '../styles/Category.module.scss';
 
-const Category = () => {
-    const router = useRouter();
-    console.log(router.query.catalogId);
-
-    const [category, setCategory] = useState<AxiosResponse<[]>>();
-
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/category?catalogId=${router.query.catalogId}`).then((resp) => { setCategory(resp.data) });
-    }, [router]);
-
-    console.log(category?.data);
-
+const Category = ({ category }: any) => {
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>
