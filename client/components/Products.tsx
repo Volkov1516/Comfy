@@ -1,19 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import axios, { AxiosResponse } from 'axios';
 
 import css from '../styles/Products.module.scss';
 
-const Products = () => {
-    const router = useRouter();
-
-    const [products, setProducts] = useState<AxiosResponse<[]>>();
-
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/product?catalogId=${router.query.catalogId}`).then((resp) => { setProducts(resp.data) });
-    }, [router]);
-
+const Products = ({ products }: any) => {
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>
