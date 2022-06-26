@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import axios, { AxiosResponse } from 'axios';
 
 import css from '../styles/Products.module.scss';
@@ -72,7 +73,11 @@ const Products = () => {
                                     <img src={item.img} alt="Banner" width="100%" height="100%" />
                                 </div>
                                 <div className={css.info}>
-                                    <div className={css.name}><a href="#">Смартфон {item.title} 64Gb Black</a></div>
+                                    <div className={css.name}>
+                                        <Link href={`/product/${item._id}`}>
+                                            <a href="#">Смартфон {item.title} 64Gb Black</a>
+                                        </Link>
+                                    </div>
                                     <div className={css.feedback}>
                                         <div>
                                             {item.rate}
