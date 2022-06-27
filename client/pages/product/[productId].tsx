@@ -7,8 +7,8 @@ const ProductPage: NextPage = ({ product }: any) => {
         <>
             <Product product={product} />
         </>
-    )
-}
+    );
+};
 
 export default ProductPage;
 
@@ -21,5 +21,5 @@ export const getServerSideProps = async (context: any) => {
         props: {
             product: data
         }
-    }
-}
+    };
+};

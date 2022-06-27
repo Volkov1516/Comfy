@@ -72,6 +72,6 @@ const ProductsCarusel = () => {
             </div>
         </section>
     );
-}
+};
 
 export default ProductsCarusel;

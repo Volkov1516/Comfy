@@ -102,7 +102,7 @@ const Products = ({ products }: any) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Products;

@@ -28,7 +28,7 @@ const Category = ({ category }: any) => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Category;

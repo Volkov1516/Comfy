@@ -199,6 +199,6 @@ const PromoCategories = () => {
             </div>
         </section>
     );
-}
+};
 
 export default PromoCategories;

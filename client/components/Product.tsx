@@ -35,6 +35,6 @@ const Product = ({ product }: any) => {
             ))}
         </div>
     );
-}
+};
 
 export default Product;

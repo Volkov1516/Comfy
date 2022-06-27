@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import axios, { AxiosResponse } from 'axios';
 
 import css from '../styles/Header.module.scss';
@@ -124,6 +124,6 @@ const Header = () => {
             </div>
         </header>
     );
-}
+};
 
 export default Header;

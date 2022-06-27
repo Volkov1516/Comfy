@@ -5,7 +5,7 @@ import css from '../styles/Slider.module.scss';
 const imgArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const Slider = () => {
-    const [currentSlide, serCurrentSlide] = useState(1)
+    const [currentSlide, serCurrentSlide] = useState(1);
 
     const prevSlide = () => {
         if (currentSlide !== 1) {
@@ -13,7 +13,7 @@ const Slider = () => {
         } else {
             serCurrentSlide(10)
         }
-    }
+    };
 
     const nextSlide = () => {
         if (currentSlide !== 10) {
@@ -21,11 +21,11 @@ const Slider = () => {
         } else {
             serCurrentSlide(1)
         }
-    }
+    };
 
     useEffect(() => {
         setTimeout(() => nextSlide(), 5000)
-    }, [currentSlide])
+    }, [currentSlide]);
 
     return (
         <div className={css.container}>
@@ -77,6 +77,6 @@ const Slider = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Slider;

@@ -8,8 +8,8 @@ const CategoryPage: NextPage = ({ category }: any) => {
             <Category category={category} />
 
         </>
-    )
-}
+    );
+};
 
 export default CategoryPage;
 
@@ -22,8 +22,8 @@ export const getStaticProps = async (context: any) => {
         props: {
             category: data
         }
-    }
-}
+    };
+};
 
 export const getStaticPaths = async () => {
     const response = await fetch(`http://localhost:5000/api/v1/category`);
@@ -32,8 +32,8 @@ export const getStaticPaths = async () => {
     const paths = data.data.map((slug: any) => {
         return {
             params: { catalogId: slug.catalogId },
-        }
+        };
     })
 
     return { paths, fallback: false };
-}
+};
