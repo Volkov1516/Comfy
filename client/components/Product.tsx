@@ -1,4 +1,5 @@
 import css from '../styles/Product.module.scss';
+import Carousel from './Carousel';
 
 const Product = ({ product }: any) => {
     return (
@@ -28,11 +29,77 @@ const Product = ({ product }: any) => {
                         </div>
                     </div>
                     <div className={css.info}>
-                        <h1 className={css.name}>Смартфон {item.title} 128Gb Black</h1>
-                        <div className={css.buy}></div>
+                        <div className={css.infoMain}>
+                            <h1 className={css.name}>Смартфон {item.title} 128Gb Black</h1>
+                            <div className={css.block}>
+                                <div className={css.labels}>
+                                    <div className={css.label}>
+                                        <img className={css.labelImg} src="https://cdn.comfy.ua/media/label/Group%20965%20(19)_1.svg" alt="Arrow" width="24px" height="24px" />
+                                        <span>Доставка Новою Поштою</span>
+                                    </div>
+                                    <div className={css.label}>
+                                        <img className={css.labelImg} src="https://cdn.comfy.ua/media/label/Group%20967_1.svg" alt="Arrow" width="24px" height="24px" />
+                                        <span>Доставка Укрпоштою</span>
+                                    </div>
+                                </div>
+                                <div className={css.reviews}>
+                                    rating stars, reviews and product code
+                                </div>
+                            </div>
+                        </div>
+                        <div className={css.infoBuy}>
+                            <div className={css.block}>
+                                <div className={css.price}>
+                                    <b>{item.price}</b>
+                                </div>
+                                <div className={css.buttons}>
+                                    <button className={css.buy}>Купити</button>
+                                    <button className={css.order}>Швидке замовлення</button>
+                                </div>
+                                <div className={css.controlls}>
+                                    <div className={css.img}>
+                                        <img src="/img/compare.svg" alt="Arrow" width="20px" height="20px" />
+                                    </div>
+                                    <div className={css.img}>
+                                        <img src="/img/heart.svg" alt="Arrow" width="20px" height="20px" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={css.bonus}>
+                                bonus
+                            </div>
+                        </div>
+                        <div className={css.infoCredit}>
+                            <div className={css.content}>
+                                <div className={css.item}>
+                                    <img src="https://cdn.comfy.ua/media/label/Group%20473_3.svg" alt="Arrow" />
+                                </div>
+                                <div className={css.item}>
+                                    <img src="https://cdn.comfy.ua/media/label/Group%20496_2.svg" alt="Arrow" />
+                                </div>
+                                <div className={css.item}>
+                                    <img src="https://cdn.comfy.ua/media/label/Group%20378_2.svg" alt="Arrow" />
+                                </div>
+                            </div>
+                            <button className={css.btn}>Купити в кредит</button>
+                        </div>
+                        <div className={css.infoAlternatives}>
+                            <p className={css.title}>Iншi моделi</p>
+                            <div className={css.actions}>
+                                <div className={css.colors}>
+                                    <div className={css.color}></div>
+                                </div>
+                                <div className={css.memory}>
+                                    <div className={css.item}>
+                                        {item.ram} ГБ
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ))}
+            <Carousel />
         </div>
     );
 };
