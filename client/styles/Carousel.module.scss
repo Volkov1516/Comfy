@@ -103,6 +103,10 @@
                 min-width: 25%;
                 height: 280px;
                 padding: 0px 6px;
+                transition: translate;
+                transition-property: transform;
+                transition-duration: 300ms;
+                transition-timing-function: ease-in-out;
 
                 .item {
                     @include flex(column, space-between, center);
