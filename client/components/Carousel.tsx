@@ -19,7 +19,7 @@ type CarouselTypes = {
     items: ItemTypes[];
 }
 
-const Carousel = ({ display = 'normal', header = mockCarouselData.header, items = mockCarouselData.items }: CarouselTypes) => {
+const Carousel = ({ display = 'small', header = mockCarouselData.header, items = mockCarouselData.items }: CarouselTypes) => {
     const [offset, setOffset] = useState(0);
 
     const handleNextSlide = () => {
@@ -36,34 +36,36 @@ const Carousel = ({ display = 'normal', header = mockCarouselData.header, items 
 
     return (
         <div className={css.container}>
-            <h3 className={css.header}>{header}</h3>
+            <h3 className={cx(css.header, css[display])}>{header}</h3>
             <div className={css.carousel}>
-                <div className={cx(offset === 0 ? css.btnPrevDisabled : css.btnPrev)} onClick={handlePrevSlide}>
+                <div className={cx(offset === 0 ? css.btnPrevDisabled : css.btnPrev, css[display])} onClick={handlePrevSlide}>
                     <img src="/img/discArrow.svg" alt="Button left" width="16px" height="16px" />
                 </div>
                 <div className={css.window}>
                     {items?.map((i: any) => (
-                        <div className={css.itemContainer} style={{ transform: `translate(${offset}%)` }}>
-                            <div className={css.item}>
-                                <div className={css.image}>
-                                    <img src={i.img} alt="Product image" width="144px" height="144px" />
-                                </div>
-                                <div className={css.text}>
-                                    <a href="#">{i.text}</a>
+                        <div className={cx(css.itemContainer, css[display])} style={{ transform: `translate(${offset}%)` }}>
+                            <div className={cx(css.item, css[display])}>
+                                <div className={cx(css.info, css[display])}>
+                                    <div className={cx(css.image, css[display])}>
+                                        <img src={i.img} alt="Product image" />
+                                    </div>
+                                    <div className={css.text}>
+                                        <a href="#">{i.text}</a>
+                                    </div>
                                 </div>
                                 <div className={css.actions}>
                                     <div className={css.price}>
                                         <div className={css.priceCurrent}>{i.price}</div>
                                     </div>
-                                    <div className={css.actionButton}>
-                                        <img src="/img/cart.svg" alt="Cart image" width="20px" height="20px" />
+                                    <div className={cx(css.actionButton, css[display])}>
+                                        <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart image" width="20px" height="20px" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className={cx(offset === -((items.length - 4) * 100) ? css.btnNextDisabled : css.btnNext)} onClick={handleNextSlide}>
+                <div className={cx(offset === -((items.length - 4) * 100) ? css.btnNextDisabled : css.btnNext, css[display])} onClick={handleNextSlide}>
                     <img src="/img/discArrow.svg" alt="Button right" width="16px" height="16px" />
                 </div>
             </div>
