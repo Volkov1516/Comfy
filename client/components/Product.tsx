@@ -1,5 +1,8 @@
 import css from '../styles/Product.module.scss';
+
 import Carousel from './Carousel';
+
+import { mockCarouselData } from '../mocks/mockCarouselData';
 
 const Product = ({ product }: any) => {
     return (
@@ -96,10 +99,16 @@ const Product = ({ product }: any) => {
                                 </div>
                             </div>
                         </div>
+                        <div className={css.infoService}>
+                            <Carousel display="small" header="Выберите сервис" items={mockCarouselData.items} />
+                        </div>
+                        <div className={css.infoAccessories}>
+                            <Carousel display="small" header="Выберите аксесуар" items={mockCarouselData.items} />
+                        </div>
                     </div>
                 </div>
             ))}
-            <Carousel />
+            <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items}/>
         </div>
     );
 };

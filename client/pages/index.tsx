@@ -3,7 +3,9 @@ import Head from 'next/head';
 
 import Slider from '../components/Slider';
 import PromoCategories from '../components/PromoCategories';
-import ProductsCarusel from '../components/ProductsCarusel';
+import Carousel from '../components/Carousel';
+
+import { mockCarouselData } from '../mocks/mockCarouselData';
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +18,7 @@ const Home: NextPage = () => {
 
       <Slider />
       <PromoCategories />
-      <ProductsCarusel />
+      <Carousel display="normal" header="Хиты продаж" items={mockCarouselData.items} />
     </>
   );
 };
