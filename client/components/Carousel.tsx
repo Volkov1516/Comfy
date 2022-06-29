@@ -3,8 +3,6 @@ import cx from 'classnames';
 
 import css from '../styles/Carousel.module.scss';
 
-import { mockCarouselData } from '../mocks/mockCarouselData';
-
 type Display = 'normal' | 'small';
 
 type ItemTypes = {
@@ -19,7 +17,7 @@ type CarouselTypes = {
     items: ItemTypes[];
 }
 
-const Carousel = ({ display = 'small', header = mockCarouselData.header, items = mockCarouselData.items }: CarouselTypes) => {
+const Carousel = ({ display, header, items }: CarouselTypes) => {
     const [offset, setOffset] = useState(0);
 
     const handleNextSlide = () => {
