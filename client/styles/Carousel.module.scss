@@ -22,7 +22,7 @@
             height: 280px;
             margin: 0px 6px 0px 0px;
             @include flex(row, center, center);
-            border: 1px solid $grayLight;
+            border: 1px solid $gray;
             border-radius: 0.8rem;
             user-select: none;
 
@@ -41,7 +41,7 @@
             height: 280px;
             margin: 0px 0px 0px 6px;
             @include flex(row, center, center);
-            border: 1px solid $grayLight;
+            border: 1px solid $gray;
             border-radius: 0.8rem;
             user-select: none;
 
@@ -69,7 +69,7 @@
                 .item {
                     @include flex(column, space-between, center);
                     flex: 1;
-                    border: 1px solid $grayLight;
+                    border: 1px solid $gray;
                     border-radius: 0.8rem;
                     padding: 12px;
                     height: 280px;
