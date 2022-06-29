@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import axios, { AxiosResponse } from 'axios';
+import cx from 'classnames';
 
 import css from '../styles/Header.module.scss';
 
@@ -74,7 +75,7 @@ const Header = () => {
                     <span className={css.catalogText}>Каталог товаров</span>
                     <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="13px" height="13px" />
                 </div>
-                <div className={css.catalogContent}>
+                <div className={cx(css.catalogContent, router.pathname === '/' && css.show)}>
                     <div className={css.left}>
                         {catalog?.data.map((item: any, index) => (
                             <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>

@@ -1,5 +1,5 @@
-@use  './variables/colors.scss' as *;
-@use  './variables/mixins.scss' as *;
+@use './variables/colors.scss' as *;
+@use './variables/mixins.scss' as *;
 
 .headerBanner {
     width: 100%;
@@ -220,17 +220,19 @@
             flex: 1;
         }
 
-        &:hover + .catalogContent {
-            @include flex(); 
+        &:hover+.catalogContent {
+            @include flex();
         }
     }
 
     .catalogContent {
-        // flex - only home page! Need to change dynamicly for display: none
-        // @include flex();
         display: none;
         position: absolute;
         top: 100%;
+
+        &.show {
+            @include flex();
+        }
 
         &:hover {
             @include flex();
@@ -242,13 +244,13 @@
             background-color: $white;
             padding: 12px;
 
-            
+
 
             .leftItem {
                 @include flex(row, flex-start, center);
 
                 &:not(:last-child) {
-                    margin-bottom: 14px;
+                    margin-bottom: 10.7px;
                 }
 
                 .leftText {
@@ -266,7 +268,7 @@
                 }
             }
 
-            &:hover + .right {
+            &:hover+.right {
                 display: block;
             }
         }
