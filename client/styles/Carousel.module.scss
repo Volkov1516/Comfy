@@ -36,6 +36,25 @@
             }
         }
 
+        .btnPrevDisabled {
+            width: 34px;
+            height: 280px;
+            margin: 0px 6px 0px 0px;
+            @include flex(row, center, center);
+            border: 1px solid $gray;
+            border-radius: 0.8rem;
+            user-select: none;
+
+            img {
+                transform: rotate(-90deg);
+                filter: invert(96%) sepia(0%) saturate(597%) hue-rotate(184deg) brightness(90%) contrast(82%);
+            }
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
         .btnNext {
             width: 34px;
             height: 280px;
@@ -52,6 +71,25 @@
             &:hover {
                 cursor: pointer;
                 background-color: $grayLight;
+            }
+        }
+
+        .btnNextDisabled {
+            width: 34px;
+            height: 280px;
+            margin: 0px 0px 0px 6px;
+            @include flex(row, center, center);
+            border: 1px solid $gray;
+            border-radius: 0.8rem;
+            user-select: none;
+
+            img {
+                transform: rotate(90deg);
+                filter: invert(96%) sepia(0%) saturate(597%) hue-rotate(184deg) brightness(90%) contrast(82%);
+            }
+
+            &:hover {
+                cursor: not-allowed;
             }
         }
 

@@ -38,7 +38,7 @@ const Carousel = ({ display = 'normal', header = mockCarouselData.header, items 
         <div className={css.container}>
             <h3 className={css.header}>{header}</h3>
             <div className={css.carousel}>
-                <div className={css.btnPrev} onClick={handlePrevSlide}>
+                <div className={cx(offset === 0 ? css.btnPrevDisabled : css.btnPrev)} onClick={handlePrevSlide}>
                     <img src="/img/discArrow.svg" alt="Button left" width="16px" height="16px" />
                 </div>
                 <div className={css.window}>
@@ -63,11 +63,11 @@ const Carousel = ({ display = 'normal', header = mockCarouselData.header, items 
                         </div>
                     ))}
                 </div>
-                <div className={css.btnNext} onClick={handleNextSlide}>
+                <div className={cx(offset === -((items.length - 4) * 100) ? css.btnNextDisabled : css.btnNext)} onClick={handleNextSlide}>
                     <img src="/img/discArrow.svg" alt="Button right" width="16px" height="16px" />
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
