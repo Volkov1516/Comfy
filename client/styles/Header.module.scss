@@ -1,15 +1,6 @@
 @use './variables/colors.scss' as *;
 @use './variables/mixins.scss' as *;
 
-.headerBanner {
-    width: 100%;
-    height: 60px;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
 .headerTop {
     width: 100%;
     height: 70px;

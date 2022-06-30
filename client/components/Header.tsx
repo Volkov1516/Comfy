@@ -24,9 +24,6 @@ const Header = () => {
 
     return (
         <header>
-            <div className={css.headerBanner}>
-                <img src="/img/headerBanner.webp" alt="Banner" width="100%" height="100%" />
-            </div>
             <div className={css.headerTop}>
                 <div className={css.leftFlex}>
                     <Link href="/">
