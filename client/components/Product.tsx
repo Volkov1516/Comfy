@@ -1,10 +1,12 @@
 import css from '../styles/Product.module.scss';
+import cx from 'classnames';
 
 import Carousel from './Carousel';
 
 import { mockCarouselData } from '../mocks/mockCarouselData';
 
 const Product = ({ product }: any) => {
+
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>
@@ -108,7 +110,43 @@ const Product = ({ product }: any) => {
                     </div>
                 </div>
             ))}
-            <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items}/>
+            <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items} />
+            <div className={css.features}>
+                {product.data.map((item: any) => (
+                    <>
+                        <h2 className={css.title}>Характеристики {item.title}</h2>
+                        <ul className={css.featureList}>
+                            <li className={cx(css.featureItem, css.withBg)}>
+                                <span className={css.featureName}>Диагональ дисплея</span>
+                                <b>{item.displaySize}</b>
+                                <img src="https://www.svgrepo.com/show/195812/question.svg" alt="Question icon" width="20px" height="20px" />
+                            </li>
+                            <li className={css.featureItem}>
+                                <span className={css.featureName}>Разрешение экрана</span>
+                                <b>{item.displayResolution}</b>
+                                <img src="https://www.svgrepo.com/show/195812/question.svg" alt="Question icon" width="20px" height="20px" />
+                            </li>
+                            <li className={cx(css.featureItem, css.withBg)}>
+                                <span className={css.featureName}>Тип экрана</span>
+                                <b>{item.displayType}</b>
+                                <img src="https://www.svgrepo.com/show/195812/question.svg" alt="Question icon" width="20px" height="20px" />
+                            </li>
+                            <li className={css.featureItem}>
+                                <span className={css.featureName}>Частота обновления экрана</span>
+                                <b>{item.frashrate} Гц</b>
+                                <img src="https://www.svgrepo.com/show/195812/question.svg" alt="Question icon" width="20px" height="20px" />
+                            </li>
+                        </ul>
+                        <button className={css.showMoreBtn}>
+                            <span>Показать больше</span>
+                            <img src="https://www.svgrepo.com/show/17594/plus.svg" alt="Question icon" width="16px" height="16px" />
+                        </button>
+                    </>
+                ))}
+            </div>
+            <div className={css.description}>
+                <h2 className={css.title}>Описание смартфона</h2>
+            </div>
         </div>
     );
 };
