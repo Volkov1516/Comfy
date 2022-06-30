@@ -147,6 +147,16 @@ const Product = ({ product }: any) => {
             <div className={css.description}>
                 <h2 className={css.title}>Описание смартфона</h2>
             </div>
+            <div className={css.review}>
+                <h2 className={css.title}>Отзывы</h2>
+                <button className={css.showMoreBtn}>
+                    <span>Показать больше</span>
+                    <img src="https://www.svgrepo.com/show/17594/plus.svg" alt="Question icon" width="16px" height="16px" />
+                </button>
+            </div>
+            <div className={css.photos}>
+                <h2 className={css.title}>Фото</h2>
+            </div>
         </div>
     );
 };
