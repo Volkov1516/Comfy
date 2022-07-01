@@ -1,25 +1,29 @@
+import cx from 'classnames';
 
 import css from '../styles/Popup.module.scss';
 
 type Type = 'normal' | 'small';
 
+type Background = 'white' | 'black';
+
 type PopupTypes = {
     type: Type;
     display?: boolean;
+    background: Background;
     title?: string;
     text: string;
     button?: string;
 };
 
-const Popup = ({ display, title, text, button }: PopupTypes) => {
+const Popup = ({ type, display, background, title, text, button }: PopupTypes) => {
 
     if(display == false) return null;
 
     return (
-        <div className={css.container}>
-            <div className={css.arrowUp}></div>
-            <p className={css.title}>{title}</p>
-            <p className={css.text}>{text}</p>
+        <div className={cx(css.container, css[type], css[background])}>
+            <div className={cx(css.arrowUp, css[type], css[background])}></div>
+            <p className={cx(css.title, css[type])}>{title}</p>
+            <p className={cx(css.text, css[type], css[background])}>{text}</p>
             {button && <button className={css.btn}>{button}</button>}
         </div>
     );
