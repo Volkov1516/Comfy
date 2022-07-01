@@ -4,18 +4,18 @@ import css from '../styles/Popup.module.scss';
 
 type Type = 'normal' | 'small';
 
-type Background = 'white' | 'black';
+type Background = 'white' | 'black' | 'default';
 
 type PopupTypes = {
     type: Type;
     display?: boolean;
-    background: Background;
+    background?: Background;
     title?: string;
     text: string;
     button?: string;
 };
 
-const Popup = ({ type, display, background, title, text, button }: PopupTypes) => {
+const Popup = ({ type, display, background = 'default', title, text, button }: PopupTypes) => {
 
     if(display == false) return null;
 

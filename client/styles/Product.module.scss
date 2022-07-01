@@ -82,6 +82,7 @@
                         @include flex(row, flex-start, center, 12px);
 
                         .label {
+                            position: relative;
                             @include flex(row, flex-start, center, 8px);
                             border: 1px solid $gray;
                             border-radius: 0.4rem;

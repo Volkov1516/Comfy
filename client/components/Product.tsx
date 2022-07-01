@@ -1,11 +1,37 @@
-import css from '../styles/Product.module.scss';
+import { useState } from 'react';
 import cx from 'classnames';
 
+import css from '../styles/Product.module.scss';
+
 import Carousel from './Carousel';
+import Popup from './Popup';
 
 import { mockCarouselData } from '../mocks/mockCarouselData';
 
 const Product = ({ product }: any) => {
+    let npDisplayTimeout: ReturnType<typeof setTimeout>;
+    let upDisplayTimeout: ReturnType<typeof setTimeout>;
+
+    const [npDisplay, setNpDisplay] = useState(false);
+    const [upDisplay, setUpDisplay] = useState(false);
+
+    const handleNpDisplayMouseLeave = () => {
+        npDisplayTimeout = setTimeout(() => { setNpDisplay(false) }, 200)
+    }
+
+    const handleNpDisplayMouseEnter = () => {
+        setNpDisplay(true);
+        clearTimeout(npDisplayTimeout);
+    }
+
+    const handleUpDisplayMouseLeave = () => {
+        upDisplayTimeout = setTimeout(() => { setUpDisplay(false) }, 200)
+    }
+
+    const handleUpDisplayMouseEnter = () => {
+        setUpDisplay(true);
+        clearTimeout(upDisplayTimeout);
+    }
 
     return (
         <div className={css.container}>
@@ -38,13 +64,15 @@ const Product = ({ product }: any) => {
                             <h1 className={css.name}>Смартфон {item.title} 128Gb Black</h1>
                             <div className={css.block}>
                                 <div className={css.labels}>
-                                    <div className={css.label}>
+                                    <div className={css.label} onMouseEnter={handleNpDisplayMouseEnter} onMouseLeave={handleNpDisplayMouseLeave}>
                                         <img className={css.labelImg} src="https://cdn.comfy.ua/media/label/Group%20965%20(19)_1.svg" alt="Arrow" width="24px" height="24px" />
                                         <span>Доставка Новою Поштою</span>
+                                        <Popup type="normal" display={npDisplay} title="Доставка Новой Почтой" text="От 99$ к отделению" button="Подробнее" />
                                     </div>
-                                    <div className={css.label}>
+                                    <div className={css.label} onMouseEnter={handleUpDisplayMouseEnter} onMouseLeave={handleUpDisplayMouseLeave}>
                                         <img className={css.labelImg} src="https://cdn.comfy.ua/media/label/Group%20967_1.svg" alt="Arrow" width="24px" height="24px" />
                                         <span>Доставка Укрпоштою</span>
+                                        <Popup type="normal" display={upDisplay} title="Доставка Укрпочтой" text="От 50$ к отделению" button="Подробнее" />
                                     </div>
                                 </div>
                                 <div className={css.reviews}>
