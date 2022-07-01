@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import cx from 'classnames';
 
-import css from '../styles/Carousel.module.scss';
+import css from '../../styles/Carousel.module.scss';
 
 type Display = 'normal' | 'small';
 

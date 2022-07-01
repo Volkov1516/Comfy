@@ -3,8 +3,8 @@ import cx from 'classnames';
 
 import css from '../styles/Product.module.scss';
 
-import Carousel from './Carousel';
-import Popup from './Popup';
+import Carousel from './common/Carousel';
+import Popup from './common/Popup';
 
 import { mockCarouselData } from '../mocks/mockCarouselData';
 

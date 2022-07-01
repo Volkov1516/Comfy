@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Slider from '../components/Slider';
 import PromoCategories from '../components/PromoCategories';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/common/Carousel';
 
 import { mockCarouselData } from '../mocks/mockCarouselData';
 

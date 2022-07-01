@@ -1,6 +1,6 @@
 import cx from 'classnames';
 
-import css from '../styles/Popup.module.scss';
+import css from '../../styles/Popup.module.scss';
 
 type Type = 'normal' | 'small';
 

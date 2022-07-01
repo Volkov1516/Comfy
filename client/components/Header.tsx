@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from 'axios';
 import cx from 'classnames';
 
 import css from '../styles/Header.module.scss';
-import Popup from './Popup';
+import Popup from './common/Popup';
 
 const Header = () => {
     const router = useRouter();
