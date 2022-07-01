@@ -5,9 +5,13 @@ import css from '../styles/Slider.module.scss';
 const imgArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const Slider = () => {
+    let timeout: ReturnType<typeof setTimeout>;
+
     const [currentSlide, serCurrentSlide] = useState(1);
 
     const prevSlide = () => {
+        clearTimeout(timeout);
+
         if (currentSlide !== 1) {
             serCurrentSlide(currentSlide - 1)
         } else {
@@ -16,6 +20,8 @@ const Slider = () => {
     };
 
     const nextSlide = () => {
+        clearTimeout(timeout);
+        
         if (currentSlide !== 10) {
             serCurrentSlide(currentSlide + 1)
         } else {
@@ -24,7 +30,7 @@ const Slider = () => {
     };
 
     useEffect(() => {
-        setTimeout(() => nextSlide(), 5000)
+        timeout = setTimeout(() => nextSlide(), 5000);
     }, [currentSlide]);
 
     return (
