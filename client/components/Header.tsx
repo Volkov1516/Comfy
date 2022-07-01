@@ -85,11 +85,13 @@ const Header = () => {
                     <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="13px" height="13px" />
                 </div>
                 <div className={cx(css.catalogContent, router.pathname === '/' && css.show)}>
+
+
                     <div className={css.left}>
                         {catalog?.data.map((item: any, index) => (
                             <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>
                                 <Link href={`/category/${item._id}`}>
-                                    <a>
+                                    <a className={css.link}>
                                         <img className={css.leftImg} src={item.img} alt="Image" width="20px" height="20px" />
                                         <span className={css.leftText}>{item.title}</span>
                                         <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="12px" height="12px" />
@@ -98,24 +100,30 @@ const Header = () => {
                             </div>
                         ))}
                     </div>
+
+                    
                     <div className={css.right}>
+                        <div className={css.categoryContainer}>
                         {category?.data.map((item: any, index) => {
                             if (item.catalogId === activeCategory) {
                                 return (
                                     <>
                                         {item.categories.map((item: any) => (
-                                            <>
-                                                <h3>{item.title}</h3>
+                                            <div className={css.categoryBlock}>
+                                                <h3 className={css.categoryTitle}>{item.title}</h3>
                                                 {item.products.map((item: any) => (
-                                                    <p>{item}</p>
+                                                    <p className={css.categoryItem}>{item}</p>
                                                 ))}
-                                            </>
+                                            </div>
                                         ))}
                                     </>
                                 )
                             }
                         })}
+                        </div>
                     </div>
+
+
                 </div>
                 <div className={css.search}>
                     <input className={css.input} type="text" placeholder="Поиск товаров" />
