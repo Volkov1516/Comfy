@@ -8,7 +8,6 @@ import css from '../styles/Header.module.scss';
 
 const Header = () => {
     const router = useRouter();
-    console.log(router.pathname);
 
     const [catalog, setCatalog] = useState<AxiosResponse<[]>>();
     const [category, setCategory] = useState<AxiosResponse<[]>>();
@@ -116,7 +115,7 @@ const Header = () => {
                     <img className={css.heartImg} src="/img/heart.svg" alt="Heart" width="20px" height="20px" />
                 </div>
                 <div className={css.cart}>
-                    <img className={css.cartImg} src="/img/cart.svg" alt="Cart" width="20px" height="20px" />
+                    <img className={css.cartImg} src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart" width="20px" height="20px" />
                     <span className={css.cartText}>Корзина</span>
                 </div>
             </div>
