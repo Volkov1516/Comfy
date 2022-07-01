@@ -331,9 +331,10 @@
         padding-left: 18px;
         padding-right: 18px;
         height: 56px;
-        @include flex(row, flex-start, center);
         background-color: $greenDark;
         cursor: default;
+        position: relative;
+        @include flex(row, flex-start, center);
 
         .cartImg {
             filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
@@ -344,6 +345,7 @@
             font-size: 16px;
             color: $white;
         }
+
 
         &:hover {
             background-color: $greenMiddle;

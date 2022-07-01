@@ -5,13 +5,17 @@ import axios, { AxiosResponse } from 'axios';
 import cx from 'classnames';
 
 import css from '../styles/Header.module.scss';
+import Popup from './Popup';
 
 const Header = () => {
     const router = useRouter();
 
+    let displayTimeout: ReturnType<typeof setTimeout>;
+
     const [catalog, setCatalog] = useState<AxiosResponse<[]>>();
     const [category, setCategory] = useState<AxiosResponse<[]>>();
     const [activeCategory, setActiveCategory] = useState<string>('');
+    const [display, setDispaly] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/catalog').then((resp) => { setCatalog(resp.data) });
@@ -20,6 +24,15 @@ const Header = () => {
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/category').then((resp) => { setCategory(resp.data) });
     }, []);
+
+    const handleDisplayMouseLeave = () => {
+        displayTimeout = setTimeout(() => {setDispaly(false)}, 200)
+    }
+
+    const handleDisplayMouseEnter = () => {
+        setDispaly(true);
+        clearTimeout(displayTimeout);
+    }
 
     return (
         <header>
@@ -114,9 +127,10 @@ const Header = () => {
                 <div className={css.wishlist}>
                     <img className={css.heartImg} src="/img/heart.svg" alt="Heart" width="20px" height="20px" />
                 </div>
-                <div className={css.cart}>
+                <div className={css.cart} onMouseEnter={handleDisplayMouseEnter} onMouseLeave={handleDisplayMouseLeave}>
                     <img className={css.cartImg} src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart" width="20px" height="20px" />
                     <span className={css.cartText}>Корзина</span>
+                    <Popup type="normal" display={display} title="Доставка" text="От 0.99$" button="Подробнее" />
                 </div>
             </div>
         </header>
