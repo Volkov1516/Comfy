@@ -1,10 +1,16 @@
 import css from '../styles/PromoCategories.module.scss';
+import PromoSlide from './PromoSlide';
 
-const PromoCategories = () => {
+type PromoCategoriesType = {
+    header: string;
+
+}
+
+const PromoCategories = ({ header }: PromoCategoriesType) => {
     return (
         <section className={css.container}>
             <div className={css.header}>
-                <h3>Скидки до -40%</h3>
+                <h3>{header}</h3>
                 <a className={css.more} href="#">
                     <span>Смотреть все</span>
                     <img src="/img/arrowPromo.svg" alt="Banner" width="20px" height="20px" />
@@ -13,9 +19,7 @@ const PromoCategories = () => {
             <div className={css.body}>
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
-                    <div className={css.slide}>
-                        <img src="/img/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
-                    </div>
+                    <PromoSlide />
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
                         <div className={css.feedback}>
@@ -39,7 +43,7 @@ const PromoCategories = () => {
                                 <div className={css.priceCurrent}>22 999</div>
                             </div>
                             <div className={css.actionButton}>
-                                <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
+                                <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Banner" width="20px" height="20px" />
                             </div>
                         </div>
                         <div className={css.bonus}>
@@ -50,9 +54,7 @@ const PromoCategories = () => {
                 </div>
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
-                    <div className={css.slide}>
-                        <img src="/img/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
-                    </div>
+                    <PromoSlide />
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
                         <div className={css.feedback}>
@@ -76,7 +78,7 @@ const PromoCategories = () => {
                                 <div className={css.priceCurrent}>22 999</div>
                             </div>
                             <div className={css.actionButton}>
-                                <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
+                                <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Banner" width="20px" height="20px" />
                             </div>
                         </div>
                         <div className={css.bonus}>
@@ -87,9 +89,7 @@ const PromoCategories = () => {
                 </div>
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
-                    <div className={css.slide}>
-                        <img src="/img/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
-                    </div>
+                    <PromoSlide />
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
                         <div className={css.feedback}>
@@ -113,7 +113,7 @@ const PromoCategories = () => {
                                 <div className={css.priceCurrent}>22 999</div>
                             </div>
                             <div className={css.actionButton}>
-                                <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
+                                <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Banner" width="20px" height="20px" />
                             </div>
                         </div>
                         <div className={css.bonus}>
@@ -124,9 +124,7 @@ const PromoCategories = () => {
                 </div>
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
-                    <div className={css.slide}>
-                        <img src="/img/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
-                    </div>
+                    <PromoSlide />
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
                         <div className={css.feedback}>
@@ -150,7 +148,7 @@ const PromoCategories = () => {
                                 <div className={css.priceCurrent}>22 999</div>
                             </div>
                             <div className={css.actionButton}>
-                                <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
+                                <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Banner" width="20px" height="20px" />
                             </div>
                         </div>
                         <div className={css.bonus}>
@@ -161,9 +159,7 @@ const PromoCategories = () => {
                 </div>
                 <div className={css.item}>
                     <a className={css.code} href="#">Код: 1234567</a>
-                    <div className={css.slide}>
-                        <img src="/img/apple_iphone_11_64gb_black_0_3.webp" alt="Banner" width="100%" height="100%" />
-                    </div>
+                    <PromoSlide />
                     <div className={css.info}>
                         <div className={css.name}><a href="#">Смартфон Apple iPhone 11 64Gb Black</a></div>
                         <div className={css.feedback}>
@@ -187,7 +183,7 @@ const PromoCategories = () => {
                                 <div className={css.priceCurrent}>22 999</div>
                             </div>
                             <div className={css.actionButton}>
-                                <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
+                                <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Banner" width="20px" height="20px" />
                             </div>
                         </div>
                         <div className={css.bonus}>
