@@ -7,7 +7,7 @@ import Carousel from '../components/common/Carousel';
 
 import { mockCarouselData } from '../mocks/mockCarouselData';
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ product }: any) => {  
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <Slider />
       <PromoCategories header="Скидки до -40%" />
       <PromoCategories header="Холодильники" />
-      <PromoCategories header="Смартфоны" />
+      <PromoCategories header="Смартфоны" data={product}/>
       <PromoCategories header="Ноутбуки" />
       <PromoCategories header="Стиральны машины" />
       <PromoCategories header="Игровые консоли" />
@@ -30,3 +30,14 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const response = await fetch('http://localhost:5000/api/v1/product');
+  const data = await response.json();
+
+  return {
+      props: {
+          product: data
+      }
+  };
+};

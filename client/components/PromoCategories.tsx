@@ -3,10 +3,10 @@ import PromoSlide from './PromoSlide';
 
 type PromoCategoriesType = {
     header: string;
-
+    data?: any;
 }
 
-const PromoCategories = ({ header }: PromoCategoriesType) => {
+const PromoCategories = ({ data, header }: PromoCategoriesType) => {
     return (
         <section className={css.container}>
             <div className={css.header}>
