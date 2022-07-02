@@ -1,0 +1,60 @@
+@use './variables/colors.scss' as *;
+@use './variables/mixins.scss' as *;
+
+
+.slide {
+    min-width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    .window {
+        @include flex();
+        transition: translate;
+        transition-property: transform;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+
+        .slideItem {
+            min-width: 100%;
+        }
+    }
+
+    .sliderNav {
+        @include flex(row, center, center, 4px);
+        height: 12px;
+
+        &:hover {
+            .sliderPrev {
+                display: block;
+            }
+
+            .sliderNext {
+                display: block;
+            }
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $gray;
+
+            &.active {
+                background-color: $green;
+            }
+        }
+
+        .sliderPrev {
+            display: none;
+            margin-right: 4px;
+            cursor: pointer;
+        }
+
+        .sliderNext {
+            display: none;
+            margin-left: 4px;
+            transform: rotate(180deg);
+            cursor: pointer;
+        }
+    }
+}
