@@ -6,7 +6,6 @@ const CategoryPage: NextPage = ({ category }: any) => {
     return (
         <>
             <Category category={category} />
-
         </>
     );
 };
