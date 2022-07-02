@@ -17,7 +17,13 @@ const Home: NextPage = () => {
       </Head>
 
       <Slider />
-      <PromoCategories />
+      <PromoCategories header="Скидки до -40%" />
+      <PromoCategories header="Холодильники" />
+      <PromoCategories header="Смартфоны" />
+      <PromoCategories header="Ноутбуки" />
+      <PromoCategories header="Стиральны машины" />
+      <PromoCategories header="Игровые консоли" />
+      <PromoCategories header="Просмотренные товары" />
       <Carousel display="normal" header="Хиты продаж" items={mockCarouselData.items} />
     </>
   );
