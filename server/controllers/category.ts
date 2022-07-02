@@ -19,3 +19,17 @@ export const createCategoryItem = async (req: Request, res: Response) => {
         res.status(500).json({ msg: error });
     }
 }
+
+export const updateCategoryItem = async (req: Request, res: Response) => {
+    try {
+        const data = await Category.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true });
+
+        if (!data) {
+            return res.status(404).json({ msg: 'No such id' });
+        }
+
+        res.status(200).json({ data });
+    } catch (error) {
+        res.status(500).json({ msg: error });
+    }
+}

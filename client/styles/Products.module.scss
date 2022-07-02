@@ -89,7 +89,7 @@
             .productContainer {
                 width: 100%;
                 height: auto;
-                @include flex();
+                @include flex(row, flex-start, center, 0px, 0px, wrap);
 
                 .item {
                     flex: 1;
