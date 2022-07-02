@@ -26,7 +26,7 @@ const Header = () => {
     }, []);
 
     const handleDisplayMouseLeave = () => {
-        displayTimeout = setTimeout(() => {setDispaly(false)}, 200)
+        displayTimeout = setTimeout(() => { setDispaly(false) }, 200)
     }
 
     const handleDisplayMouseEnter = () => {
@@ -85,8 +85,6 @@ const Header = () => {
                     <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="13px" height="13px" />
                 </div>
                 <div className={cx(css.catalogContent, router.pathname === '/' && css.show)}>
-
-
                     <div className={css.left}>
                         {catalog?.data.map((item: any, index) => (
                             <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>
@@ -100,30 +98,26 @@ const Header = () => {
                             </div>
                         ))}
                     </div>
-
-                    
                     <div className={css.right}>
                         <div className={css.categoryContainer}>
-                        {category?.data.map((item: any, index) => {
-                            if (item.catalogId === activeCategory) {
-                                return (
-                                    <>
-                                        {item.categories.map((item: any) => (
-                                            <div className={css.categoryBlock}>
-                                                <h3 className={css.categoryTitle}>{item.title}</h3>
-                                                {item.products.map((item: any) => (
-                                                    <p className={css.categoryItem}>{item}</p>
-                                                ))}
-                                            </div>
-                                        ))}
-                                    </>
-                                )
-                            }
-                        })}
+                            {category?.data.map((item: any, index) => {
+                                if (item.catalogId === activeCategory) {
+                                    return (
+                                        <>
+                                            {item.categories.map((item: any) => (
+                                                <div className={css.categoryBlock}>
+                                                    <h3 className={css.categoryTitle}>{item.title}</h3>
+                                                    {item.products.map((item: any) => (
+                                                        <p className={css.categoryItem}>{item}</p>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </>
+                                    )
+                                }
+                            })}
                         </div>
                     </div>
-
-
                 </div>
                 <div className={css.search}>
                     <input className={css.input} type="text" placeholder="Поиск товаров" />

@@ -274,6 +274,7 @@
                 height: 100%;
                 padding: 16px;
                 @include flex(column, flex-start, stretch, 0px, 0px, wrap);
+                cursor: pointer;
 
                 .categoryBlock {
                     margin-bottom: 20px;
@@ -291,6 +292,10 @@
 
                         &:not(:last-child) {
                             margin-bottom: 8px;
+                        }
+
+                        &:hover {
+                            color: $orange;
                         }
                     }
                 }
