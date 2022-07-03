@@ -9,8 +9,6 @@ import testRouter from './routes/test';
 import categoryRouter from './routes/category';
 import productRouter from './routes/product';
 
-import newCategoriesRouter from './routes/categories';
-
 const app = express();
 
 dotenv.config();
@@ -23,8 +21,6 @@ app.use(cors());
 app.use('/api/v1/test', testRouter);
 app.use('/api/v1/category', categoryRouter);
 app.use('/api/v1/product', productRouter);
-
-app.use('/api/v2/new_categories', newCategoriesRouter);
 
 app.use(notFound);
 
