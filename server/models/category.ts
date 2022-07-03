@@ -5,10 +5,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    query: {
-        type: String,
-        required: true,
-    },
+    query: String,
 });
 
 const SubcategorySchema = new mongoose.Schema({
@@ -16,6 +13,7 @@ const SubcategorySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    img: String,
     products: [ProductSchema],
 });
 
