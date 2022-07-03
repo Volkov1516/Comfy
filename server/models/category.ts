@@ -1,19 +1,30 @@
 import mongoose, { mongo } from 'mongoose';
 
-const CategoryObjSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    productId: {
+        type: String,
+        required: true,
+    },
+});
+
+const SubcategorySchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
     },
-    products: [String]
+    products: [ProductSchema],
 });
 
 const CategorySchema = new mongoose.Schema({
-    catalogId: {
+    name: {
         type: String,
-        required: true
+        required: true,
     },
-    categories: [CategoryObjSchema]
+    subcategories: [SubcategorySchema],
 });
 
 export default mongoose.model('Category', CategorySchema);
