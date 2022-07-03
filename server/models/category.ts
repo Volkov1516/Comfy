@@ -5,7 +5,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    productId: {
+    query: {
         type: String,
         required: true,
     },
@@ -21,6 +21,10 @@ const SubcategorySchema = new mongoose.Schema({
 
 const CategorySchema = new mongoose.Schema({
     name: {
+        type: String,
+        required: true,
+    },
+    img: {
         type: String,
         required: true,
     },
