@@ -17,9 +17,8 @@ const Header = () => {
     const [display, setDispaly] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v2/new_categories').then((resp) => { setNewCategory(resp.data) });
+        axios.get('http://localhost:5000/api/v1/category').then((resp) => { setNewCategory(resp.data) });
     }, []);
-    console.log(newCtegory);
 
     const handleDisplayMouseLeave = () => {
         displayTimeout = setTimeout(() => { setDispaly(false) }, 200)
