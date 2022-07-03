@@ -55,16 +55,16 @@ const Products = ({ products }: any) => {
                         <span>По популярности</span>
                     </div>
                     <div className={css.productContainer}>
-                        {products?.data?.map((item: any) => (
+                        {products?.map((item: any) => (
                             <div className={css.item}>
                                 <a className={css.code} href="#">Код: 1234567</a>
                                 <div className={css.slide}>
-                                    <img src={item.img} alt="Banner" width="100%" height="100%" />
+                                    <img src={item.images[0]} alt="Banner" width="100%" height="100%" />
                                 </div>
                                 <div className={css.info}>
                                     <div className={css.name}>
                                         <Link href={`/product/${item._id}`}>
-                                            <a href="#">Смартфон {item.title} 64Gb Black</a>
+                                            <a href="#">Смартфон {item.brand} {item.name} {item.rom}Gb {item.color}</a>
                                         </Link>
                                     </div>
                                     <div className={css.feedback}>
