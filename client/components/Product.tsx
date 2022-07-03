@@ -45,7 +45,7 @@ const Product = ({ product }: any) => {
                 <a className={css.tabItem} href="#">АКСЕССУАРЫ</a>
                 <a className={css.tabItem} href="#">СЕРВИСЫ</a>
             </div>
-            {product?.data.map((item: any) => (
+            {product?.map((item: any) => (
                 <div className={css.general}>
                     <div className={css.gallery}>
                         <div className={css.list}>
@@ -140,7 +140,7 @@ const Product = ({ product }: any) => {
             ))}
             <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items} />
             <div className={css.features}>
-                {product.data.map((item: any) => (
+                {product.map((item: any) => (
                     <>
                         <h2 className={css.title}>Характеристики {item.title}</h2>
                         <ul className={css.featureList}>

@@ -2,21 +2,25 @@ import mongoose, { mongo } from "mongoose";
 
 const ProductSchema = new mongoose.Schema({
     categoryId: String,
-    title: String,
-    img: String,
+    name: String,
+    brand: String,
+    model: String,
+    color: String,
+    colorAvailable: [],
     price: Number,
     rate: Number,
-    brand: String,
     rom: Number,
+    romAvailable: [],
     ram: Number,
     processor: String,
     os: String,
-    nfc: Boolean,
-    displaySize: String,
+    displaySize: Number,
     displayResolution: String,
     displayType: String,
-    frashrate: Number,
-    battery: Number
+    displayFrashrate: Number,
+    battery: Number,
+    images: Array,
+    labels: Array,
 });
 
 export default mongoose.model('Product', ProductSchema);

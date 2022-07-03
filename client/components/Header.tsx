@@ -12,17 +12,12 @@ const Header = () => {
 
     let displayTimeout: ReturnType<typeof setTimeout>;
 
-    const [catalog, setCatalog] = useState<AxiosResponse<[]>>();
-    const [category, setCategory] = useState<AxiosResponse<[]>>();
+    const [newCtegory, setNewCategory] = useState<AxiosResponse<[]>>();
     const [activeCategory, setActiveCategory] = useState<string>('');
     const [display, setDispaly] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/catalog').then((resp) => { setCatalog(resp.data) });
-    }, []);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/category').then((resp) => { setCategory(resp.data) });
+        axios.get('http://localhost:5000/api/v1/category').then((resp) => { setNewCategory(resp.data) });
     }, []);
 
     const handleDisplayMouseLeave = () => {
@@ -86,12 +81,12 @@ const Header = () => {
                 </div>
                 <div className={cx(css.catalogContent, router.pathname === '/' && css.show)}>
                     <div className={css.left}>
-                        {catalog?.data.map((item: any, index) => (
+                        {newCtegory?.map((item: any, index) => (
                             <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>
                                 <Link href={`/category/${item._id}`}>
                                     <a className={css.link}>
                                         <img className={css.leftImg} src={item.img} alt="Image" width="20px" height="20px" />
-                                        <span className={css.leftText}>{item.title}</span>
+                                        <span className={css.leftText}>{item.name}</span>
                                         <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="12px" height="12px" />
                                     </a>
                                 </Link>
@@ -100,15 +95,15 @@ const Header = () => {
                     </div>
                     <div className={css.right}>
                         <div className={css.categoryContainer}>
-                            {category?.data.map((item: any, index) => {
-                                if (item.catalogId === activeCategory) {
+                            {newCtegory?.map((item: any, index) => {
+                                if (item._id === activeCategory) {
                                     return (
                                         <>
-                                            {item.categories.map((item: any) => (
+                                            {item.subcategories.map((item: any) => (
                                                 <div className={css.categoryBlock}>
                                                     <h3 className={css.categoryTitle}>{item.title}</h3>
                                                     {item.products.map((item: any) => (
-                                                        <p className={css.categoryItem}>{item}</p>
+                                                        <p className={css.categoryItem}>{item.name}</p>
                                                     ))}
                                                 </div>
                                             ))}
