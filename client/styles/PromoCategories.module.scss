@@ -30,96 +30,10 @@
     .body {
         width: 100%;
         height: auto;
-        @include flex();
 
-        .item {
-            flex: 1;
-            padding: 16px 16px 28px;
-            background-color: $white;
-            border-right: 1px solid $grayLight;
-
-            .code {
-                width: 100%;
-                float: right;
-                padding-bottom: 15px;
-                font-size: 10px;
-                color: $grayMiddle;
-            }
-
-            .info {
-                .name {
-                    font-size: 14px;
-                    margin: 24px 0px 12px;
-                }
-
-                .feedback {
-                    @include flex(row, flex-start, center, 12px);
-                    margin-bottom: 12px;
-
-                    .comments {
-                        @include flex(row, flex-start, center, 6px);
-
-                        img {
-                            transform: scale(-1, 1);
-                        }
-                    }
-                }
-
-                .labels {
-                    width: 100%;
-                    height: auto;
-                    @include flex(row, space-between, center);
-                    margin-bottom: 32px;
-                }
-
-                .actions {
-                    width: 100%;
-                    height: 48px;
-                    @include flex(row, space-between);
-
-                    .price {
-                        @include flex(column, center, center);
-
-                        .priceCurrent {
-                            font-size: 24px;
-                            font-weight: 700;
-                        }
-                    }
-
-                    .actionButton {
-                        @include flex(row, flex-start, center);
-                        background-color: $green;
-                        padding: 10px;
-                        border-radius: 0.8rem;
-                        font-weight: 700;
-
-                        img {
-                            margin: 0px 4px;
-                            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
-                        }
-
-                        &:hover {
-                            cursor: pointer;
-                            background-color: $orange;
-                        }
-                    }
-                }
-
-                .bonus {
-                    margin-top: 8px;
-                    font-size: 12px;
-                    @include flex(row, flex-start, center);
-
-                    .pinted {
-                        color: $orange;
-                        margin-left: 4px;
-                    }
-
-                    img {
-                        filter: invert(52%) sepia(73%) saturate(3057%) hue-rotate(345deg);
-                    }
-                }
-            }
+        .cardContainer {
+            max-width: 20%;
+            @include flex();
         }
     }
 }
