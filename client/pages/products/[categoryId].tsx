@@ -14,7 +14,8 @@ export default ProductsPage;
 
 export const getServerSideProps = async (context: any) => {
     const { params } = context;
-    const response = await fetch(`http://localhost:5000/api/v1/product?catalogId=${params.catalogId}`);
+    console.log(params)
+    const response = await fetch(`http://localhost:5000/api/v1/product?categoryId=${params.categoryId}`);
     const data = await response.json();
 
     return {
