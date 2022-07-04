@@ -1,6 +1,5 @@
-import Link from 'next/link';
-
 import css from '../styles/Products.module.scss';
+
 import ProductCard from './common/ProductCard';
 
 const Products = ({ products }: any) => {
@@ -11,32 +10,13 @@ const Products = ({ products }: any) => {
                 <h1>Смартфоны</h1>
             </div>
             <div className={css.content}>
+
+
                 <div className={css.filter}>
-                    <div className={css.filterItem}>
-                        <div className={css.header}>
-                            <b>Наличие</b>
-                            <img src="/img/arrowOutlined.svg" alt="Logo" width="24px" height="24px" />
-                        </div>
-                        <div className={css.content}>
-                            <a href="#"> <input type="checkbox" /> Только в наличии</a>
-                            <a href="#">  <input type="checkbox" /> В магазине</a>
-                        </div>
-                    </div>
-                    <div className={css.filterItem}>
-                        <div className={css.header}>
-                            <b>Дейвствующие акции</b>
-                            <img src="/img/arrowOutlined.svg" alt="Logo" width="24px" height="24px" />
-                        </div>
-                        <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> Оплата частями</a>
-                            <a href="#">  <input type="checkbox" /> Скидка</a>
-                        </div>
-                    </div>
                     <div className={css.filterItem}>
                         <div className={css.price}>
                             <div className={css.header}>
                                 <b>Цена</b>
-                                <img src="/img/arrowOutlined.svg" alt="Logo" width="24px" height="24px" />
                             </div>
                             <div className={css.content}>
                                 <span>от</span>
@@ -50,7 +30,103 @@ const Products = ({ products }: any) => {
                             </div>
                         </div>
                     </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Бренд</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#"> <input type="checkbox" /> Apple </a>
+                            <a href="#">  <input type="checkbox" /> Samsung </a>
+                            <a href="#">  <input type="checkbox" /> Xiaomi </a>
+                            <a href="#">  <input type="checkbox" /> OPPO </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Модель</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro Max </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 mini </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 12 </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 11 </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Операционная система</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> Android </a>
+                            <a href="#">  <input type="checkbox" /> iOS </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Модель</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro Max </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 13 mini </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 12 </a>
+                            <a href="#">  <input type="checkbox" /> iPhone 11 </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Память</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> 64 </a>
+                            <a href="#">  <input type="checkbox" /> 128 </a>
+                            <a href="#">  <input type="checkbox" /> 256 </a>
+                            <a href="#">  <input type="checkbox" /> 512 </a>
+                            <a href="#">  <input type="checkbox" /> 1 </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Оперативная память</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> 1 </a>
+                            <a href="#">  <input type="checkbox" /> 2 </a>
+                            <a href="#">  <input type="checkbox" /> 3 </a>
+                            <a href="#">  <input type="checkbox" /> 4 </a>
+                            <a href="#">  <input type="checkbox" /> 5 </a>
+                            <a href="#">  <input type="checkbox" /> 6 </a>
+                            <a href="#">  <input type="checkbox" /> 7 </a>
+                            <a href="#">  <input type="checkbox" /> 8 </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Размер экрана</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> 4.1 - 4.9 </a>
+                            <a href="#">  <input type="checkbox" /> 5 - 5.9 </a>
+                            <a href="#">  <input type="checkbox" /> 6 - 6.4 </a>
+                            <a href="#">  <input type="checkbox" /> 6.5 - 6.9 </a>
+                        </div>
+                    </div>
+                    <div className={css.filterItem}>
+                        <div className={css.header}>
+                            <b>Частота обновления экрана</b>
+                        </div>
+                        <div className={css.content}>
+                            <a href="#">  <input type="checkbox" /> 60 </a>
+                            <a href="#">  <input type="checkbox" /> 90 </a>
+                            <a href="#">  <input type="checkbox" /> 120 </a>
+                        </div>
+                    </div>
                 </div>
+
+
                 <div className={css.main}>
                     <div className={css.controlls}>
                         <span>По популярности</span>
@@ -58,49 +134,8 @@ const Products = ({ products }: any) => {
                     <div className={css.productContainer}>
                         {products?.map((item: any) => (
                             <div className={css.cardContainer}>
-                            <ProductCard product={item} />
+                                <ProductCard product={item} />
                             </div>
-                            // <div className={css.item}>
-                            //     <a className={css.code} href="#">Код: 1234567</a>
-                            //     <div className={css.slide}>
-                            //         <img src={item.images[0]} alt="Banner" width="100%" height="100%" />
-                            //     </div>
-                            //     <div className={css.info}>
-                            //         <div className={css.name}>
-                            //             <Link href={`/product/${item._id}`}>
-                            //                 <a href="#">Смартфон {item.brand} {item.name} {item.rom}Gb {item.color}</a>
-                            //             </Link>
-                            //         </div>
-                            //         <div className={css.feedback}>
-                            //             <div>
-                            //                 {item.rate}
-                            //             </div>
-                            //             <a className={css.comments}>
-                            //                 <img src="/img/chat-bubble.svg" alt="Banner" width="15px" height="15px" />
-                            //                 <span>63</span>
-                            //             </a>
-                            //         </div>
-                            //         <div className={css.labels}>
-                            //             <img src="/img/labels/5m.svg" alt="Banner" width="30px" height="30px" />
-                            //             <img src="/img/labels/abank.svg" alt="Banner" width="30px" height="30px" />
-                            //             <img src="/img/labels/mono.svg" alt="Banner" width="30px" height="30px" />
-                            //             <img src="/img/labels/np.svg" alt="Banner" width="30px" height="30px" />
-                            //             <img src="/img/labels/privat.svg" alt="Banner" width="30px" height="30px" />
-                            //         </div>
-                            //         <div className={css.actions}>
-                            //             <div className={css.price}>
-                            //                 <div className={css.priceCurrent}>{item.price}</div>
-                            //             </div>
-                            //             <div className={css.actionButton}>
-                            //                 <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
-                            //             </div>
-                            //         </div>
-                            //         <div className={css.bonus}>
-                            //             <img src="/img/coin.svg" alt="Banner" width="14px" height="14px" />
-                            //             <span><b className={css.pinted}>+200$</b> на бонусный счет</span>
-                            //         </div>
-                            //     </div>
-                            // </div>
                         ))}
                     </div>
                 </div>

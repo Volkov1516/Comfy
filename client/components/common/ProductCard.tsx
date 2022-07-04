@@ -9,7 +9,6 @@ type ProductCardType = {
 }
 
 const ProductCard = ({ product }: any) => {
-    console.log(product)
     return (
         <div className={css.container}>
             <a className={css.code} href="#">Код: 1234567</a>
