@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import css from '../styles/Products.module.scss';
+import ProductCard from './common/ProductCard';
 
 const Products = ({ products }: any) => {
     return (
@@ -56,47 +57,50 @@ const Products = ({ products }: any) => {
                     </div>
                     <div className={css.productContainer}>
                         {products?.map((item: any) => (
-                            <div className={css.item}>
-                                <a className={css.code} href="#">Код: 1234567</a>
-                                <div className={css.slide}>
-                                    <img src={item.images[0]} alt="Banner" width="100%" height="100%" />
-                                </div>
-                                <div className={css.info}>
-                                    <div className={css.name}>
-                                        <Link href={`/product/${item._id}`}>
-                                            <a href="#">Смартфон {item.brand} {item.name} {item.rom}Gb {item.color}</a>
-                                        </Link>
-                                    </div>
-                                    <div className={css.feedback}>
-                                        <div>
-                                            {item.rate}
-                                        </div>
-                                        <a className={css.comments}>
-                                            <img src="/img/chat-bubble.svg" alt="Banner" width="15px" height="15px" />
-                                            <span>63</span>
-                                        </a>
-                                    </div>
-                                    <div className={css.labels}>
-                                        <img src="/img/labels/5m.svg" alt="Banner" width="30px" height="30px" />
-                                        <img src="/img/labels/abank.svg" alt="Banner" width="30px" height="30px" />
-                                        <img src="/img/labels/mono.svg" alt="Banner" width="30px" height="30px" />
-                                        <img src="/img/labels/np.svg" alt="Banner" width="30px" height="30px" />
-                                        <img src="/img/labels/privat.svg" alt="Banner" width="30px" height="30px" />
-                                    </div>
-                                    <div className={css.actions}>
-                                        <div className={css.price}>
-                                            <div className={css.priceCurrent}>{item.price}</div>
-                                        </div>
-                                        <div className={css.actionButton}>
-                                            <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
-                                        </div>
-                                    </div>
-                                    <div className={css.bonus}>
-                                        <img src="/img/coin.svg" alt="Banner" width="14px" height="14px" />
-                                        <span><b className={css.pinted}>+200$</b> на бонусный счет</span>
-                                    </div>
-                                </div>
+                            <div className={css.cardContainer}>
+                            <ProductCard product={item} />
                             </div>
+                            // <div className={css.item}>
+                            //     <a className={css.code} href="#">Код: 1234567</a>
+                            //     <div className={css.slide}>
+                            //         <img src={item.images[0]} alt="Banner" width="100%" height="100%" />
+                            //     </div>
+                            //     <div className={css.info}>
+                            //         <div className={css.name}>
+                            //             <Link href={`/product/${item._id}`}>
+                            //                 <a href="#">Смартфон {item.brand} {item.name} {item.rom}Gb {item.color}</a>
+                            //             </Link>
+                            //         </div>
+                            //         <div className={css.feedback}>
+                            //             <div>
+                            //                 {item.rate}
+                            //             </div>
+                            //             <a className={css.comments}>
+                            //                 <img src="/img/chat-bubble.svg" alt="Banner" width="15px" height="15px" />
+                            //                 <span>63</span>
+                            //             </a>
+                            //         </div>
+                            //         <div className={css.labels}>
+                            //             <img src="/img/labels/5m.svg" alt="Banner" width="30px" height="30px" />
+                            //             <img src="/img/labels/abank.svg" alt="Banner" width="30px" height="30px" />
+                            //             <img src="/img/labels/mono.svg" alt="Banner" width="30px" height="30px" />
+                            //             <img src="/img/labels/np.svg" alt="Banner" width="30px" height="30px" />
+                            //             <img src="/img/labels/privat.svg" alt="Banner" width="30px" height="30px" />
+                            //         </div>
+                            //         <div className={css.actions}>
+                            //             <div className={css.price}>
+                            //                 <div className={css.priceCurrent}>{item.price}</div>
+                            //             </div>
+                            //             <div className={css.actionButton}>
+                            //                 <img src="/img/cart.svg" alt="Banner" width="20px" height="20px" />
+                            //             </div>
+                            //         </div>
+                            //         <div className={css.bonus}>
+                            //             <img src="/img/coin.svg" alt="Banner" width="14px" height="14px" />
+                            //             <span><b className={css.pinted}>+200$</b> на бонусный счет</span>
+                            //         </div>
+                            //     </div>
+                            // </div>
                         ))}
                     </div>
                 </div>
