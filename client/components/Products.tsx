@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import css from '../styles/Products.module.scss';
 
 import ProductCard from './common/ProductCard';
@@ -51,7 +53,13 @@ const Products = ({ products }: any) => {
                             <a href="#">  <input type="checkbox" /> iPhone 13 </a>
                             <a href="#">  <input type="checkbox" /> iPhone 13 mini </a>
                             <a href="#">  <input type="checkbox" /> iPhone 12 </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 11 </a>
+
+
+                            <Link href={`/products/categoryId=62b438533e01d8b900854295&model=iphone_11`}>
+                                <a href="#">  <input type="checkbox" /> iPhone 11 </a>
+                            </Link>
+
+                            
                         </div>
                     </div>
                     <div className={css.filterItem}>
