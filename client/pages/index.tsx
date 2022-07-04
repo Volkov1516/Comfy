@@ -7,7 +7,9 @@ import Carousel from '../components/common/Carousel';
 
 import { mockCarouselData } from '../mocks/mockCarouselData';
 
-const Home: NextPage = ({ product }: any) => {  
+const Home: NextPage = ({ products }: any) => {
+  let sliced = products.slice(5, 10);
+  
   return (
     <>
       <Head>
@@ -17,17 +19,17 @@ const Home: NextPage = ({ product }: any) => {
       </Head>
 
       <Slider />
-      <PromoCategories header="Скидки до -40%" />
-      <PromoCategories header="Холодильники" />
-      <PromoCategories header="Смартфоны" data={product}/>
-      <PromoCategories header="Ноутбуки" />
-      <PromoCategories header="Стиральны машины" />
-      <PromoCategories header="Игровые консоли" />
-      <PromoCategories header="Просмотренные товары" />
+      <PromoCategories header="Скидки до -40%" products={sliced}/>
+      <PromoCategories header="Холодильники" products={sliced}/>
+      <PromoCategories header="Смартфоны" products={sliced}/>
+      <PromoCategories header="Ноутбуки" products={sliced}/>
+      <PromoCategories header="Стиральны машины" products={sliced}/>
+      <PromoCategories header="Игровые консоли" products={sliced}/>
+      <PromoCategories header="Просмотренные товары" products={sliced}/>
       <Carousel display="normal" header="Хиты продаж" items={mockCarouselData.items} />
     </>
   );
-};
+}; 
 
 export default Home;
 
@@ -37,7 +39,7 @@ export const getStaticProps = async () => {
 
   return {
       props: {
-          product: data
-      }
+          products: data,
+      },
   };
 };
