@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import css from '../../styles/ProductCard.module.scss';
 
 import ProductCardCarousel from './ProductCardCarousel';
@@ -12,10 +14,14 @@ const ProductCard = ({ product }: any) => {
         <div className={css.container}>
             <a className={css.code} href="#">Код: 1234567</a>
 
-            <ProductCardCarousel images={product.images} colors={product.colorAvailable}/>
+            <ProductCardCarousel images={product.images} colors={product.colorAvailable} />
 
             <div className={css.info}>
-                <div className={css.name}><a href="#">Смартфон {product.name} {product.rom}Gb {product.color}</a></div>
+                <div className={css.name}>
+                    <Link href={`/product/${product._id}`}>
+                        <a href="#">Смартфон {product.brand} {product.name} {product.rom}Gb {product.color}</a>
+                    </Link>
+                </div>
                 <div className={css.feedback}>
                     <div>
                         {product.rate}
