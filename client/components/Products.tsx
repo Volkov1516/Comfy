@@ -1,10 +1,15 @@
-import Link from 'next/link';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 import css from '../styles/Products.module.scss';
 
 import ProductCard from './common/ProductCard';
 
 const Products = ({ products }: any) => {
+    const router = useRouter();
+
+    const [query, setQuery] = useState([]);
+
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>
@@ -12,8 +17,6 @@ const Products = ({ products }: any) => {
                 <h1>Смартфоны</h1>
             </div>
             <div className={css.content}>
-
-
                 <div className={css.filter}>
                     <div className={css.filterItem}>
                         <div className={css.price}>
@@ -48,18 +51,12 @@ const Products = ({ products }: any) => {
                             <b>Модель</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro Max </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 mini </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 12 </a>
-
-
-                            <Link href={`/products/categoryId=62b438533e01d8b900854295&model=iphone_11`}>
-                                <a href="#">  <input type="checkbox" /> iPhone 11 </a>
-                            </Link>
-
-                            
+                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13_pro_max`)}>  <input type="checkbox" /> iPhone 13 Pro Max </a>
+                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13_pro`)}>  <input type="checkbox" /> iPhone 13 Pro </a>
+                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13`)}>  <input type="checkbox" /> iPhone 13 </a>
+                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13_mini`)}>  <input type="checkbox" /> iPhone 13 mini </a>
+                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_12`)}>  <input type="checkbox" /> iPhone 12 </a>
+                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_11`)}>  <input type="checkbox" /> iPhone 11 </a>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -69,19 +66,6 @@ const Products = ({ products }: any) => {
                         <div className={css.content}>
                             <a href="#">  <input type="checkbox" /> Android </a>
                             <a href="#">  <input type="checkbox" /> iOS </a>
-                        </div>
-                    </div>
-                    <div className={css.filterItem}>
-                        <div className={css.header}>
-                            <b>Модель</b>
-                        </div>
-                        <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro Max </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 Pro </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 13 mini </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 12 </a>
-                            <a href="#">  <input type="checkbox" /> iPhone 11 </a>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -133,8 +117,6 @@ const Products = ({ products }: any) => {
                         </div>
                     </div>
                 </div>
-
-
                 <div className={css.main}>
                     <div className={css.controlls}>
                         <span>По популярности</span>
