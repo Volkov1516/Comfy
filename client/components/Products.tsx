@@ -8,7 +8,10 @@ import ProductCard from './common/ProductCard';
 const Products = ({ products }: any) => {
     const router = useRouter();
 
-    const [query, setQuery] = useState([]);
+    const handleClick = (e: any) => {
+        console.log(e.target.id + " " + e.target.name)
+        router.push(`${router.asPath}&${e.target.name}=${e.target.id}`)
+    };
 
     return (
         <div className={css.container}>
@@ -40,10 +43,22 @@ const Products = ({ products }: any) => {
                             <b>Бренд</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#"> <input type="checkbox" /> Apple </a>
-                            <a href="#">  <input type="checkbox" /> Samsung </a>
-                            <a href="#">  <input type="checkbox" /> Xiaomi </a>
-                            <a href="#">  <input type="checkbox" /> OPPO </a>
+                            <div>
+                                <input type="checkbox" id="Apple" name="brand" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="Apple">Apple</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Samsung" name="brand" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="Samsung">Samsung</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Xiaomi" name="brand" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="Xiaomi">Xiaomi</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="OPPO" name="brand" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="OPPO">OPPO</label>
+                            </div>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -51,12 +66,30 @@ const Products = ({ products }: any) => {
                             <b>Модель</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13_pro_max`)}>  <input type="checkbox" /> iPhone 13 Pro Max </a>
-                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13_pro`)}>  <input type="checkbox" /> iPhone 13 Pro </a>
-                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13`)}>  <input type="checkbox" /> iPhone 13 </a>
-                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_13_mini`)}>  <input type="checkbox" /> iPhone 13 mini </a>
-                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_12`)}>  <input type="checkbox" /> iPhone 12 </a>
-                            <a href="#" onClick={() => router.push(`${router.asPath}&model=iphone_11`)}>  <input type="checkbox" /> iPhone 11 </a>
+                            <div>
+                                <input type="checkbox" id="iphone_13_pro_max" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_13_pro_max">iPgone 13 Pro Max</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="iphone_13_pro" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_13_pro">iPhone 13 Pro</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="iphone_13" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_13">iPhone 13</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="iphone_13 mini" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_13 mini">iPhone 13 mini</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="iphone_12" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_12">iPhone 12</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="iphone_11" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_11">iPhone 11</label>
+                            </div>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -64,8 +97,18 @@ const Products = ({ products }: any) => {
                             <b>Операционная система</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> Android </a>
-                            <a href="#">  <input type="checkbox" /> iOS </a>
+                            <div>
+                                <input type="checkbox" id="Apple iOS 15" name="os" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="Apple iOS 15">iOS 15</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Apple iOS 14" name="os" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="Apple iOS 14">iOS 14</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Apple iOS 13" name="os" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="Apple iOS 13">iOS 13</label>
+                            </div>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -73,11 +116,26 @@ const Products = ({ products }: any) => {
                             <b>Память</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> 64 </a>
-                            <a href="#">  <input type="checkbox" /> 128 </a>
-                            <a href="#">  <input type="checkbox" /> 256 </a>
-                            <a href="#">  <input type="checkbox" /> 512 </a>
-                            <a href="#">  <input type="checkbox" /> 1 </a>
+                            <div>
+                                <input type="checkbox" id="64" name="rom" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="64">64</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="128" name="rom" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="128">128</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="256" name="rom" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="256">256</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="512" name="rom" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="512">512</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="1" name="rom" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="1">1</label>
+                            </div>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -85,25 +143,38 @@ const Products = ({ products }: any) => {
                             <b>Оперативная память</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> 1 </a>
-                            <a href="#">  <input type="checkbox" /> 2 </a>
-                            <a href="#">  <input type="checkbox" /> 3 </a>
-                            <a href="#">  <input type="checkbox" /> 4 </a>
-                            <a href="#">  <input type="checkbox" /> 5 </a>
-                            <a href="#">  <input type="checkbox" /> 6 </a>
-                            <a href="#">  <input type="checkbox" /> 7 </a>
-                            <a href="#">  <input type="checkbox" /> 8 </a>
-                        </div>
-                    </div>
-                    <div className={css.filterItem}>
-                        <div className={css.header}>
-                            <b>Размер экрана</b>
-                        </div>
-                        <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> 4.1 - 4.9 </a>
-                            <a href="#">  <input type="checkbox" /> 5 - 5.9 </a>
-                            <a href="#">  <input type="checkbox" /> 6 - 6.4 </a>
-                            <a href="#">  <input type="checkbox" /> 6.5 - 6.9 </a>
+                            <div>
+                                <input type="checkbox" id="1" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="1">1</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="2" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="2">2</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="3" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="3">3</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="4" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="4">4</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="5" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="5">5</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="6" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="6">6</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="7" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="7">7</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="8" name="ram" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="8">8</label>
+                            </div>
                         </div>
                     </div>
                     <div className={css.filterItem}>
@@ -111,9 +182,18 @@ const Products = ({ products }: any) => {
                             <b>Частота обновления экрана</b>
                         </div>
                         <div className={css.content}>
-                            <a href="#">  <input type="checkbox" /> 60 </a>
-                            <a href="#">  <input type="checkbox" /> 90 </a>
-                            <a href="#">  <input type="checkbox" /> 120 </a>
+                            <div>
+                                <input type="checkbox" id="60" name="displayFrashrate" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="60">60</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="90" name="displayFrashrate" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="90">90</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="120" name="displayFrashrate" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="120">120</label>
+                            </div>
                         </div>
                     </div>
                 </div>
