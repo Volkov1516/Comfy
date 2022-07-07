@@ -3,7 +3,6 @@ import Link from 'next/link';
 import css from '../styles/Category.module.scss';
 
 const Category = ({ category }: any) => {
-    console.log(category)
     return (
         <div className={css.container}>
             <div>Breadcrumbs</div>

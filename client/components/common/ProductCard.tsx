@@ -4,10 +4,6 @@ import css from '../../styles/ProductCard.module.scss';
 
 import ProductCardCarousel from './ProductCardCarousel';
 
-type ProductCardType = {
-    product: any;
-}
-
 const ProductCard = ({ product }: any) => {
     return (
         <div className={css.container}>

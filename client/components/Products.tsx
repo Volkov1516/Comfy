@@ -9,8 +9,7 @@ const Products = ({ products }: any) => {
     const router = useRouter();
 
     const handleClick = (e: any) => {
-        console.log(e.target.id + " " + e.target.name)
-        router.push(`${router.asPath}&${e.target.name}=${e.target.id}`)
+        router.push(`${router.asPath}&${e.target.name}=${e.target.id}`);
     };
 
     return (
