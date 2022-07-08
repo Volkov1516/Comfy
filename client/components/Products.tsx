@@ -198,7 +198,8 @@ const Products = ({ products }: any) => {
                 </div>
                 <div className={css.main}>
                     <div className={css.controlls}>
-                        <span>По популярности</span>
+                        <span onClick={() => router.push(`${router.asPath}&sort=-price`)}>Сначала дорогие</span>
+                        <span onClick={() => router.push(`${router.asPath}&sort=price`)}>Сначала дешевые</span>
                     </div>
                     <div className={css.productContainer}>
                         {products?.map((item: any) => (
