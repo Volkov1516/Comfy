@@ -5,7 +5,7 @@ import Slider from '../components/Slider';
 import PromoCategories from '../components/PromoCategories';
 import Carousel from '../components/common/Carousel';
 
-import { mockCarouselData } from '../mocks/mockCarouselData';
+import { mockCarouselData, hits, special } from '../mocks/mockCarouselData';
 
 const Home: NextPage = ({ products }: any) => {
   let sliced = products.slice(5, 10);
@@ -19,6 +19,7 @@ const Home: NextPage = ({ products }: any) => {
       </Head>
 
       <Slider />
+
       <PromoCategories header="Скидки до -40%" products={sliced}/>
       <PromoCategories header="Холодильники" products={sliced}/>
       <PromoCategories header="Смартфоны" products={sliced}/>
@@ -26,7 +27,11 @@ const Home: NextPage = ({ products }: any) => {
       <PromoCategories header="Стиральны машины" products={sliced}/>
       <PromoCategories header="Игровые консоли" products={sliced}/>
       <PromoCategories header="Просмотренные товары" products={sliced}/>
-      <Carousel display="normal" header="Хиты продаж" items={mockCarouselData.items} />
+
+      <Carousel display="normal" header="Хиты продаж" items={hits.items} />
+      <Carousel display="normal" header="Специально для вас" items={special.items} />
+      <Carousel display="normal" header="Видеообзоры" items={mockCarouselData.items} />
+      <Carousel display="normal" header="Новости из блога" items={mockCarouselData.items} />
     </>
   );
 }; 
