@@ -2,8 +2,10 @@ import { Request, Response } from "express";
 import Product from "../models/product";
 
 export const getProducts = async (req: Request, res: Response) => {
+    const { sort } = req.query;
     try {
-        const data = await Product.find(req.query);
+        //@ts-ignore
+        const data = await Product.find(req.query).sort(sort);
 
         res.status(201).json([ ...data ]);
     } catch (error) {
