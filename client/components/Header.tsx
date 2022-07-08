@@ -101,9 +101,11 @@ const Header = () => {
                                         <>
                                             {item.subcategories.map((item: any) => (
                                                 <div className={css.categoryBlock}>
-                                                    <h3 className={css.categoryTitle}>{item.title}</h3>
+                                                    <h3 className={css.categoryTitle} onClick={() => router.push(`/products/categoryId=62b438533e01d8b900854295`)}>{item.title}</h3>
                                                     {item.products.map((item: any) => (
-                                                        <p className={css.categoryItem}>{item.name}</p>
+                                                        <Link href={`/products/categoryId=62b438533e01d8b900854295&${item.query}`}>
+                                                            <p className={css.categoryItem}>{item.name}</p>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                             ))}
