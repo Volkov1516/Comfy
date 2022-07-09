@@ -5,7 +5,7 @@ import ProductCard from './common/ProductCard';
 type PromoCategoriesType = {
     header: string;
     products?: any[];
-}
+};
 
 const PromoCategories = ({ products, header }: PromoCategoriesType) => {
     return (

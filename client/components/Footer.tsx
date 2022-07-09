@@ -41,9 +41,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <div className={styles.homeSection}></div> */}
-
             <div className={css.subscribe}>
                 <div className={css.textWrapper}>
                     <span className={css.text}>Подписывайтесь на скидки и рекомендации!</span>

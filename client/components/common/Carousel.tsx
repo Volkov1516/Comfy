@@ -9,13 +9,13 @@ type ItemTypes = {
     img: string;
     text: string;
     price: number;
-}
+};
 
 type CarouselTypes = {
     display: Display;
     header: string;
     items: ItemTypes[];
-}
+};
 
 const Carousel = ({ display, header, items }: CarouselTypes) => {
     const [offset, setOffset] = useState(0);

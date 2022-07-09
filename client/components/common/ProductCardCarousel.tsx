@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import cx from 'classnames';
 
 import css from '../../styles/ProductCardCarousel.module.scss';
@@ -6,7 +6,7 @@ import css from '../../styles/ProductCardCarousel.module.scss';
 type ProductCardCarouselType = {
     images: string[];
     colors: {}[];
-}
+};
 
 const ProductCardCarousel = ({ images, colors }: ProductCardCarouselType) => {
     const [offset, setOffset] = useState(0);
@@ -38,8 +38,8 @@ const ProductCardCarousel = ({ images, colors }: ProductCardCarouselType) => {
                             </div>
                         </div>
                         <div className={css.colors}>
-                            {colors.map((i:any) => (
-                                <div className={css.color} style={{backgroundColor: `${i.simple}`}}></div>
+                            {colors.map((i: any) => (
+                                <div className={css.color} style={{ backgroundColor: `${i.simple}` }}></div>
                             ))}
                         </div>
                     </div>

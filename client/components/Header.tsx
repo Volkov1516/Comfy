@@ -21,7 +21,7 @@ const Header = () => {
     }, []);
 
     const handleDisplayMouseLeave = () => {
-        displayTimeout = setTimeout(() => { setDispaly(false) }, 200)
+        displayTimeout = setTimeout(() => { setDispaly(false) }, 200);
     }
 
     const handleDisplayMouseEnter = () => {

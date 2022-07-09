@@ -17,7 +17,7 @@ const Product = ({ product }: any) => {
     const [upDisplay, setUpDisplay] = useState(false);
 
     const handleNpDisplayMouseLeave = () => {
-        npDisplayTimeout = setTimeout(() => { setNpDisplay(false) }, 200)
+        npDisplayTimeout = setTimeout(() => { setNpDisplay(false) }, 200);
     }
 
     const handleNpDisplayMouseEnter = () => {
@@ -26,7 +26,7 @@ const Product = ({ product }: any) => {
     }
 
     const handleUpDisplayMouseLeave = () => {
-        upDisplayTimeout = setTimeout(() => { setUpDisplay(false) }, 200)
+        upDisplayTimeout = setTimeout(() => { setUpDisplay(false) }, 200);
     }
 
     const handleUpDisplayMouseEnter = () => {

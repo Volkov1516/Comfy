@@ -13,19 +13,19 @@ const Slider = () => {
         clearTimeout(timeout);
 
         if (currentSlide !== 1) {
-            serCurrentSlide(currentSlide - 1)
+            serCurrentSlide(currentSlide - 1);
         } else {
-            serCurrentSlide(10)
+            serCurrentSlide(10);
         }
     };
 
     const nextSlide = () => {
         clearTimeout(timeout);
-        
+
         if (currentSlide !== 10) {
-            serCurrentSlide(currentSlide + 1)
+            serCurrentSlide(currentSlide + 1);
         } else {
-            serCurrentSlide(1)
+            serCurrentSlide(1);
         }
     };
 

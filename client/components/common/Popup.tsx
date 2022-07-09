@@ -17,7 +17,7 @@ type PopupTypes = {
 
 const Popup = ({ type, display, background = 'default', title, text, button }: PopupTypes) => {
 
-    if(display == false) return null;
+    if (display == false) return null;
 
     return (
         <div className={cx(css.container, css[type], css[background])}>
