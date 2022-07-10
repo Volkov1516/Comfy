@@ -118,12 +118,16 @@ const Product = ({ product }: any) => {
                         <p className={css.title}>Iншi моделi</p>
                         <div className={css.actions}>
                             <div className={css.colors}>
-                                <div className={css.color}></div>
+                                {colorAvailable.map((item: any) => (
+                                    <div className={css.color} style={{ backgroundColor: `${item.simple}` }}></div>
+                                ))}
                             </div>
                             <div className={css.memory}>
-                                <div className={css.item}>
-                                    {ram} ГБ
-                                </div>
+                                {romAvailable.map((item: any) => (
+                                    <div className={css.item}>
+                                        {item} ГБ
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
