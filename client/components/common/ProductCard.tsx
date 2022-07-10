@@ -14,7 +14,7 @@ const ProductCard = ({ product }: any) => {
             <div className={css.info}>
                 <div className={css.name}>
                     <Link href={`/product/${product._id}`}>
-                        <a href="#">Смартфон {product.brand} {product.name} {product.rom}Gb {product.color}</a>
+                        <a href="#">{product.brand} {product.name} {product.rom} {product.color}</a>
                     </Link>
                 </div>
                 <div className={css.feedback}>

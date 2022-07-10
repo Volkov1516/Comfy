@@ -26,7 +26,7 @@ const ProductCardCarousel = ({ images, colors }: ProductCardCarouselType) => {
     return (
         <div className={css.slide}>
             <div className={css.window} style={{ transform: `translate(${offset}%)` }}>
-                {images.map((i: any) => (
+                {images?.map((i: any) => (
                     <div className={css.slideItem}>
                         <img className={css.image} src={i} alt="Banner" />
                         <div className={css.controlls}>
@@ -38,7 +38,7 @@ const ProductCardCarousel = ({ images, colors }: ProductCardCarouselType) => {
                             </div>
                         </div>
                         <div className={css.colors}>
-                            {colors.map((i: any) => (
+                            {colors?.map((i: any) => (
                                 <div className={css.color} style={{ backgroundColor: `${i.simple}` }}></div>
                             ))}
                         </div>

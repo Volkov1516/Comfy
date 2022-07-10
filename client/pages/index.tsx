@@ -5,10 +5,13 @@ import Slider from '../components/Slider';
 import PromoCategories from '../components/PromoCategories';
 import Carousel from '../components/common/Carousel';
 
-import { mockCarouselData, hits, special, blog } from '../mocks/mockCarouselData';
+import { hits, special, blog } from '../mocks/mockCarouselData';
+import { sale, refrigerators, smaptphones, laptops, washes, robots } from '../mocks/products';
 
 const Home: NextPage = ({ products }: any) => {
   let sliced = products.slice(5, 10);
+
+  console.log(sliced);
   
   return (
     <>
@@ -20,12 +23,12 @@ const Home: NextPage = ({ products }: any) => {
 
       <Slider />
 
-      <PromoCategories header="Скидки до -40%" products={sliced}/>
-      <PromoCategories header="Холодильники" products={sliced}/>
-      <PromoCategories header="Смартфоны" products={sliced}/>
-      <PromoCategories header="Ноутбуки" products={sliced}/>
-      <PromoCategories header="Стиральны машины" products={sliced}/>
-      <PromoCategories header="Игровые консоли" products={sliced}/>
+      <PromoCategories header="Скидки до -40%" products={sale}/>
+      <PromoCategories header="Холодильники" products={refrigerators}/>
+      <PromoCategories header="Смартфоны" products={smaptphones}/>
+      <PromoCategories header="Ноутбуки" products={laptops}/>
+      <PromoCategories header="Стиральны машины" products={washes}/>
+      <PromoCategories header="Роботы-пылесосы" products={robots}/>
       <PromoCategories header="Просмотренные товары" products={sliced}/>
 
       <Carousel display="normal" header="Хиты продаж" items={hits.items} />
