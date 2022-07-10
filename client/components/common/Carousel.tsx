@@ -3,12 +3,14 @@ import cx from 'classnames';
 
 import css from '../../styles/Carousel.module.scss';
 
-type Display = 'normal' | 'small';
+type Display = 'normal' | 'small' | 'blog';
 
 type ItemTypes = {
     img: string;
     text: string;
-    price: number;
+    price?: number;
+    date?: string;
+    header?: string;
 };
 
 type CarouselTypes = {
@@ -47,11 +49,13 @@ const Carousel = ({ display, header, items }: CarouselTypes) => {
                                     <div className={cx(css.image, css[display])}>
                                         <img src={i.img} alt="Product image" />
                                     </div>
+                                    <h5 className={cx(css.header, css[display])}>{i.header}</h5>
                                     <div className={css.text}>
                                         <a href="#">{i.text}</a>
                                     </div>
+                                    <p>{i.date}</p>
                                 </div>
-                                <div className={css.actions}>
+                                <div className={cx(css.actions, css[display])}>
                                     <div className={css.price}>
                                         <div className={css.priceCurrent}>{i.price}</div>
                                     </div>

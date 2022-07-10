@@ -5,13 +5,12 @@
     width: 100%;
     height: auto;
     padding: 0px 24px 24px;
-    // background-color: $gray;
 
     .header {
         font-size: 24px;
         margin: 0px 0px 24px 16px;
         font-weight: 500;
-        
+
         &.small {
             font-size: 16px;
             margin: 0px 0px 16px;
@@ -41,6 +40,10 @@
                 height: 108px;
             }
 
+            &.blog {
+                height: 330px;
+            }
+
             &:hover {
                 cursor: pointer;
                 background-color: $grayLight;
@@ -65,6 +68,10 @@
                 height: 108px;
             }
 
+            &.blog {
+                height: 330px;
+            }
+
             &:hover {
                 cursor: not-allowed;
             }
@@ -85,6 +92,10 @@
 
             &.small {
                 height: 108px;
+            }
+
+            &.blog {
+                height: 330px;
             }
 
             &:hover {
@@ -109,6 +120,10 @@
 
             &.small {
                 height: 108px;
+            }
+
+            &.blog {
+                height: 330px;
             }
 
             &:hover {
@@ -144,6 +159,12 @@
                         height: 108px;
                     }
 
+                    &.blog {
+                        padding: 0px;
+                        height: 330px;
+                        border: none;
+                    }
+
                     .info {
                         @include flex(column, space-between, center);
 
@@ -162,6 +183,19 @@
                                     height: 40px;
                                 }
                             }
+
+                            &.blog {
+                                img {
+                                    width: 100%;
+                                    border-radius: 0.8rem;
+                                }
+                            }
+                        }
+
+                        .header {
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin: 8px 0px;
                         }
 
                         .text {
@@ -185,6 +219,10 @@
                         height: 48px;
                         @include flex(row, space-between);
 
+                        &.blog {
+                            display: none;
+                        }
+
                         .price {
                             @include flex(column, center, center);
 
@@ -207,7 +245,7 @@
                                 margin: 0px 4px;
                                 filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(104deg);
                             }
-                            
+
                             &.small {
                                 width: 60px;
                                 height: 40px;
