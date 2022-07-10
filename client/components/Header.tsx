@@ -16,6 +16,7 @@ const Header = () => {
     const [newCtegory, setNewCategory] = useState<AxiosResponse<[]>>();
     const [activeCategory, setActiveCategory] = useState<string>('');
     const [display, setDispaly] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/category').then((resp) => { setNewCategory(resp.data) });
@@ -28,6 +29,10 @@ const Header = () => {
     const handleDisplayMouseEnter = () => {
         setDispaly(true);
         clearTimeout(displayTimeout);
+    }
+
+    const handleModal = () => {
+        setIsOpen(!isOpen);
     }
 
     return (
@@ -120,7 +125,7 @@ const Header = () => {
                 <div className={css.search}>
                     <input className={css.input} type="text" placeholder="Поиск товаров" />
                 </div>
-                <div className={css.login}>Войти</div>
+                <div onClick={handleModal} className={css.login}>Войти</div>
                 <div className={css.compare}>
                     <img className={css.compareImg} src="/img/compare.svg" alt="Compare" width="20px" height="20px" />
                 </div>
@@ -133,7 +138,7 @@ const Header = () => {
                     <Popup type="small" display={display} background="white" text="Корзина пуста" />
                 </div>
             </div>
-            <Login />
+            <Login isOpen={isOpen} handleModal={handleModal}/>
         </header>
     );
 };

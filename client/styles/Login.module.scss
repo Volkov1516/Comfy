@@ -31,6 +31,11 @@
             padding: 34px;
             @include flex(column, flex-start);
 
+            .close {
+                align-self: flex-end;
+                cursor: pointer;
+            }
+
             .label {
                 color: $grayDark;
                 margin-bottom: 8px;
