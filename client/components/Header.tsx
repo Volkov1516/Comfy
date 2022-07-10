@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import css from '../styles/Header.module.scss';
 import Popup from './common/Popup';
+import Login from './Login';
 
 const Header = () => {
     const router = useRouter();
@@ -132,6 +133,7 @@ const Header = () => {
                     <Popup type="small" display={display} background="white" text="Корзина пуста" />
                 </div>
             </div>
+            <Login />
         </header>
     );
 };
