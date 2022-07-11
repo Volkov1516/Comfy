@@ -19,6 +19,7 @@
             @include flex(row, center, center);
             font-size: 14px;
             color: $grayMiddle;
+            cursor: pointer;
 
             &:hover {
                 background-color: $grayLight;
@@ -289,6 +290,11 @@
             background-color: $white;
             border: 1px solid $gray;
             border-radius: 0.8rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $grayLight;
+            }
         }
     }
 
@@ -330,6 +336,11 @@
             background-color: $white;
             border: 1px solid $gray;
             border-radius: 0.8rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $grayLight;
+            }
         }
     }
 
