@@ -23,7 +23,6 @@ const Product = ({ product }: any) => {
         newRom = rom + 'Tb'
     }
 
-
     const [npDisplay, setNpDisplay] = useState(false);
     const [upDisplay, setUpDisplay] = useState(false);
 
@@ -56,7 +55,7 @@ const Product = ({ product }: any) => {
             <div>Breadcrumbs</div>
             <div className={css.tabs}>
                 <a className={css.tabItem} onClick={handleTab}>ВСЁ О ТОВАРЕ</a>
-                <a className={css.tabItem} onClick={handleTab}>ХАРАКТЕРИСТИКИ</a>
+                <a className={css.tabItem}>ХАРАКТЕРИСТИКИ</a>
                 <a className={css.tabItem} onClick={handleTab}>ОТЗЫВЫ</a>
                 <a className={css.tabItem}>ВОПРОСЫ</a>
                 <a className={css.tabItem}>ВИДЕО</a>
@@ -65,16 +64,20 @@ const Product = ({ product }: any) => {
             </div>
             {activeTab === 'ВСЁ О ТОВАРЕ' && <>
                 <div className={css.general}>
+
                     <div className={css.gallery}>
                         <div className={css.list}>
                             {images.map((img: string) => (
-                                <img className={css.listItem} src={img} alt="product images" width="52px" height="52px" />
+                                <div className={css.itemWrapper}>
+                                    <img src={img} alt="product images" />
+                                </div>
                             ))}
                         </div>
                         <div className={css.mainImage}>
-                            <img className={css.listItem} src={images[0]} alt="main image" width="100%" height="380px" />
+                            <img className={css.listItem} src={images[0]} alt="main image" />
                         </div>
                     </div>
+
                     <div className={css.info}>
                         <div className={css.infoMain}>
                             <h1 className={css.name}>Смартфон {name} {newRom} {newColor}</h1>
@@ -115,7 +118,8 @@ const Product = ({ product }: any) => {
                                 </div>
                             </div>
                             <div className={css.bonus}>
-                                bonus
+                                <img src="/img/coin.svg" alt="Cion image" width="14px" height="14px" />
+                                <span><b className={css.pinted}>+200$</b> на бонусный счет</span>
                             </div>
                         </div>
                         <div className={css.infoCredit}>
@@ -157,7 +161,7 @@ const Product = ({ product }: any) => {
                         </div>
                     </div>
                 </div>
-                <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items} />
+                {/* <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items} /> */}
                 <div className={css.features}>
                     <>
                         <h2 className={css.title}>Характеристики {name}</h2>
@@ -183,13 +187,13 @@ const Product = ({ product }: any) => {
                                 <img src="https://www.svgrepo.com/show/195812/question.svg" alt="Question icon" width="20px" height="20px" />
                             </li>
                         </ul>
-                        <button className={css.showMoreBtn} onClick={() => setActiveTab("ХАРАКТЕРИСТИКИ")}>
+                        <button className={css.showMoreBtn}>
                             <span>Показать больше</span>
                             <img src="https://www.svgrepo.com/show/17594/plus.svg" alt="Question icon" width="16px" height="16px" />
                         </button>
                     </>
                 </div>
-                <div className={css.description}>
+                {/* <div className={css.description}>
                     <h2 className={css.title}>Описание смартфона</h2>
                 </div>
                 <div className={css.review}>
@@ -201,7 +205,7 @@ const Product = ({ product }: any) => {
                 </div>
                 <div className={css.photos}>
                     <h2 className={css.title}>Фото</h2>
-                </div>
+                </div> */}
             </>}
         </div>
     );
