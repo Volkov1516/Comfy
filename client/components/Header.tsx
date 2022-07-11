@@ -134,11 +134,11 @@ const Header = () => {
                 </div>
                 <div className={css.cart} onMouseEnter={handleDisplayMouseEnter} onMouseLeave={handleDisplayMouseLeave}>
                     <img className={css.cartImg} src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart" width="20px" height="20px" />
-                    <span className={css.cartText}>Корзина</span>
+                    <Link href="/cart"><span className={css.cartText}>Корзина</span></Link>
                     <Popup type="small" display={display} background="white" text="Корзина пуста" />
                 </div>
             </div>
-            <Login isOpen={isOpen} handleModal={handleModal}/>
+            <Login isOpen={isOpen} handleModal={handleModal} />
         </header>
     );
 };

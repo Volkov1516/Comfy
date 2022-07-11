@@ -1,4 +1,92 @@
 @use './variables/colors.scss' as *;
 @use './variables/mixins.scss' as *;
 
+.container {
+    padding: 20px;
+    @include flex(row);
 
+    .main {
+        width: 60%;
+
+        .order {
+            padding: 40px;
+            background-color: $gray;
+            border-radius: 0.8rem;
+            margin-bottom: 12px;
+
+            h4 {
+                color: $grayDark;
+                font-size: 18px;
+                margin-top: 0px;
+            }
+
+            .content {
+                @include flex(row, space-between, center);
+
+                .items {
+                    @include flex(row, center, center, 8px);
+
+                    .itemWrapper {
+                        width: 68px;
+                        height: 68px;
+                        background-color: $white;
+                        @include flex(row, center, center);
+                        border-radius: 0.6rem;
+
+                        img {
+                            width: auto;
+                            height: 52px;
+                        }
+                    }
+                }
+
+                button {
+                    padding: 12px 60px;
+                    border-radius: 0.4rem;
+                    color: $green;
+                    cursor: pointer;
+                    outline: none;
+                    border: 1px solid $green;
+                    background-color: transparent;
+
+                    &:hover {
+                        background-color: $green;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .contacts {
+            padding: 40px;
+            background-color: $gray;
+            border-radius: 0.8rem;
+            margin-bottom: 12px;
+
+            h4 {
+                color: $grayDark;
+                font-size: 18px;
+                margin-top: 0px;
+            }
+
+            .content {
+                @include flex(row, space-between, center);
+
+                button {
+                    padding: 12px 60px;
+                    border-radius: 0.4rem;
+                    color: $green;
+                    cursor: pointer;
+                    outline: none;
+                    border: 1px solid $green;
+                    background-color: transparent;
+
+                    &:hover {
+                        background-color: $green;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
