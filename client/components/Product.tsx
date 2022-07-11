@@ -77,7 +77,6 @@ const Product = ({ product }: any) => {
                             <img className={css.listItem} src={images[0]} alt="main image" />
                         </div>
                     </div>
-
                     <div className={css.info}>
                         <div className={css.infoMain}>
                             <h1 className={css.name}>Смартфон {name} {newRom} {newColor}</h1>
@@ -161,7 +160,6 @@ const Product = ({ product }: any) => {
                         </div>
                     </div>
                 </div>
-                {/* <Carousel display="normal" header="Посмотрите ещё" items={mockCarouselData.items} /> */}
                 <div className={css.features}>
                     <>
                         <h2 className={css.title}>Характеристики {name}</h2>
@@ -193,20 +191,57 @@ const Product = ({ product }: any) => {
                         </button>
                     </>
                 </div>
-                {/* <div className={css.description}>
-                    <h2 className={css.title}>Описание смартфона</h2>
-                </div>
-                <div className={css.review}>
-                    <h2 className={css.title}>Отзывы</h2>
-                    <button className={css.showMoreBtn} onClick={() => setActiveTab("ОТЗЫВЫ")}>
-                        <span>Показать больше</span>
-                        <img src="https://www.svgrepo.com/show/17594/plus.svg" alt="Question icon" width="16px" height="16px" />
-                    </button>
-                </div>
-                <div className={css.photos}>
-                    <h2 className={css.title}>Фото</h2>
-                </div> */}
             </>}
+            {activeTab === "ОТЗЫВЫ" && (
+                <div className={css.reviewsContainer}>
+                    <h3>{brand} {name} {newRom} {newColor} - отзывы</h3>
+                    <div className={css.reviews}>
+                        <div className={css.attention}>
+                            <span>Оставтье свой отзыв об этом товаре</span>
+                            <button>Оставить отзыв</button>
+                        </div>
+                        <div className={css.review}>
+                            <div className={css.reviewHeader}>
+                                <div className={css.name}>Name</div>
+                                <div className={css.rete}>rate</div>
+                            </div>
+                            <p className={css.reviewText}>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magni excepturi distinctio repellat autem laborum quibusdam nesciunt, natus, est qui sunt deleniti ipsam molestiae quaerat corporis repudiandae delectus laboriosam ad?
+                            </p>
+                            <div className={css.reviewActions}>
+                                <div className={css.answer}>Ответить</div>
+                                <div className={css.likes}>Likes</div>
+                            </div>
+                        </div>
+                        <div className={css.review}>
+                            <div className={css.reviewHeader}>
+                                <div className={css.name}>Name</div>
+                                <div className={css.rete}>rate</div>
+                            </div>
+                            <p className={css.reviewText}>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magni excepturi distinctio repellat autem laborum quibusdam nesciunt, natus, est qui sunt deleniti ipsam molestiae quaerat corporis repudiandae delectus laboriosam ad?
+                            </p>
+                            <div className={css.reviewActions}>
+                                <div className={css.answer}>Ответить</div>
+                                <div className={css.likes}>Likes</div>
+                            </div>
+                        </div>
+                        <div className={css.review}>
+                            <div className={css.reviewHeader}>
+                                <div className={css.name}>Name</div>
+                                <div className={css.rete}>rate</div>
+                            </div>
+                            <p className={css.reviewText}>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magni excepturi distinctio repellat autem laborum quibusdam nesciunt, natus, est qui sunt deleniti ipsam molestiae quaerat corporis repudiandae delectus laboriosam ad?
+                            </p>
+                            <div className={css.reviewActions}>
+                                <div className={css.answer}>Ответить</div>
+                                <div className={css.likes}>Likes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

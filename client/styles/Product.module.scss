@@ -389,4 +389,73 @@
             font-size: 34px;
         }
     }
+
+    .reviewsContainer {
+        padding: 32px 48px;
+        margin-bottom: 4px;
+        background-color: $white;
+
+        h3 {
+            font-size: 34px;
+            margin-top: 0px;
+        }
+
+        .reviews {
+            width: 70%;
+            @include flex(column, flex-start);
+
+            .attention {
+                padding: 16px 24px;
+                border-radius: 0.8rem;
+                background-color: $grayLight;
+                margin: 0px 0px 24px;
+                @include flex(row, space-between, center);
+
+                span {
+                    font-size: 20px;
+                    color: $grayDark;
+                }
+
+                button {
+                    padding: 12px 48px;
+                    border-radius: 0.8rem;
+                    color: $white;
+                    font-weight: 600;
+                    font-size: 14px;
+                    outline: none;
+                    border: none;
+                    background-color: $orange;
+                    margin-left: 12px;
+                    cursor: pointer;
+                }
+            }
+
+            .review {
+                width: 100%;
+                padding: 24px;
+                border: 1px solid $gray;
+                border-radius: 0.8rem;
+
+                .reviewHeader {
+                    width: 100%;
+                    @include flex(row, space-between, center);
+
+                    .name {
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+                }
+
+                .reviewText {
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+
+                .reviewActions {
+                    width: 100%;
+                    @include flex(row, space-between, center);
+                }
+            }
+        }
+    }
 }
