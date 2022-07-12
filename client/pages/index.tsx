@@ -10,8 +10,6 @@ import { sale, refrigerators, smaptphones, laptops, washes, robots } from '../mo
 
 const Home: NextPage = ({ products }: any) => {
   let sliced = products.slice(5, 10);
-
-  console.log(sliced);
   
   return (
     <>

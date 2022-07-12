@@ -2,12 +2,6 @@ import type { NextPage } from 'next';
 
 import Cart from '../components/Cart';
 
-const ProductsPage: NextPage = () => {
-    return (
-        <>
-            <Cart />
-        </>
-    );
-};
+const CartPage: NextPage = () => <Cart />;
 
-export default Cart;
+export default CartPage;

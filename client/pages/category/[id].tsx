@@ -2,13 +2,7 @@ import type { NextPage } from 'next';
 
 import Category from '../../components/Category';
 
-const CategoryPage: NextPage = ({ category }: any) => {
-    return (
-        <>
-            <Category category={category} />
-        </>
-    );
-};
+const CategoryPage: NextPage = ({ category }: any) => <Category category={category} />;
 
 export default CategoryPage;
 

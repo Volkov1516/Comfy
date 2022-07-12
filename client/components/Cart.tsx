@@ -41,7 +41,6 @@ const Cart = () => {
                 </div>
             </div>
             <div className={css.result}>
-
             </div>
         </div>
     )
