@@ -5,21 +5,33 @@ import css from '../../styles/ProductCard.module.scss';
 import ProductCardCarousel from './ProductCardCarousel';
 
 const ProductCard = ({ product }: any) => {
+    let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = product;
+
+    const newColor = color?.split('_').map((i: any) => i[0].toUpperCase() + i.substring(1)).join(' ');
+
+    let newRom;
+
+    if (rom > 16) {
+        newRom = rom + 'Gb'
+    } else {
+        newRom = rom + 'Tb'
+    }
+
     return (
         <div className={css.container}>
             <a className={css.code} href="#">Код: 1234567</a>
 
-            <ProductCardCarousel images={product.images} colors={product.colorAvailable} />
+            <ProductCardCarousel images={images} colors={colorAvailable} />
 
             <div className={css.info}>
                 <div className={css.name}>
-                    <Link href={`/product/${product._id}`}>
-                        <a href="#">{product.brand} {product.name} {product.rom} {product.color}</a>
+                    <Link href={`/product/${_id}`}>
+                        <a href="#">{brand} {name} {newRom} {newColor}</a>
                     </Link>
                 </div>
                 <div className={css.feedback}>
                     <div>
-                        {product.rate}
+                        {rate}
                     </div>
                     <a className={css.comments}>
                         <img src="/img/chat-bubble.svg" alt="Comments image" width="15px" height="15px" />
@@ -27,13 +39,13 @@ const ProductCard = ({ product }: any) => {
                     </a>
                 </div>
                 <div className={css.labels}>
-                    {product.labels.map((i: any) => (
+                    {labels.map((i: any) => (
                         <img src={i} alt="Label image" width="30px" height="30px" />
                     ))}
                 </div>
                 <div className={css.actions}>
                     <div className={css.price}>
-                        <div className={css.priceCurrent}>{product.price}</div>
+                        <div className={css.priceCurrent}>{price}</div>
                     </div>
                     <div className={css.actionButton}>
                         <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart image" width="20px" height="20px" />
@@ -45,10 +57,10 @@ const ProductCard = ({ product }: any) => {
                 </div>
             </div>
             <div className={css.hidden}>
-                <p className={css.hiddenItem}>Диагональ: {product.displaySize}''</p>
-                <p className={css.hiddenItem}>Разрешение: {product.displayResolution}</p>
-                <p className={css.hiddenItem}>Оперативная память: {product.ram}Гб</p>
-                <p className={css.hiddenItem}>Процессор: {product.processor}</p>
+                <p className={css.hiddenItem}>Диагональ: {displaySize}''</p>
+                <p className={css.hiddenItem}>Разрешение: {displayResolution}</p>
+                <p className={css.hiddenItem}>Оперативная память: {ram}Гб</p>
+                <p className={css.hiddenItem}>Процессор: {processor}</p>
             </div>
         </div>
     );

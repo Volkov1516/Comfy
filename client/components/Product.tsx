@@ -13,7 +13,7 @@ const Product = ({ product }: any) => {
     let npDisplayTimeout: ReturnType<typeof setTimeout>;
     let upDisplayTimeout: ReturnType<typeof setTimeout>;
 
-    const newColor = color.split('_').map((i: any) => i[0].toUpperCase() + i.substring(1)).join(' ');
+    const newColor = color?.split('_').map((i: any) => i[0].toUpperCase() + i.substring(1)).join(' ');
 
     let newRom;
 
