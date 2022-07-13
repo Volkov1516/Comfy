@@ -28,7 +28,7 @@ const ProductCardCarousel = ({ images, colors }: ProductCardCarouselType) => {
             <div className={css.window} style={{ transform: `translate(${offset}%)` }}>
                 {images?.map((i: any) => (
                     <div className={css.slideItem}>
-                        <img className={css.image} src={i} alt="Banner" />
+                        <img loading="lazy" className={css.image} src={i} alt="Banner" />
                         <div className={css.controlls}>
                             <div className={css.img}>
                                 <img src="/img/compare.svg" alt="Arrow" width="20px" height="20px" />
