@@ -12,5 +12,25 @@ export const register = async (req: Request, res: Response) => {
 };
 
 export const login = async (req: Request, res: Response) => {
-    res.send('Login');
+    const { email, password } = req.body;
+
+    if(!email || !password) {
+        return res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'Please, provide email and password' });
+    }
+
+    const user = await User.findOne({email});
+
+    if(!user) {
+        return res.status(StatusCodes.UNAUTHORIZED).json({ msg: 'No such user' });
+    }
+    // @ts-ignore
+    const isPasswordCorrect = await user.comparePassword(password);
+
+    if(!isPasswordCorrect) {
+        return res.status(StatusCodes.UNAUTHORIZED).json({ msg: 'Wrong password' });
+    }
+    // @ts-ignore
+    const token = user.createJWT();
+
+    res.status(StatusCodes.OK).json({user: {email: user.email}, token});
 };

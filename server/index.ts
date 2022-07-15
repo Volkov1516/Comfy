@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import { notFound } from './middleware/notFound';
+import { auth } from './middleware/authentication';
 
 import categoryRouter from './routes/category';
 import productRouter from './routes/product';
@@ -20,7 +21,7 @@ app.use(cors());
 
 app.use('/api/v1/category', categoryRouter);
 app.use('/api/v1/product', productRouter);
-app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/auth', auth, authRouter);
 
 app.use(notFound);
 
