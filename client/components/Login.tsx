@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 import css from '../styles/Login.module.scss';
 
-const Login = ({isOpen, handleModal}: any) => {
+const Login = ({ isOpen, handleModal }: any) => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,7 +15,15 @@ const Login = ({isOpen, handleModal}: any) => {
         setPassword(e?.target?.value);
     }
 
-    if(!isOpen) return;
+    const handleSignIn = async () => {
+        const response = await axios.post('http://localhost:5000/api/v1/auth/login', { email: name, password: password });
+    };
+
+    const handleSignUp = async () => {
+        const response = await axios.post('http://localhost:5000/api/v1/auth/register', { email: name, password: password });
+    };
+
+    if (!isOpen) return;
 
     return (
         <div className={css.container}>
@@ -29,7 +38,8 @@ const Login = ({isOpen, handleModal}: any) => {
                     <input className={css.input} value={name} onChange={handleName} type="text" id="name" />
                     <label className={css.label} htmlFor="email">Пароль</label>
                     <input className={css.input} value={password} onChange={handlePassword} type="password" id="email" />
-                    <button className={css.button}>Войти</button>
+                    <button className={css.button} onClick={handleSignIn}>Войти</button>
+                    <button className={css.button} onClick={handleSignUp}>Зарегистрироваться</button>
                 </div>
             </div>
         </div>
