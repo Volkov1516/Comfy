@@ -17,6 +17,16 @@ const Header = () => {
     const [activeCategory, setActiveCategory] = useState<string>('');
     const [display, setDispaly] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [auth, setAuth] = useState('Войти');
+    
+    useEffect(() => {
+        if(!localStorage.getItem('user')){
+            return;
+        } else {
+            //@ts-ignore
+            setAuth(localStorage.getItem('user'));
+        }
+    }, []);
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/category').then((resp) => { setNewCategory(resp.data) });
@@ -125,7 +135,7 @@ const Header = () => {
                 <div className={css.search}>
                     <input className={css.input} type="text" placeholder="Поиск товаров" />
                 </div>
-                <div onClick={handleModal} className={css.login}>Войти</div>
+                <div onClick={handleModal} className={css.login}>{auth}</div>
                 <div className={css.compare}>
                     <img className={css.compareImg} src="/img/compare.svg" alt="Compare" width="20px" height="20px" />
                 </div>

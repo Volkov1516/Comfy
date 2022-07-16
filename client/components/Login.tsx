@@ -6,6 +6,7 @@ import css from '../styles/Login.module.scss';
 const Login = ({ isOpen, handleModal }: any) => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [user, setUser] = useState(null);
 
     const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
@@ -17,10 +18,16 @@ const Login = ({ isOpen, handleModal }: any) => {
 
     const handleSignIn = async () => {
         const response = await axios.post('http://localhost:5000/api/v1/auth/login', { email: name, password: password });
+        setUser(response.data);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", response.data.user.email);
     };
 
     const handleSignUp = async () => {
         const response = await axios.post('http://localhost:5000/api/v1/auth/register', { email: name, password: password });
+        setUser(response.data);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", response.data.user.email);
     };
 
     if (!isOpen) return;
