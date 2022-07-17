@@ -1,17 +1,18 @@
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
+import { asyncWrapper } from '../middleware/async';
+
 import User from '../models/user';
 
-export const register = async (req: Request, res: Response) => {
+export const register = asyncWrapper(async (req: Request, res: Response) => {
     const user = await User.create({ ...req.body });
-
     const token = user.createJWT();
 
     res.status(StatusCodes.CREATED).json({ user: { email: user.email, id: user._id }, token });
-};
+});
 
-export const login = async (req: Request, res: Response) => {
+export const login = asyncWrapper(async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -33,4 +34,4 @@ export const login = async (req: Request, res: Response) => {
     const token = user.createJWT();
 
     res.status(StatusCodes.OK).json({ user: { email: user.email, id: user._id }, token });
-};
+});

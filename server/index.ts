@@ -12,11 +12,10 @@ import authRouter from './routes/auth';
 import commentRouter from './routes/comment';
 import cartRouter from './routes/cart';
 
-const app = express();
-
 dotenv.config();
 
-const PORT = 5000;
+const app = express();
+const port = 5000;
 
 app.use(express.json());
 app.use(cors());
@@ -32,7 +31,7 @@ app.use(notFound);
 mongoose
     .connect(process.env.MONGODB_URI as string)
     .then(() => {
-        app.listen(PORT, () => {
+        app.listen(port, () => {
             console.log('Server is running on port 5000...');
         });
     })
