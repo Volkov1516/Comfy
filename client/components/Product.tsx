@@ -51,11 +51,34 @@ const Product = ({ product }: any) => {
         setActiveTab(e.target.childNodes[0].data);
     }
 
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState<{}[]>([]);
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/v1/comment/${_id}`).then((resp) => setComments(resp.data.data));
     }, []);
+
+    const [auth, setAuth] = useState(false);
+
+    useEffect(() => {
+        if (!localStorage.getItem('userId')) {
+            return;
+        } else {
+            //@ts-ignore
+            setAuth(true);
+        }
+    }, []);
+
+    const [commentMessage, setCommentMessage] = useState('');
+
+    const handleComment = () => {
+        axios.post(`http://localhost:5000/api/v1/comment`, {
+            productId: _id,
+            userId: localStorage.getItem('userId'),
+            userEmail: localStorage.getItem('userEmail'),
+            text: commentMessage, 
+            rete: 4
+        }).then((resp) => setComments([resp.data.data, ...comments]));
+    }
 
     return (
         <div className={css.container}>
@@ -203,10 +226,17 @@ const Product = ({ product }: any) => {
                 <div className={css.reviewsContainer}>
                     <h3>{brand} {name} {newRom} {newColor} - отзывы</h3>
                     <div className={css.reviews}>
-                        <div className={css.attention}>
-                            <span>Оставтье свой отзыв об этом товаре</span>
-                            <button>Оставить отзыв</button>
-                        </div>
+                        {auth ? (
+                            <div>
+                                <input type="text" value={commentMessage} onChange={e => setCommentMessage(e.target.value)}/>
+                                <button onClick={handleComment}>Отправить</button>
+                            </div>
+                        ) : (
+                            <div className={css.attention}>
+                                <span>Оставтье свой отзыв об этом товаре</span>
+                                <button>Оставить отзыв</button>
+                            </div>
+                        )}
                         {comments?.map((i: any) => (
                             <div className={css.review}>
                                 <div className={css.reviewHeader}>
