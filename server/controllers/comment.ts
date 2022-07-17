@@ -3,7 +3,7 @@ import Comment from "../models/comment";
 
 export const getRelatedComments = async (req: Request, res: Response) => {
     try {
-        const data = await Comment.find({ _id: req.params.id });
+        const data = await Comment.find({ productId: req.params.id });
 
         if (!data) {
             return res.status(404).json({ msg: 'No such id' });

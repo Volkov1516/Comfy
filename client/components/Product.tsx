@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import cx from 'classnames';
+import axios from 'axios';
 
 import css from '../styles/Product.module.scss';
 
@@ -9,7 +10,7 @@ import Popup from './common/Popup';
 import { mockCarouselData } from '../mocks/mockCarouselData';
 
 const Product = ({ product }: any) => {
-    let { name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = product[0];
+    let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = product[0];
     let npDisplayTimeout: ReturnType<typeof setTimeout>;
     let upDisplayTimeout: ReturnType<typeof setTimeout>;
 
@@ -49,6 +50,12 @@ const Product = ({ product }: any) => {
     const handleTab = (e: any) => {
         setActiveTab(e.target.childNodes[0].data);
     }
+
+    const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/v1/comment/${_id}`).then((resp) => setComments(resp.data.data));
+    }, []);
 
     return (
         <div className={css.container}>
@@ -200,45 +207,21 @@ const Product = ({ product }: any) => {
                             <span>Оставтье свой отзыв об этом товаре</span>
                             <button>Оставить отзыв</button>
                         </div>
-                        <div className={css.review}>
-                            <div className={css.reviewHeader}>
-                                <div className={css.name}>Name</div>
-                                <div className={css.rete}>rate</div>
+                        {comments?.map((i: any) => (
+                            <div className={css.review}>
+                                <div className={css.reviewHeader}>
+                                    <div className={css.name}>{i.userEmail}</div>
+                                    <div className={css.rete}>{i.rate}</div>
+                                </div>
+                                <p className={css.reviewText}>
+                                    {i.text}
+                                </p>
+                                <div className={css.reviewActions}>
+                                    <div className={css.answer}>Ответить</div>
+                                    <div className={css.likes}>Likes</div>
+                                </div>
                             </div>
-                            <p className={css.reviewText}>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magni excepturi distinctio repellat autem laborum quibusdam nesciunt, natus, est qui sunt deleniti ipsam molestiae quaerat corporis repudiandae delectus laboriosam ad?
-                            </p>
-                            <div className={css.reviewActions}>
-                                <div className={css.answer}>Ответить</div>
-                                <div className={css.likes}>Likes</div>
-                            </div>
-                        </div>
-                        <div className={css.review}>
-                            <div className={css.reviewHeader}>
-                                <div className={css.name}>Name</div>
-                                <div className={css.rete}>rate</div>
-                            </div>
-                            <p className={css.reviewText}>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magni excepturi distinctio repellat autem laborum quibusdam nesciunt, natus, est qui sunt deleniti ipsam molestiae quaerat corporis repudiandae delectus laboriosam ad?
-                            </p>
-                            <div className={css.reviewActions}>
-                                <div className={css.answer}>Ответить</div>
-                                <div className={css.likes}>Likes</div>
-                            </div>
-                        </div>
-                        <div className={css.review}>
-                            <div className={css.reviewHeader}>
-                                <div className={css.name}>Name</div>
-                                <div className={css.rete}>rate</div>
-                            </div>
-                            <p className={css.reviewText}>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magni excepturi distinctio repellat autem laborum quibusdam nesciunt, natus, est qui sunt deleniti ipsam molestiae quaerat corporis repudiandae delectus laboriosam ad?
-                            </p>
-                            <div className={css.reviewActions}>
-                                <div className={css.answer}>Ответить</div>
-                                <div className={css.likes}>Likes</div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             )}
