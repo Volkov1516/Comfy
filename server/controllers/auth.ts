@@ -8,29 +8,29 @@ export const register = async (req: Request, res: Response) => {
 
     const token = user.createJWT();
 
-    res.status(StatusCodes.CREATED).json({ user: { email: user.email }, token });
+    res.status(StatusCodes.CREATED).json({ user: { email: user.email, id: user._id }, token });
 };
 
 export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
-    if(!email || !password) {
+    if (!email || !password) {
         return res.status(StatusCodes.NOT_ACCEPTABLE).json({ msg: 'Please, provide email and password' });
     }
 
-    const user = await User.findOne({email});
+    const user = await User.findOne({ email });
 
-    if(!user) {
+    if (!user) {
         return res.status(StatusCodes.UNAUTHORIZED).json({ msg: 'No such user' });
     }
     // @ts-ignore
     const isPasswordCorrect = await user.comparePassword(password);
 
-    if(!isPasswordCorrect) {
+    if (!isPasswordCorrect) {
         return res.status(StatusCodes.UNAUTHORIZED).json({ msg: 'Wrong password' });
     }
     // @ts-ignore
     const token = user.createJWT();
 
-    res.status(StatusCodes.OK).json({user: {email: user.email}, token});
+    res.status(StatusCodes.OK).json({ user: { email: user.email, id: user._id }, token });
 };
