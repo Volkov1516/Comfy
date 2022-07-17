@@ -20,14 +20,16 @@ const Login = ({ isOpen, handleModal }: any) => {
         const response = await axios.post('http://localhost:5000/api/v1/auth/login', { email: name, password: password });
         setUser(response.data);
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", response.data.user.email);
+        localStorage.setItem("userEmail", response.data.user.email);
+        localStorage.setItem("userId", response.data.user.id);
     };
 
     const handleSignUp = async () => {
         const response = await axios.post('http://localhost:5000/api/v1/auth/register', { email: name, password: password });
         setUser(response.data);
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", response.data.user.email);
+        localStorage.setItem("userEmail", response.data.user.email);
+        localStorage.setItem("userId", response.data.user.id);
     };
 
     if (!isOpen) return;

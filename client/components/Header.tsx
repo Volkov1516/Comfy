@@ -20,11 +20,11 @@ const Header = () => {
     const [auth, setAuth] = useState('Войти');
     
     useEffect(() => {
-        if(!localStorage.getItem('user')){
+        if(!localStorage.getItem('userId')){
             return;
         } else {
             //@ts-ignore
-            setAuth(localStorage.getItem('user'));
+            setAuth(localStorage.getItem('userEmail'));
         }
     }, []);
 
