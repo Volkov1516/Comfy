@@ -1,4 +1,4 @@
-export const mockCarouselData = {
+export const satndart = {
     header: 'Посмотреть еще',
     items: [
         {

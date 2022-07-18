@@ -7,7 +7,7 @@ import css from '../styles/Product.module.scss';
 import Carousel from './common/Carousel';
 import Popup from './common/Popup';
 
-import { mockCarouselData } from '../mocks/mockCarouselData';
+import { satndart } from '../mocks/carousel';
 
 const Product = ({ product }: any) => {
     let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = product[0];
@@ -183,10 +183,10 @@ const Product = ({ product }: any) => {
                             </div>
                         </div>
                         <div className={css.infoService}>
-                            <Carousel display="small" header="Выберите сервис" items={mockCarouselData.items} />
+                            <Carousel display="small" header="Выберите сервис" items={satndart.items} />
                         </div>
                         <div className={css.infoAccessories}>
-                            <Carousel display="small" header="Выберите аксесуар" items={mockCarouselData.items} />
+                            <Carousel display="small" header="Выберите аксесуар" items={satndart.items} />
                         </div>
                     </div>
                 </div>
