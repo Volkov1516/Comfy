@@ -1,49 +1,65 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import cx from 'classnames';
 
 import css from '../styles/Header.module.scss';
+
 import Popup from './common/Popup';
 import Login from './Login';
+
+type ProductType = {
+    _id: string,
+    name: string,
+    query: string,
+};
+
+type SubcategoryType = {
+    _id: string,
+    title: string,
+    img: string,
+    products: ProductType[],
+};
+
+type CategoryType = {
+    _id: string,
+    name: string,
+    img: string,
+    subcategories: SubcategoryType[],
+};
 
 const Header = () => {
     const router = useRouter();
 
     let displayTimeout: ReturnType<typeof setTimeout>;
 
-    const [newCtegory, setNewCategory] = useState<AxiosResponse<[]>>();
+    const [categories, setCategories] = useState([]);
     const [activeCategory, setActiveCategory] = useState<string>('');
     const [display, setDispaly] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [auth, setAuth] = useState('Войти');
+    const [auth, setAuth] = useState<ReactNode | string>('Войти');
     
     useEffect(() => {
         if(!localStorage.getItem('userId')){
             return;
         } else {
-            //@ts-ignore
             setAuth(localStorage.getItem('userEmail'));
         }
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/category').then((resp) => { setNewCategory(resp.data) });
+        axios.get('http://localhost:5000/api/v1/category').then((resp) => { setCategories(resp.data) });
     }, []);
-
-    const handleDisplayMouseLeave = () => {
-        displayTimeout = setTimeout(() => { setDispaly(false) }, 200);
-    }
 
     const handleDisplayMouseEnter = () => {
         setDispaly(true);
         clearTimeout(displayTimeout);
-    }
+    };
 
-    const handleModal = () => {
-        setIsOpen(!isOpen);
-    }
+    const handleDisplayMouseLeave = () => displayTimeout = setTimeout(() => { setDispaly(false) }, 200);
+
+    const handleModal = () => setIsOpen(!isOpen);
 
     return (
         <header>
@@ -61,21 +77,21 @@ const Header = () => {
                     <a className={css.link} href="#"><b>#ComfyHelps</b></a>
                     <a className={css.link} href="#">Магазины</a>
                     <a className={css.link} href="#">Новый заказ</a>
-                    <div className={css.dropdown}>
-                        <span className={css.dropdownBtn}>Еще <img className={css.arrowImg} src="/img/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
-                        <div className={css.dropdownContent}>
+                    <div className={css.moreDropdown}>
+                        <span className={css.moreDropdownBtn}>Ещё <img className={css.arrowImg} src="/img/arrow.svg" alt="Arrow" width="12px" height="12px" /></span>
+                        <div className={css.moreDropdownContent}>
                             <a href="#">Доставка</a>
                             <a href="#">Возврат</a>
                             <a href="#">Блог</a>
                         </div>
                     </div>
-                    <div className={css.contact}>
-                        <div className={css.dropdownBtn2}>
+                    <div className={css.contactDropdown}>
+                        <div className={css.contactDropdownBtn}>
                             <img className={css.phoneImg} src="/img/headerPhone.svg" alt="Phone" width="20px" height="20px" />
                             <span className={css.contactText}>Связаться</span>
                             <img className={css.arrowImg} src="/img/arrow.svg" alt="Arrow" width="12px" height="12px" />
                         </div>
-                        <div className={css.dropdownContent}>
+                        <div className={css.contactDropdownContent}>
                             <a href="#">Чат на сайте</a>
                             <a href="#">Messenger</a>
                             <a href="#">Viber</a>
@@ -97,12 +113,12 @@ const Header = () => {
                 </div>
                 <div className={cx(css.catalogContent, router.pathname === '/' && css.show)}>
                     <div className={css.left}>
-                        {newCtegory?.map((item: any, index) => (
-                            <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(item._id)}>
-                                <Link href={`/category/${item._id}`}>
+                        {categories.map((i: CategoryType, index) => (
+                            <div className={css.leftItem} key={index} onMouseEnter={() => setActiveCategory(i._id)}>
+                                <Link href={`/category/${i._id}`}>
                                     <a className={css.link}>
-                                        <img className={css.leftImg} src={item.img} alt="Image" width="20px" height="20px" />
-                                        <span className={css.leftText}>{item.name}</span>
+                                        <img className={css.leftImg} src={i.img} alt="Image" width="20px" height="20px" />
+                                        <span className={css.leftText}>{i.name}</span>
                                         <img className={css.arrowImg} src="/img/arrow.svg" alt="Compare" width="12px" height="12px" />
                                     </a>
                                 </Link>
@@ -111,16 +127,16 @@ const Header = () => {
                     </div>
                     <div className={css.right}>
                         <div className={css.categoryContainer}>
-                            {newCtegory?.map((item: any, index) => {
-                                if (item._id === activeCategory) {
+                            {categories.map((i: CategoryType) => {
+                                if (i._id === activeCategory) {
                                     return (
                                         <>
-                                            {item.subcategories.map((item: any) => (
-                                                <div className={css.categoryBlock}>
-                                                    <h3 className={css.categoryTitle} onClick={() => router.push(`/products/categoryId=62b438533e01d8b900854295`)}>{item.title}</h3>
-                                                    {item.products.map((item: any) => (
-                                                        <Link href={`/products/categoryId=62b438533e01d8b900854295&${item.query}`}>
-                                                            <p className={css.categoryItem}>{item.name}</p>
+                                            {i.subcategories.map((j: SubcategoryType, index) => (
+                                                <div className={css.categoryBlock} key={index}>
+                                                    <h3 className={css.categoryTitle} onClick={() => router.push(`/products/categoryId=62b438533e01d8b900854295`)}>{j.title}</h3>
+                                                    {j.products.map((y: ProductType, index) => (
+                                                        <Link href={`/products/categoryId=62b438533e01d8b900854295&${y.query}`}>
+                                                            <p className={css.categoryItem} key={index}>{y.name}</p>
                                                         </Link>
                                                     ))}
                                                 </div>

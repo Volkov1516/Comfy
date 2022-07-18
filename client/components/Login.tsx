@@ -32,7 +32,7 @@ const Login = ({ isOpen, handleModal }: any) => {
         localStorage.setItem("userId", response.data.user.id);
     };
 
-    if (!isOpen) return;
+    if (!isOpen) return null;
 
     return (
         <div className={css.container}>
