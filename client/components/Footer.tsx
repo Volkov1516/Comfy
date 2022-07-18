@@ -145,7 +145,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={css.bottom}>
-                <p>Все права защищены ООО "КОМФИ ТРЕЙД", 2010-2022</p>
+                <p>All rights reserved</p>
             </div>
         </footer>
     );
