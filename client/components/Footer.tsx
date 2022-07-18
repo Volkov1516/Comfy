@@ -9,7 +9,7 @@ const Footer = () => {
                     <div className={css.textWrapper}>
                         <span className={css.infoItemText}>Доставка</span>
                         <p className={css.infoItemDescription}>
-                            Самовывоз из магазина "Comfy", доставка по адресу или в отделение "Нова пошта" и Justin.
+                            Самовывоз из магазина, доставка по адресу или в отделение "Нова пошта" и Justin.
                         </p>
                     </div>
                 </div>
@@ -95,13 +95,13 @@ const Footer = () => {
                     </div>
                     <div className={css.nav}>
                         <div className={css.column}>
-                            <span className={css.title}>Comfy</span>
+                            <span className={css.title}>О нас</span>
                             <ul className={css.columnItems}>
                                 <li><a href="#">О компании</a></li>
                                 <li><a href="#">Магазины</a></li>
                                 <li><a href="#">Контакты</a></li>
                                 <li><a href="#">Пресс-центр</a></li>
-                                <li><a href="#">Работа в Comfy</a></li>
+                                <li><a href="#">Работа у нас</a></li>
                                 <li><a href="#">Безопасность и предупреждения</a></li>
                                 <li><a href="#">Тендер</a></li>
                                 <li><a href="#">Партнерам</a></li>
@@ -145,7 +145,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={css.bottom}>
-                <p>All rights reserved</p>
+                <p>Все права защищены</p>
             </div>
         </footer>
     );
