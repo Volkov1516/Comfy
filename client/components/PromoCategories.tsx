@@ -2,9 +2,17 @@ import css from '../styles/PromoCategories.module.scss';
 
 import ProductCard from './common/ProductCard';
 
+type ProductType = {
+    name: string,
+    price: number,
+    rate: number,
+    images: string[],
+    labels: string[],
+};
+
 type PromoCategoriesType = {
     header: string;
-    products?: any[];
+    products?: ProductType[];
 };
 
 const PromoCategories = ({ products, header }: PromoCategoriesType) => {
@@ -19,7 +27,7 @@ const PromoCategories = ({ products, header }: PromoCategoriesType) => {
             </div>
             <div className={css.body}>
                 <div className={css.cardContainer}>
-                    {products?.map((i: any) => (<ProductCard product={i} />))}
+                    {products?.map((i) => <ProductCard product={i} />)}
                 </div>
             </div>
         </section>
