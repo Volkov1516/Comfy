@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 import css from '../styles/Slider.module.scss';
 
-const imgArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 const Slider = () => {
+    const imgArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
     let timeout: ReturnType<typeof setTimeout>;
 
     const [currentSlide, serCurrentSlide] = useState(1);
@@ -50,9 +50,7 @@ const Slider = () => {
                 </a>
             </div>
             <div className={css.slider}>
-                {imgArr.map((item, index) => (
-                    <img key={index} src={`/img/slider/slider${currentSlide}.webp`} alt="Logo" width="100%" height="450px" />
-                ))}
+                {imgArr.map((i, index) => <img key={index} src={`/img/slider/slider${currentSlide}.webp`} alt="Logo" width="100%" height="450px" />)}
                 <img className={css.prew} onClick={prevSlide} src="/img/arrow.svg" alt="Logo" width="40px" height="40px" />
                 <img className={css.next} onClick={nextSlide} src="/img/arrow.svg" alt="Logo" width="40px" height="40px" />
                 <div className={css.sliderNum}>{currentSlide}/10</div>
