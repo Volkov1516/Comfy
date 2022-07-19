@@ -120,23 +120,23 @@ const Products = ({ products }: ProductsType) => {
                         <div className={css.content}>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="64" name="rom" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="64">64</label>
+                                <label htmlFor="64">64 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="128" name="rom" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="128">128</label>
+                                <label htmlFor="128">128 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="256" name="rom" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="256">256</label>
+                                <label htmlFor="256">256 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="512" name="rom" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="512">512</label>
+                                <label htmlFor="512">512 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="1" name="rom" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="1">1</label>
+                                <label htmlFor="1">1 ТБ</label>
                             </div>
                         </div>
                     </div>
@@ -147,35 +147,35 @@ const Products = ({ products }: ProductsType) => {
                         <div className={css.content}>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="1" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="1">1</label>
+                                <label htmlFor="1">1 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="2" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="2">2</label>
+                                <label htmlFor="2">2 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="3" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="3">3</label>
+                                <label htmlFor="3">3 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="4" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="4">4</label>
+                                <label htmlFor="4">4 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="5" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="5">5</label>
+                                <label htmlFor="5">5 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="6" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="6">6</label>
+                                <label htmlFor="6">6 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="7" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="7">7</label>
+                                <label htmlFor="7">7 ГБ</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="8" name="ram" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="8">8</label>
+                                <label htmlFor="8">8 ГБ</label>
                             </div>
                         </div>
                     </div>
@@ -186,15 +186,15 @@ const Products = ({ products }: ProductsType) => {
                         <div className={css.content}>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="60" name="displayFrashrate" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="60">60</label>
+                                <label htmlFor="60">60 Гц</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="90" name="displayFrashrate" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="90">90</label>
+                                <label htmlFor="90">90 Гц</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="120" name="displayFrashrate" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="120">120</label>
+                                <label htmlFor="120">120 Гц</label>
                             </div>
                         </div>
                     </div>
