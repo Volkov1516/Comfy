@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -12,7 +13,32 @@ type ProductsType = {
 const Products = ({ products }: ProductsType) => {
     const router = useRouter();
 
+    const [currentPage, setCurrentPage] = useState('1');
+    const [minPrice, setMinPrice] = useState('');
+    const [maxPrice, setMaxPrice] = useState('');
+
     const handleClick = (e: React.MouseEvent<HTMLInputElement>) => router.push(`${router.asPath}&${(e.target as HTMLInputElement).name}=${(e.target as HTMLInputElement).id}`);
+
+    const handleChangeMin = (e: React.ChangeEvent<HTMLInputElement>) => setMinPrice((e.target as HTMLInputElement).value);
+
+    const handleChangeMax = (e: React.ChangeEvent<HTMLInputElement>) => setMaxPrice((e.target as HTMLInputElement).value);
+
+    const handlePrice = () => {
+        if (!minPrice && !maxPrice) {
+            return;
+        } else if (minPrice && !maxPrice) {
+            return router.push(`${router.asPath}&numericFilters=price>${minPrice}`);
+        } else if (maxPrice && !minPrice) {
+            return router.push(`${router.asPath}&numericFilters=price<${maxPrice}`);
+        } else if (minPrice && maxPrice) {
+            router.push(`${router.asPath}&numericFilters=price${minPrice && '>' + minPrice + ',price<' + maxPrice}`);
+        }
+    };
+
+    const handlePage = () => {
+        setCurrentPage('2');
+        router.push(`${router.asPath}&page=${currentPage}`);
+    }
 
     return (
         <div className={css.container}>
@@ -30,12 +56,12 @@ const Products = ({ products }: ProductsType) => {
                             <div className={css.content}>
                                 <div className={css.controllers}>
                                     <span>от</span>
-                                    <input className={css.input} type="number" />
+                                    <input className={css.input} value={minPrice} onChange={handleChangeMin} />
                                     <span>до</span>
-                                    <input className={css.input} type="number" />
+                                    <input className={css.input} value={maxPrice} onChange={handleChangeMax} />
                                     <span>$</span>
                                 </div>
-                                <button className={css.submitBtn}>ПРИМЕНИТЬ</button>
+                                <button className={css.submitBtn} onClick={handlePrice}>ПРИМЕНИТЬ</button>
                             </div>
 
                         </div>
@@ -81,8 +107,8 @@ const Products = ({ products }: ProductsType) => {
                                 <label htmlFor="iphone_13">iPhone 13</label>
                             </div>
                             <div className={css.row}>
-                                <input className={css.customCheckbox} type="checkbox" id="iphone_13 mini" name="model" onClick={(e) => handleClick(e)} />
-                                <label htmlFor="iphone_13 mini">iPhone 13 mini</label>
+                                <input className={css.customCheckbox} type="checkbox" id="iphone_13_mini" name="model" onClick={(e) => handleClick(e)} />
+                                <label htmlFor="iphone_13_mini">iPhone 13 mini</label>
                             </div>
                             <div className={css.row}>
                                 <input className={css.customCheckbox} type="checkbox" id="iphone_12" name="model" onClick={(e) => handleClick(e)} />
@@ -218,6 +244,7 @@ const Products = ({ products }: ProductsType) => {
                     </div>
                 </div>
             </div>
+            pagination <b onClick={handlePage}>2</b>
         </div>
     );
 };

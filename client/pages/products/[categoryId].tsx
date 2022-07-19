@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 
 import Products from '../../components/Products';
 
-const ProductsPage: NextPage = ({products}: any) => <Products products={products}/>;
+const ProductsPage: NextPage = ({products}: any) => <Products products={products} />;
 
 export default ProductsPage;
 
@@ -15,7 +15,7 @@ export const getServerSideProps = async (context: any) => {
 
     return {
         props: {
-            products: data
+            products: data,
         }
     };
 };
