@@ -3,7 +3,10 @@ import mongoose from "mongoose";
 const ProductSchema = new mongoose.Schema({
     categoryId: String,
     name: String,
-    brand: String,
+    brand: {
+        type: String,
+        enum: ['Apple', 'Samsung', 'Xiaomi', 'OPPO'],
+    },
     model: String,
     color: String,
     colorAvailable: [],
