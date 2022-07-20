@@ -19,6 +19,7 @@
 
     .content {
         padding: 0px 20px;
+        margin-bottom: 4px;
         @include flex();
 
         .filter {
@@ -143,6 +144,19 @@
         .main {
             width: 100%;
 
+            .pagination {
+                width: 100%;
+                padding: 10px 0px;
+                @include flex(row, center, center, 4px);
+                font-size: 20px;
+
+                span {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
             .controlls {
                 padding: 20px 30px 12px 20px;
                 @include flex(row, flex-end, center);
@@ -172,6 +186,7 @@
 
                         span {
                             font-size: 14px;
+
                             &:hover {
                                 cursor: pointer;
                                 color: $green;

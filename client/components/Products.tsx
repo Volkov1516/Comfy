@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -10,12 +10,23 @@ type ProductsType = {
     products: {}[],
 };
 
+type QueryStringType = {
+    brand?: string,
+    model?: string,
+    os?: string,
+    rom?: string,
+    ram?: string,
+    displayFrashrate?: string,
+    sort?: string,
+    page?: string,
+};
+
 const Products = ({ products }: ProductsType) => {
     const router = useRouter();
 
-    const [currentPage, setCurrentPage] = useState('1');
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
+    const [page, setPage] = useState('');
 
     const handleClick = (e: React.MouseEvent<HTMLInputElement>) => router.push(`${router.asPath}&${(e.target as HTMLInputElement).name}=${(e.target as HTMLInputElement).id}`);
 
@@ -35,10 +46,13 @@ const Products = ({ products }: ProductsType) => {
         }
     };
 
-    const handlePage = () => {
-        setCurrentPage('2');
-        router.push(`${router.asPath}&page=${currentPage}`);
-    }
+    const handlePage = (num: string): any => {
+        setPage(num)
+    };
+
+    useEffect(() => {
+        router.push(`${router.asPath}${page && `&page=${page}`}`);
+    }, [page])
 
     return (
         <div className={css.container}>
@@ -242,9 +256,14 @@ const Products = ({ products }: ProductsType) => {
                             </div>
                         ))}
                     </div>
+                    <div className={css.pagination}>
+                        <span onClick={() => handlePage('1')}>1</span>
+                        <span onClick={() => handlePage('2')}>2</span>
+                        <span onClick={() => handlePage('3')}>3</span>
+                        <span onClick={() => handlePage('4')}>4</span>
+                    </div>
                 </div>
             </div>
-            pagination <b onClick={handlePage}>2</b>
         </div>
     );
 };
