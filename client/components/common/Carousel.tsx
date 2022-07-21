@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import cx from 'classnames';
 
 import css from '../../styles/Carousel.module.scss';
