@@ -1,6 +1,22 @@
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+
 import css from '../styles/Cart.module.scss';
 
 const Cart = () => {
+    const router = useRouter();
+    
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        if(!localStorage.getItem('userId')){
+            router.push('/');
+        } else {
+            axios.get(`http://localhost:5000/api/v1/cart/${localStorage.getItem('userId')}`).then((resp) => setCart(resp.data))
+        }
+    }, []);
+
     return (
         <div className={css.container}>
             <div className={css.main}>

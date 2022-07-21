@@ -61,6 +61,14 @@ const Header = () => {
 
     const handleModal = () => setIsOpen(!isOpen);
 
+    const handleCart = () => {
+        if(!localStorage.getItem('userId')){
+            return;
+        } else {
+            router.push('/cart');
+        }
+    }
+
     return (
         <header>
             <div className={css.headerTop}>
@@ -160,7 +168,7 @@ const Header = () => {
                 </div>
                 <div className={css.cart} onMouseEnter={handleDisplayMouseEnter} onMouseLeave={handleDisplayMouseLeave}>
                     <img className={css.cartImg} src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart" width="20px" height="20px" />
-                    <Link href="/cart"><span className={css.cartText}>Корзина</span></Link>
+                    <span className={css.cartText} onClick={handleCart}>Корзина</span>
                     <Popup type="small" display={display} background="white" text="Корзина пуста" />
                 </div>
             </div>
