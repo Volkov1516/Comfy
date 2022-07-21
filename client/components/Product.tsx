@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import cx from 'classnames';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 import css from '../styles/Product.module.scss';
 
@@ -10,7 +11,12 @@ import Popup from './common/Popup';
 import { satndart } from '../mocks/carousel';
 
 const Product = ({ product }: any) => {
-    let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = product[0];
+    const router = useRouter();
+
+    const [prod, setProd] = useState<any>({});
+    const [comments, setComments] = useState<{}[]>([]);
+
+    let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = prod;
     let npDisplayTimeout: ReturnType<typeof setTimeout>;
     let upDisplayTimeout: ReturnType<typeof setTimeout>;
 
@@ -51,13 +57,13 @@ const Product = ({ product }: any) => {
         setActiveTab(e.target.childNodes[0].data);
     }
 
-    const [comments, setComments] = useState<{}[]>([]);
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/v1/product/${router.query.productId}`).then((resp) => setProd(resp.data.data));
+    }, []);
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/v1/comment/${_id}`).then((resp) => setComments(resp.data.data));
     }, []);
-
-    const [auth, setAuth] = useState(false);
 
     useEffect(() => {
         if (!localStorage.getItem('userId')) {
@@ -97,14 +103,14 @@ const Product = ({ product }: any) => {
 
                     <div className={css.gallery}>
                         <div className={css.list}>
-                            {images.map((img: string) => (
+                            {images?.map((img: string) => (
                                 <div className={css.itemWrapper}>
                                     <img src={img} alt="product images" />
                                 </div>
                             ))}
                         </div>
                         <div className={css.mainImage}>
-                            <img className={css.listItem} src={images[0]} alt="main image" />
+                            {images && <img className={css.listItem} src={images[0]} alt="main image" />}
                         </div>
                     </div>
                     <div className={css.info}>
@@ -169,12 +175,12 @@ const Product = ({ product }: any) => {
                             <p className={css.title}>Iншi моделi</p>
                             <div className={css.actions}>
                                 <div className={css.colors}>
-                                    {colorAvailable.map((item: any) => (
+                                    {colorAvailable?.map((item: any) => (
                                         <div className={css.color} style={{ backgroundColor: `${item.simple}` }}></div>
                                     ))}
                                 </div>
                                 <div className={css.memory}>
-                                    {romAvailable.map((item: any) => (
+                                    {romAvailable?.map((item: any) => (
                                         <div className={css.item}>
                                             {item} ГБ
                                         </div>
