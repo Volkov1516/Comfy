@@ -47,12 +47,12 @@ const Products = ({ products }: ProductsType) => {
     };
 
     const handlePage = (num: string): any => {
-        setPage(num)
+        setPage(num);
     };
 
     useEffect(() => {
         router.push(`${router.asPath}${page && `&page=${page}`}`);
-    }, [page])
+    }, [page]);
 
     return (
         <div className={css.container}>

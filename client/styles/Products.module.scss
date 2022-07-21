@@ -146,12 +146,23 @@
 
             .pagination {
                 width: 100%;
-                padding: 10px 0px;
-                @include flex(row, center, center, 4px);
+                @include flex(row, center, center);
                 font-size: 20px;
+                font-weight: 600;
 
                 span {
+                    @include flex(row, center, center);
+                    height: 70px;
+                    width: 80px;
+                    border-left: 2px solid $grayLight;
+
+                    &:last-child {
+                        border-right: 2px solid $grayLight;
+                    }
+
                     &:hover {
+                        color: $orange;
+                        background-color: $grayLight;
                         cursor: pointer;
                     }
                 }
