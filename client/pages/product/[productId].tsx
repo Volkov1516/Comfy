@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 
 import Product from '../../components/Product';
 
-const ProductPage: NextPage = ({ product }: any) => <Product product={product} />;
+const ProductPage: NextPage = ({ product }: any) => <Product />;
 
 export default ProductPage;
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import cx from 'classnames';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 
 import css from '../styles/Product.module.scss';
 
@@ -10,18 +10,45 @@ import Popup from './common/Popup';
 
 import { satndart } from '../mocks/carousel';
 
-const Product = ({ product }: any) => {
+type ProductType = {
+    _id: string,
+    name: string,
+    brand: string,
+    model: string,
+    color: string,
+    battery: number,
+    colorAvailable: string[],
+    displayFrashrate: number,
+    displayResolution: string,
+    displaySize: number,
+    displayType: string,
+    images: string[],
+    labels: string[],
+    os: string,
+    price: number,
+    processor: string,
+    ram: number,
+    rom: number,
+    rate: number,
+    romAvailable: number[],
+};
+
+const Product = () => {
     const router = useRouter();
 
-    const [prod, setProd] = useState<any>({});
+    const [product, setProduct] = useState<ProductType | {}>({});
     const [comments, setComments] = useState<{}[]>([]);
+    const [commentMessage, setCommentMessage] = useState('');
+    const [npDisplay, setNpDisplay] = useState(false);
+    const [upDisplay, setUpDisplay] = useState(false);
+    const [auth, setAuth] = useState(false);
+    const [activeTab, setActiveTab] = useState('ВСЁ О ТОВАРЕ');
 
-    let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = prod;
+    const { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable }: any = product;
     let npDisplayTimeout: ReturnType<typeof setTimeout>;
     let upDisplayTimeout: ReturnType<typeof setTimeout>;
 
     const newColor = color?.split('_').map((i: any) => i[0].toUpperCase() + i.substring(1)).join(' ');
-
     let newRom;
 
     if (rom > 16) {
@@ -30,35 +57,8 @@ const Product = ({ product }: any) => {
         newRom = rom + 'Tb'
     }
 
-    const [npDisplay, setNpDisplay] = useState(false);
-    const [upDisplay, setUpDisplay] = useState(false);
-
-    const [activeTab, setActiveTab] = useState('ВСЁ О ТОВАРЕ');
-
-    const handleNpDisplayMouseLeave = () => {
-        npDisplayTimeout = setTimeout(() => { setNpDisplay(false) }, 200);
-    }
-
-    const handleNpDisplayMouseEnter = () => {
-        setNpDisplay(true);
-        clearTimeout(npDisplayTimeout);
-    }
-
-    const handleUpDisplayMouseLeave = () => {
-        upDisplayTimeout = setTimeout(() => { setUpDisplay(false) }, 200);
-    }
-
-    const handleUpDisplayMouseEnter = () => {
-        setUpDisplay(true);
-        clearTimeout(upDisplayTimeout);
-    }
-
-    const handleTab = (e: any) => {
-        setActiveTab(e.target.childNodes[0].data);
-    }
-
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/product/${router.query.productId}`).then((resp) => setProd(resp.data.data));
+        axios.get(`http://localhost:5000/api/v1/product/${router.query.productId}`).then((resp) => setProduct(resp.data.data));
     }, []);
 
     useEffect(() => {
@@ -74,17 +74,31 @@ const Product = ({ product }: any) => {
         }
     }, []);
 
-    const [commentMessage, setCommentMessage] = useState('');
+    const handleNpDisplayMouseLeave = () => npDisplayTimeout = setTimeout(() => { setNpDisplay(false) }, 200);
+
+    const handleNpDisplayMouseEnter = () => {
+        setNpDisplay(true);
+        clearTimeout(npDisplayTimeout);
+    };
+
+    const handleUpDisplayMouseLeave = () => upDisplayTimeout = setTimeout(() => { setUpDisplay(false) }, 200);
+
+    const handleUpDisplayMouseEnter = () => {
+        setUpDisplay(true);
+        clearTimeout(upDisplayTimeout);
+    };
+
+    const handleTab = (e: any) => setActiveTab(e.target.childNodes[0].data);
 
     const handleComment = () => {
         axios.post(`http://localhost:5000/api/v1/comment`, {
             productId: _id,
             userId: localStorage.getItem('userId'),
             userEmail: localStorage.getItem('userEmail'),
-            text: commentMessage, 
+            text: commentMessage,
             rete: 4
         }).then((resp) => setComments([resp.data.data, ...comments]));
-    }
+    };
 
     return (
         <div className={css.container}>
@@ -233,9 +247,9 @@ const Product = ({ product }: any) => {
                     <h3>{brand} {name} {newRom} {newColor} - отзывы</h3>
                     <div className={css.reviews}>
                         {auth ? (
-                            <div>
-                                <input type="text" value={commentMessage} onChange={e => setCommentMessage(e.target.value)}/>
-                                <button onClick={handleComment}>Отправить</button>
+                            <div className={css.controlls}>
+                                <input className={css.input} type="text" value={commentMessage} onChange={e => setCommentMessage(e.target.value)} />
+                                <button className={css.button} onClick={handleComment}>Отправить</button>
                             </div>
                         ) : (
                             <div className={css.attention}>
