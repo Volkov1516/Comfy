@@ -56,7 +56,6 @@ const Products = ({ products }: ProductsType) => {
 
     return (
         <div className={css.container}>
-            <div>Breadcrumbs</div>
             <div className={css.categoryInfo}>
                 <h1>Смартфоны</h1>
             </div>

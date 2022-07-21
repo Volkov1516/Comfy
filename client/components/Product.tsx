@@ -102,7 +102,6 @@ const Product = () => {
 
     return (
         <div className={css.container}>
-            <div>Breadcrumbs</div>
             <div className={css.tabs}>
                 <a className={css.tabItem} onClick={handleTab}>ВСЁ О ТОВАРЕ</a>
                 <a className={css.tabItem}>ХАРАКТЕРИСТИКИ</a>

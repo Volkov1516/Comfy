@@ -31,7 +31,6 @@ type CategoryType = {
 const Category = ({ category }: CategoryType) => {
     return (
         <div className={css.container}>
-            <div>Breadcrumbs</div>
             <div className={css.category}>
                 {category?.data?.subcategories?.map((i: SubcategoryType, index) => (
                     <div className={css.categoryItem} key={index}>
