@@ -134,17 +134,17 @@ const Product = () => {
                                 <div className={css.labels}>
                                     <div className={css.label} onMouseEnter={handleNpDisplayMouseEnter} onMouseLeave={handleNpDisplayMouseLeave}>
                                         <img className={css.labelImg} src="https://cdn.comfy.ua/media/label/Group%20965%20(19)_1.svg" alt="Arrow" width="24px" height="24px" />
-                                        <span>Доставка Новою Поштою</span>
+                                        <span>Доставка Новой Почтой</span>
                                         <Popup type="normal" display={npDisplay} title="Доставка Новой Почтой" text="От 99$ к отделению" button="Подробнее" />
                                     </div>
                                     <div className={css.label} onMouseEnter={handleUpDisplayMouseEnter} onMouseLeave={handleUpDisplayMouseLeave}>
                                         <img className={css.labelImg} src="https://cdn.comfy.ua/media/label/Group%20967_1.svg" alt="Arrow" width="24px" height="24px" />
-                                        <span>Доставка Укрпоштою</span>
+                                        <span>Доставка Укрпочтой</span>
                                         <Popup type="normal" display={upDisplay} title="Доставка Укрпочтой" text="От 50$ к отделению" button="Подробнее" />
                                     </div>
                                 </div>
                                 <div className={css.reviews}>
-                                    {rate} reviews and product code
+                                    {rate}
                                 </div>
                             </div>
                         </div>
@@ -154,8 +154,8 @@ const Product = () => {
                                     <b>{price}</b>
                                 </div>
                                 <div className={css.buttons}>
-                                    <button className={css.buy}>Купити</button>
-                                    <button className={css.order}>Швидке замовлення</button>
+                                    <button className={css.buy}>Купить</button>
+                                    <button className={css.order}>Быстрый заказ</button>
                                 </div>
                                 <div className={css.controlls}>
                                     <div className={css.img}>
@@ -183,10 +183,10 @@ const Product = () => {
                                     <img src="https://cdn.comfy.ua/media/label/Group%20378_2.svg" alt="Arrow" />
                                 </div>
                             </div>
-                            <button className={css.btn}>Купити в кредит</button>
+                            <button className={css.btn}>Купить в кредит</button>
                         </div>
                         <div className={css.infoAlternatives}>
-                            <p className={css.title}>Iншi моделi</p>
+                            <p className={css.title}>Другие модели</p>
                             <div className={css.actions}>
                                 <div className={css.colors}>
                                     {colorAvailable?.map((item: any) => (

@@ -53,7 +53,6 @@ const Carousel = ({ display, header, items }: CarouselTypes) => {
                                     <div className={css.text}>
                                         <a href="#">{i.text}</a>
                                     </div>
-                                    <p>{i.date}</p>
                                 </div>
                                 <div className={cx(css.actions, css[display])}>
                                     <div className={css.price}>
