@@ -4,6 +4,8 @@ import css from '../../styles/ProductCard.module.scss';
 
 import ProductCardCarousel from './ProductCardCarousel';
 
+import axios from 'axios';
+
 const ProductCard = ({ product }: any) => {
     let { _id, name, brand, model, color, battery, colorAvailable, displayFrashrate, displayResolution, displaySize, displayType, images, labels, os, price, processor, ram, rom, rate, romAvailable } = product;
 
@@ -16,6 +18,18 @@ const ProductCard = ({ product }: any) => {
     } else {
         newRom = rom + 'Tb'
     }
+
+    const hanldeCart = () => {
+        axios.post(`http://localhost:5000/api/v1/cart`, {
+            userId: localStorage.getItem('userId'),
+            products: [{
+                productId: _id,
+                name: name,
+                img: images[0],
+                price: price,
+            }]
+        }).then((data: any) => console.log(data.data))
+    };
 
     return (
         <div className={css.container}>
@@ -47,7 +61,7 @@ const ProductCard = ({ product }: any) => {
                     <div className={css.price}>
                         <div className={css.priceCurrent}>{price}</div>
                     </div>
-                    <div className={css.actionButton}>
+                    <div className={css.actionButton} onClick={hanldeCart}>
                         <img src="https://www.svgrepo.com/show/378541/cart.svg" alt="Cart image" width="20px" height="20px" />
                     </div>
                 </div>

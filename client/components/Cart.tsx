@@ -6,11 +6,11 @@ import css from '../styles/Cart.module.scss';
 
 const Cart = () => {
     const router = useRouter();
-    
-    const [cart, setCart] = useState([]);
+
+    const [cart, setCart] = useState<any>([]);
 
     useEffect(() => {
-        if(!localStorage.getItem('userId')){
+        if (!localStorage.getItem('userId')) {
             router.push('/');
         } else {
             axios.get(`http://localhost:5000/api/v1/cart/${localStorage.getItem('userId')}`).then((resp) => setCart(resp.data))
@@ -24,12 +24,11 @@ const Cart = () => {
                     <h4>Ваш заказ</h4>
                     <div className={css.content}>
                         <div className={css.items}>
-                            <div className={css.itemWrapper}>
-                                <img src="https://cdn.comfy.ua/media/catalog/product/cache/4/thumbnail/160x/9df78eab33525d08d6e5fb8d27136e95/a/p/apple_iphone_11_128gb_black_01.png" alt="" />
-                            </div>
-                            <div className={css.itemWrapper}>
-                                <img src="https://cdn.comfy.ua/media/catalog/product/cache/4/thumbnail/160x/9df78eab33525d08d6e5fb8d27136e95/1/5/1550702.png" alt="" />
-                            </div>
+                            {cart?.data?.map((i: any) => (
+                                <div className={css.itemWrapper}>
+                                    <img src={i.products[0].img} alt="" />
+                                </div>
+                            ))}
                         </div>
                         <button>Изменить</button>
                     </div>
