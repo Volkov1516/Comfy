@@ -5,9 +5,9 @@
     width: 100%;
     height: auto;
     padding: 0px 20px;
+    margin: 8px 0px;
 
     .category {
-        // @include flex(row, flex-start, center, 6px, 6px, wrap);
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-column-gap: 6px;
