@@ -1,4 +1,4 @@
-# COMFY
+# ONLINE STORE
 
 ## Description
 This is an education app based on the Comfy online store as the reference. 
