@@ -6,7 +6,7 @@ The goal of this app is to learn and train such technologies as Next.js and Node
 Functional of this app was simplified to test the basics. 
 
 ## Features
-- SsSS
+- SaSS
 - classnames
 - Typescript
 - Next.js
