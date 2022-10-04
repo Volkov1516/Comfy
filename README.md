@@ -1,20 +1,34 @@
-# ONLINE STORE
+# COMFY
 
 ## Description
-This is an education app based on the Comfy online store as the reference. 
-The goal of this app is to learn and train such technologies as Next.js and Node.js.
-Functional of this app was simplified to test the basics. 
+This is an education application based on the Comfy online store as the reference.
 
 ## Features
-- SaSS
-- classnames
+- Complex layout and components such dropdowns, slider, carousel, modal
+- Filtering
+- Sort
+- Pagination
+- Registration
+- Cart
+- Comments
+
+## Features
+- HTML/CSS (SaSS)
 - Typescript
-- Next.js
-- Node.js/Express
+- Next
+- classnames
+- axios
+- Node/Express
 - Modgo DB
+- mongoose
+- bcryptjs
+- jsonwebtoken
+- dotenv
+- cors
 
 ## Installing
 - Copy the repository
-- Install dependencies for client and server
+- Install dependencies for client and server `npm install`
 - Setup enviroment variables
-- Use npm run dev to run client and server
+- Run the server `npm run dev`
+- Run the client `npm run dev`
